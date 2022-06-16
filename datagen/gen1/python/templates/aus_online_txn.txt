@@ -1,0 +1,8 @@
+{
+  "id": "{{ id }}",
+  "ccpID": "{{ ccpID }}",
+  "productID": "{{ productID }}",
+  "productDesc": "{{ productDesc }}",
+  "productQty": {{ productQty }},
+  "transactionDate": "{{ transactionDate }}"
+}

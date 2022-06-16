@@ -1,0 +1,220 @@
+{
+  "results": [
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Forsyth",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Cumming",
+        "extendedPostalCode": "300417922",
+        "freeformAddress": "1000 Market Place Boulevard, Cumming, GA 30041",
+        "localName": "Cumming",
+        "municipality": "Cumming",
+        "municipalitySubdivision": "Cumming",
+        "postalCode": "30041",
+        "streetName": "Market Place Boulevard",
+        "streetNumber": "1000"
+      },
+      "entryPoints": [
+        {
+          "position": {
+            "lat": 34.18142,
+            "lon": -84.13188
+          },
+          "type": "main"
+        },
+        {
+          "position": {
+            "lat": 34.17838,
+            "lon": -84.12992
+          },
+          "type": "minor"
+        },
+        {
+          "position": {
+            "lat": 34.17891,
+            "lon": -84.13197
+          },
+          "type": "minor"
+        },
+        {
+          "position": {
+            "lat": 34.18034,
+            "lon": -84.13262
+          },
+          "type": "minor"
+        },
+        {
+          "position": {
+            "lat": 34.18164,
+            "lon": -84.13138
+          },
+          "type": "minor"
+        }
+      ],
+      "id": "US/PAD/p1/21384454",
+      "position": {
+        "lat": 34.17998,
+        "lon": -84.13001
+      },
+      "score": 14.14995,
+      "type": "Point Address",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.17908,
+          "lon": -84.12892
+        },
+        "topLeftPoint": {
+          "lat": 34.18088,
+          "lon": -84.1311
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Forsyth",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Cumming",
+        "extendedPostalCode": "300417975, 300417976, 300417977, 300417978, 300417979, 300417980, 300417981, 300417982, 300417983, 300417984",
+        "freeformAddress": "Market Place Boulevard, Cumming, GA 30041",
+        "municipality": "Cumming",
+        "municipalitySubdivision": "Cumming",
+        "postalCode": "30041",
+        "streetName": "Market Place Boulevard"
+      },
+      "id": "US/STR/p0/4877694",
+      "position": {
+        "lat": 34.20849,
+        "lon": -84.11657
+      },
+      "score": 12.44169,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.20645,
+          "lon": -84.11575
+        },
+        "topLeftPoint": {
+          "lat": 34.21054,
+          "lon": -84.11791
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Forsyth",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Cumming",
+        "extendedPostalCode": "300416060, 300416061, 300417920, 300417921, 300417922, 300417923, 300417924, 300417925, 300417926, 300417927, 300417928, 300417929, 300417931, 300417932, 300417933, 300417934, 300417935, 300417936, 300417938, 300417955, 300417974, 300417985, 300417986, 300417987, 300417988, 300417989, 300417990, 300417995",
+        "freeformAddress": "Market Place Boulevard, Cumming, GA 30041",
+        "municipality": "Cumming",
+        "municipalitySubdivision": "Cumming",
+        "postalCode": "30041",
+        "streetName": "Market Place Boulevard"
+      },
+      "id": "US/STR/p0/4877695",
+      "position": {
+        "lat": 34.19064,
+        "lon": -84.12923
+      },
+      "score": 12.44169,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.18122,
+          "lon": -84.1181
+        },
+        "topLeftPoint": {
+          "lat": 34.19921,
+          "lon": -84.13985
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Forsyth",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Cumming",
+        "freeformAddress": "Ronald Reagan Boulevard, Cumming, GA 30041",
+        "municipality": "Cumming",
+        "postalCode": "30041",
+        "streetName": "Ronald Reagan Boulevard"
+      },
+      "id": "US/STR/p0/6924646",
+      "position": {
+        "lat": 34.17706,
+        "lon": -84.137
+      },
+      "score": 12.10257,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.17403,
+          "lon": -84.13356
+        },
+        "topLeftPoint": {
+          "lat": 34.18005,
+          "lon": -84.13784
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Forsyth",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Cumming",
+        "freeformAddress": "Market Place Boulevard & Ronald Reagan Boulevard, Cumming, GA 30041",
+        "municipality": "Cumming",
+        "municipalitySubdivision": "Cumming",
+        "postalCode": "30041",
+        "streetName": "Market Place Boulevard & Ronald Reagan Boulevard, Market Place Boulevard"
+      },
+      "id": "US/XSTR/p1/2965736",
+      "position": {
+        "lat": 34.18005,
+        "lon": -84.13364
+      },
+      "score": 10.60552,
+      "type": "Cross Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.17915,
+          "lon": -84.13255
+        },
+        "topLeftPoint": {
+          "lat": 34.18095,
+          "lon": -84.13473
+        }
+      }
+    }
+  ],
+  "search_address": "1000 Market Pl Blvd Cumming GA 30041",
+  "summary": {
+    "fuzzyLevel": 1,
+    "numResults": 5,
+    "offset": 0,
+    "query": "1000 market pl blvd cumming ga 30041",
+    "queryTime": 74,
+    "queryType": "NON_NEAR",
+    "totalResults": 5
+  }
+}

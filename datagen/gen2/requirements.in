@@ -1,0 +1,13 @@
+# Chris Joakim, Microsoft, May 2022
+# These libraries are sorted alphabetically
+
+Faker
+Jinja2
+arrow
+azure-storage-blob
+docopt
+flake8
+humanize
+pymongo
+redis
+requests

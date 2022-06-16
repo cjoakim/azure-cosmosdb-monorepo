@@ -1,0 +1,1 @@
+/Users/cjoakim/github/azure-cosmosdb-cost-calculator/cosmos_calc.tests/TestResults/8e09a51f-5715-48d9-aa69-7bd0ba084ca1/coverage.cobertura.xml

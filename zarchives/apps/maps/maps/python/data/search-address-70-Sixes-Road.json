@@ -1,0 +1,172 @@
+{
+  "results": [
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Cherokee",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Holly Springs",
+        "extendedPostalCode": "301157427",
+        "freeformAddress": "4520 Holly Springs Parkway, Canton, GA 30115",
+        "localName": "Canton",
+        "municipality": "Holly Springs, Canton",
+        "municipalitySubdivision": "Holly Springs, Canton",
+        "postalCode": "30115",
+        "streetName": "Holly Springs Parkway",
+        "streetNumber": "4520"
+      },
+      "entryPoints": [
+        {
+          "position": {
+            "lat": 34.14818,
+            "lon": -84.51145
+          },
+          "type": "main"
+        },
+        {
+          "position": {
+            "lat": 34.14876,
+            "lon": -84.51148
+          },
+          "type": "minor"
+        },
+        {
+          "position": {
+            "lat": 34.14722,
+            "lon": -84.51213
+          },
+          "type": "minor"
+        }
+      ],
+      "id": "US/PAD/p1/48801118",
+      "position": {
+        "lat": 34.1485,
+        "lon": -84.51289
+      },
+      "score": 14.21533,
+      "type": "Point Address",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.1476,
+          "lon": -84.5118
+        },
+        "topLeftPoint": {
+          "lat": 34.1494,
+          "lon": -84.51398
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Cherokee",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Holly Springs",
+        "freeformAddress": "Holly Springs Parkway, Holly Springs, GA 30115",
+        "municipality": "Holly Springs, Canton",
+        "municipalitySubdivision": "Holly Springs",
+        "postalCode": "30115",
+        "streetName": "Holly Springs Parkway"
+      },
+      "id": "US/STR/p0/7397187",
+      "position": {
+        "lat": 34.17825,
+        "lon": -84.5034
+      },
+      "score": 12.52697,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.17786,
+          "lon": -84.5033
+        },
+        "topLeftPoint": {
+          "lat": 34.17873,
+          "lon": -84.50357
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Cherokee",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Holly Springs",
+        "freeformAddress": "Holly Springs Parkway, Holly Springs, GA",
+        "municipality": "Holly Springs, Canton",
+        "municipalitySubdivision": "Holly Springs",
+        "postalCode": "30114, 30115",
+        "streetName": "Holly Springs Parkway"
+      },
+      "id": "US/STR/p0/7397191",
+      "position": {
+        "lat": 34.18467,
+        "lon": -84.50317
+      },
+      "score": 12.52697,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.17557,
+          "lon": -84.4934
+        },
+        "topLeftPoint": {
+          "lat": 34.19355,
+          "lon": -84.51515
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Cherokee",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Holly Springs",
+        "freeformAddress": "Holly Springs Parkway, Holly Springs, GA",
+        "municipality": "Holly Springs, Canton, Woodstock",
+        "municipalitySubdivision": "Holly Springs, Canton",
+        "postalCode": "30115, 30188",
+        "streetName": "Holly Springs Parkway"
+      },
+      "id": "US/STR/p0/4062696",
+      "position": {
+        "lat": 34.14391,
+        "lon": -84.51155
+      },
+      "score": 12.50783,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.14358,
+          "lon": -84.51129
+        },
+        "topLeftPoint": {
+          "lat": 34.14391,
+          "lon": -84.51155
+        }
+      }
+    }
+  ],
+  "search_address": "4520 Holly Springs Pkwy Canton GA 30115",
+  "summary": {
+    "fuzzyLevel": 1,
+    "numResults": 4,
+    "offset": 0,
+    "query": "4520 holly springs pkwy canton ga 30115",
+    "queryTime": 60,
+    "queryType": "NON_NEAR",
+    "totalResults": 135
+  }
+}

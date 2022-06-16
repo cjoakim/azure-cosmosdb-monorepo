@@ -1,0 +1,6 @@
+SELECT
+    UDF.preprocess(input)
+INTO
+    [cosmos-events]
+FROM
+    [iothub] as input

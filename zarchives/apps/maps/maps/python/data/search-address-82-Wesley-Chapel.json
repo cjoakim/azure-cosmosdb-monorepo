@@ -1,0 +1,273 @@
+{
+  "results": [
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Dekalb",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Atlanta-Decatur",
+        "freeformAddress": "4325 New Snapfinger Woods Drive, Decatur, GA 30035",
+        "localName": "Decatur",
+        "municipality": "Decatur",
+        "municipalitySubdivision": "Decatur",
+        "postalCode": "30035",
+        "streetName": "New Snapfinger Woods Drive",
+        "streetNumber": "4325"
+      },
+      "entryPoints": [
+        {
+          "position": {
+            "lat": 33.7148,
+            "lon": -84.21246
+          },
+          "type": "main"
+        },
+        {
+          "position": {
+            "lat": 33.71353,
+            "lon": -84.21519
+          },
+          "type": "minor"
+        },
+        {
+          "position": {
+            "lat": 33.71465,
+            "lon": -84.21369
+          },
+          "type": "minor"
+        },
+        {
+          "position": {
+            "lat": 33.71471,
+            "lon": -84.21315
+          },
+          "type": "minor"
+        },
+        {
+          "position": {
+            "lat": 33.71466,
+            "lon": -84.21211
+          },
+          "type": "minor"
+        },
+        {
+          "position": {
+            "lat": 33.71293,
+            "lon": -84.21523
+          },
+          "type": "minor"
+        }
+      ],
+      "id": "US/PAD/p0/1907286",
+      "position": {
+        "lat": 33.71328,
+        "lon": -84.21247
+      },
+      "score": 13.37436,
+      "type": "Point Address",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 33.71238,
+          "lon": -84.21139
+        },
+        "topLeftPoint": {
+          "lat": 33.71418,
+          "lon": -84.21355
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Dekalb",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Atlanta-Decatur",
+        "freeformAddress": "New Snapfinger Woods Drive, Decatur, GA 30035",
+        "municipality": "Decatur",
+        "postalCode": "30035",
+        "streetName": "New Snapfinger Woods Drive"
+      },
+      "id": "US/STR/p0/2182485",
+      "position": {
+        "lat": 33.71487,
+        "lon": -84.21411
+      },
+      "score": 11.66404,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 33.7148,
+          "lon": -84.21273
+        },
+        "topLeftPoint": {
+          "lat": 33.71508,
+          "lon": -84.21568
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Dekalb",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Atlanta-Decatur",
+        "freeformAddress": "New Snapfinger Woods Drive & Snapfinger Woods Drive, Decatur, GA 30035",
+        "municipality": "Decatur",
+        "municipalitySubdivision": "Decatur",
+        "postalCode": "30035",
+        "streetName": "New Snapfinger Woods Drive & Snapfinger Woods Drive, East Wesley Chapel Way"
+      },
+      "id": "US/XSTR/p1/4032799",
+      "position": {
+        "lat": 33.71109,
+        "lon": -84.21004
+      },
+      "score": 9.7766,
+      "type": "Cross Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 33.71019,
+          "lon": -84.20896
+        },
+        "topLeftPoint": {
+          "lat": 33.71199,
+          "lon": -84.21112
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Dekalb",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Atlanta-Decatur",
+        "extendedPostalCode": "300354110, 300354117, 300354118, 300354119, 300354129",
+        "freeformAddress": "4325 Snapfinger Woods Drive, Decatur, GA 30035",
+        "municipality": "Decatur",
+        "municipalitySubdivision": "Decatur",
+        "postalCode": "30035",
+        "streetName": "Snapfinger Woods Drive",
+        "streetNumber": "4325"
+      },
+      "addressRanges": {
+        "from": {
+          "lat": 33.71124,
+          "lon": -84.21227
+        },
+        "rangeLeft": "4316 - 4334",
+        "rangeRight": "4317 - 4335",
+        "to": {
+          "lat": 33.71116,
+          "lon": -84.21197
+        }
+      },
+      "id": "US/ADDR/p3/16225176",
+      "position": {
+        "lat": 33.71116,
+        "lon": -84.21216
+      },
+      "score": 9.45361,
+      "type": "Address Range",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 33.71116,
+          "lon": -84.21197
+        },
+        "topLeftPoint": {
+          "lat": 33.71124,
+          "lon": -84.21227
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Dekalb",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Atlanta-Decatur",
+        "extendedPostalCode": "300354052, 300354126, 300354139, 300354151, 300354196, 300354197, 300354198",
+        "freeformAddress": "Snapfinger Woods Drive, Decatur, GA 30035",
+        "municipality": "Decatur",
+        "municipalitySubdivision": "Decatur",
+        "postalCode": "30035",
+        "streetName": "Snapfinger Woods Drive"
+      },
+      "id": "US/STR/p0/743437",
+      "position": {
+        "lat": 33.71127,
+        "lon": -84.18778
+      },
+      "score": 9.25598,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 33.71125,
+          "lon": -84.18514
+        },
+        "topLeftPoint": {
+          "lat": 33.71127,
+          "lon": -84.19049
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Dekalb",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Atlanta-Decatur",
+        "extendedPostalCode": "3003534, 300353409, 300353411, 300353412, 300353415, 300353417, 300353431, 300353432, 300353433, 300353434, 300353435, 300353436, 300353437, 300353438, 300353439, 300353440, 300353441",
+        "freeformAddress": "Snapfinger Woods Drive, Decatur, GA 30035",
+        "municipality": "Decatur",
+        "municipalitySubdivision": "Decatur",
+        "postalCode": "30035",
+        "streetName": "Snapfinger Woods Drive"
+      },
+      "id": "US/STR/p0/743438",
+      "position": {
+        "lat": 33.71462,
+        "lon": -84.21999
+      },
+      "score": 9.25598,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 33.71433,
+          "lon": -84.21611
+        },
+        "topLeftPoint": {
+          "lat": 33.71511,
+          "lon": -84.22404
+        }
+      }
+    }
+  ],
+  "search_address": "4325 New Snapfinger Wood Decatur GA 30035",
+  "summary": {
+    "fuzzyLevel": 2,
+    "numResults": 6,
+    "offset": 0,
+    "query": "4325 new snapfinger wood decatur ga 30035",
+    "queryTime": 189,
+    "queryType": "NON_NEAR",
+    "totalResults": 562
+  }
+}

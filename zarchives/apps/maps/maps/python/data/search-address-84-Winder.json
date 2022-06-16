@@ -1,0 +1,320 @@
+{
+  "results": [
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Barrow",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Bethlehem",
+        "extendedPostalCode": "306803816",
+        "freeformAddress": "649 Carl Bethlehem Road, Bethlehem, GA 30680",
+        "localName": "Bethlehem",
+        "municipality": "Winder, Bethlehem",
+        "municipalitySubdivision": "Winder",
+        "postalCode": "30680",
+        "streetName": "Carl Bethlehem Road",
+        "streetNumber": "649"
+      },
+      "entryPoints": [
+        {
+          "position": {
+            "lat": 33.94711,
+            "lon": -83.76365
+          },
+          "type": "main"
+        },
+        {
+          "position": {
+            "lat": 33.94649,
+            "lon": -83.76242
+          },
+          "type": "minor"
+        },
+        {
+          "position": {
+            "lat": 33.94684,
+            "lon": -83.76064
+          },
+          "type": "minor"
+        },
+        {
+          "position": {
+            "lat": 33.94901,
+            "lon": -83.76218
+          },
+          "type": "minor"
+        },
+        {
+          "position": {
+            "lat": 33.94958,
+            "lon": -83.76319
+          },
+          "type": "minor"
+        }
+      ],
+      "id": "US/PAD/p0/39825315",
+      "position": {
+        "lat": 33.9481,
+        "lon": -83.76283
+      },
+      "score": 14.14995,
+      "type": "Point Address",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 33.9472,
+          "lon": -83.76175
+        },
+        "topLeftPoint": {
+          "lat": 33.949,
+          "lon": -83.76391
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Barrow",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Bethlehem",
+        "extendedPostalCode": "306803816",
+        "freeformAddress": "Carl Bethlehem Road, Winder, GA",
+        "municipality": "Winder, Bethlehem",
+        "municipalitySubdivision": "Winder",
+        "postalCode": "30620, 30680",
+        "streetName": "Carl Bethlehem Road"
+      },
+      "id": "US/STR/p0/3774949",
+      "position": {
+        "lat": 33.94771,
+        "lon": -83.7647
+      },
+      "score": 12.44169,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 33.94656,
+          "lon": -83.76266
+        },
+        "topLeftPoint": {
+          "lat": 33.94826,
+          "lon": -83.76568
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Barrow",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Auburn",
+        "extendedPostalCode": "306803815, 306803820, 306803978, 306807844, 306807864",
+        "freeformAddress": "Carl Bethlehem Road, Winder, GA 30680",
+        "municipality": "Winder",
+        "municipalitySubdivision": "Winder",
+        "postalCode": "30680",
+        "streetName": "Carl Bethlehem Road"
+      },
+      "id": "US/STR/p0/6651877",
+      "position": {
+        "lat": 33.97709,
+        "lon": -83.79022
+      },
+      "score": 12.44169,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 33.96831,
+          "lon": -83.77954
+        },
+        "topLeftPoint": {
+          "lat": 33.98629,
+          "lon": -83.80123
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Barrow",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Bethlehem",
+        "extendedPostalCode": "306803805, 306807838",
+        "freeformAddress": "Carl Bethlehem Road, Winder, GA 30680",
+        "municipality": "Winder",
+        "municipalitySubdivision": "Winder",
+        "postalCode": "30680",
+        "streetName": "Carl Bethlehem Road"
+      },
+      "id": "US/STR/p0/6812951",
+      "position": {
+        "lat": 33.95065,
+        "lon": -83.76761
+      },
+      "score": 12.44169,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 33.94826,
+          "lon": -83.76568
+        },
+        "topLeftPoint": {
+          "lat": 33.95296,
+          "lon": -83.7682
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Barrow",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Bethlehem",
+        "freeformAddress": "Carl Bethlehem Road & J. Royster Road, Winder, GA 30680",
+        "municipality": "Winder, Bethlehem",
+        "municipalitySubdivision": "Winder",
+        "postalCode": "30680",
+        "streetName": "Carl Bethlehem Road, Carl Bethlehem Road Southwest & J. Royster Road"
+      },
+      "id": "US/XSTR/p1/5229780",
+      "position": {
+        "lat": 33.94771,
+        "lon": -83.7647
+      },
+      "score": 10.60552,
+      "type": "Cross Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 33.94681,
+          "lon": -83.76362
+        },
+        "topLeftPoint": {
+          "lat": 33.94861,
+          "lon": -83.76578
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Barrow",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Bethlehem",
+        "freeformAddress": "Carl Bethlehem Road & Omer Church Road, Winder, GA 30680",
+        "municipality": "Winder",
+        "postalCode": "30680",
+        "streetName": "Carl Bethlehem Road, Carl Bethlehem Road Southwest & Omer Church Road"
+      },
+      "id": "US/XSTR/p1/5229824",
+      "position": {
+        "lat": 33.95361,
+        "lon": -83.76838
+      },
+      "score": 10.60552,
+      "type": "Cross Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 33.95271,
+          "lon": -83.7673
+        },
+        "topLeftPoint": {
+          "lat": 33.95451,
+          "lon": -83.76946
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Barrow",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Bethlehem",
+        "freeformAddress": "Carl Bethlehem Road & Patrick Mill Road Southwest, Winder, GA 30680",
+        "municipality": "Winder",
+        "municipalitySubdivision": "Winder",
+        "postalCode": "30680",
+        "streetName": "Carl Bethlehem Road, Carl Bethlehem Road Southwest & Patrick Mill Road Southwest"
+      },
+      "id": "US/XSTR/p0/4845752",
+      "position": {
+        "lat": 33.97383,
+        "lon": -83.78665
+      },
+      "score": 10.42685,
+      "type": "Cross Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 33.97293,
+          "lon": -83.78557
+        },
+        "topLeftPoint": {
+          "lat": 33.97473,
+          "lon": -83.78773
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Barrow",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Auburn",
+        "freeformAddress": "Caesar Road & Carl Bethlehem Road, Winder, GA 30680",
+        "municipality": "Winder",
+        "municipalitySubdivision": "Winder",
+        "postalCode": "30680",
+        "streetName": "Caesar Road & Carl Bethlehem Road, Carl Bethlehem Road Southwest"
+      },
+      "id": "US/XSTR/p1/5228948",
+      "position": {
+        "lat": 33.97615,
+        "lon": -83.78919
+      },
+      "score": 10.42685,
+      "type": "Cross Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 33.97525,
+          "lon": -83.78811
+        },
+        "topLeftPoint": {
+          "lat": 33.97705,
+          "lon": -83.79027
+        }
+      }
+    }
+  ],
+  "search_address": "649 Carl Bethlehem Rd Winder GA 30680",
+  "summary": {
+    "fuzzyLevel": 1,
+    "numResults": 8,
+    "offset": 0,
+    "query": "649 carl bethlehem rd winder ga 30680",
+    "queryTime": 249,
+    "queryType": "NON_NEAR",
+    "totalResults": 13
+  }
+}

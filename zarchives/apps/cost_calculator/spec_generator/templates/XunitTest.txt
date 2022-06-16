@@ -1,0 +1,93 @@
+using System;
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+using Xunit;
+
+using CJoakim.CosmosCalc;
+
+// Xunit unit tests for a Specification Matrix Scenario.
+// Chris Joakim, Microsoft, {{ date }}
+
+namespace cosmos_calc.tests
+{
+    public class {{ classname }}
+    {
+        [Fact]
+        public void Test{{ classname }}()
+        {
+            Container c = new Container();
+            c.name                  = "{{resultobj['name']}}";
+            c.provisioningType      = "{{ pt }}";
+            c.replicationType       = "{{ rt }}";
+            c.availabilityZone      = {{azbool}};
+            c.regionCount           = {{rc}};
+            c.sizeInGB              = {{gb}};
+            c.replicatedGBPerMonth  = {{repl_gb}};
+            c.ruPerSecond           = {{resultobj['ruPerSecond']}};
+            c.synapseLinkEnabled    = true;
+            c.maxHistoricalManualRu = 0;
+            c.maxHistoricalAutoRu   = 0;
+
+            int    expectedCalculatedMinRU             = {{resultobj['calculatedMinRU']}};
+            double expectedCalculatedRatePer100RU      = {{resultobj['calculatedRatePer100RU']}};
+            double expectedCalculatedRUInHundreds      = {{resultobj['calculatedRUInHundreds']}};
+            double expectedCalculatedRuDollarsPerHour  = {{resultobj['calculatedRuDollarsPerHour']}};
+            double expectedCalculatedRuDollarsPerMonth = {{resultobj['calculatedRuDollarsPerMonth']}};
+            double expectedCalculatedEgressPerMonth    = {{resultobj['calculatedEgressPerMonth']}};
+            double expectedCalculatedStoragePerMonth   = {{resultobj['calculatedStoragePerMonth']}};
+            double expectedCalculatedAnalyticalStoragePerMonth = {{resultobj['calculatedAnalyticalStoragePerMonth']}};
+            double expectedCalculatedTotalPerMonth     = {{resultobj['calculatedTotalPerMonth']}};
+
+            double costs = c.CalculateCosts();
+            double tolerance = 0.01;
+            
+            //LogContainerJson(c);
+
+            Assert.True(c.calculatedMinRU + tolerance > expectedCalculatedMinRU);
+            Assert.True(c.calculatedMinRU - tolerance < expectedCalculatedMinRU);
+
+            Assert.True(c.calculatedRatePer100RU + tolerance > expectedCalculatedRatePer100RU);
+            Assert.True(c.calculatedRatePer100RU - tolerance < expectedCalculatedRatePer100RU);
+        
+            Assert.True(c.calculatedRUInHundreds + tolerance > expectedCalculatedRUInHundreds);
+            Assert.True(c.calculatedRUInHundreds - tolerance < expectedCalculatedRUInHundreds);
+
+            Assert.True(c.calculatedRuDollarsPerHour + tolerance > expectedCalculatedRuDollarsPerHour);
+            Assert.True(c.calculatedRuDollarsPerHour - tolerance < expectedCalculatedRuDollarsPerHour);
+
+            Assert.True(c.calculatedRuDollarsPerMonth + tolerance > expectedCalculatedRuDollarsPerMonth);
+            Assert.True(c.calculatedRuDollarsPerMonth - tolerance < expectedCalculatedRuDollarsPerMonth);
+
+            Assert.True(c.calculatedEgressPerMonth + tolerance > expectedCalculatedEgressPerMonth);
+            Assert.True(c.calculatedEgressPerMonth - tolerance < expectedCalculatedEgressPerMonth);
+
+            Assert.True(c.calculatedStoragePerMonth + tolerance > expectedCalculatedStoragePerMonth);
+            Assert.True(c.calculatedStoragePerMonth - tolerance < expectedCalculatedStoragePerMonth);
+
+            Assert.True(c.calculatedAnalyticalStoragePerMonth + tolerance > expectedCalculatedAnalyticalStoragePerMonth);
+            Assert.True(c.calculatedAnalyticalStoragePerMonth - tolerance < expectedCalculatedAnalyticalStoragePerMonth);
+
+            Assert.True(c.calculatedTotalPerMonth + tolerance > expectedCalculatedTotalPerMonth);
+            Assert.True(c.calculatedTotalPerMonth - tolerance < expectedCalculatedTotalPerMonth);
+        }
+
+        private void LogContainerJson(Container c)
+        {
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+            };
+            Console.WriteLine(JsonSerializer.Serialize(c, options));
+        }
+    }
+}
+
+/*
+{{ spec }}
+*/
+
+/*
+{{ calcjson | safe }}
+*/

@@ -1,0 +1,96 @@
+
+SELECT TOP 100 * 
+FROM OPENROWSET('CosmosDB',
+                'Account=cjoakimiotcosmossql;Database=dev;Key=<Key>',
+                events) AS events
+
+===
+
+DROP DATABASE IF EXISTS Demo
+GO
+
+CREATE DATABASE [Demo];
+GO
+
+CREATE VIEW [Demo].events AS
+SELECT
+    *
+FROM
+    OPENROWSET('CosmosDB',
+                'Account=cjoakimiotcosmossql;Database=dev;Key=xxx',
+                events) AS events
+
+===
+
+DROP DATABASE IF EXISTS Demo
+GO
+
+CREATE DATABASE [Demo];
+GO
+
+CREATE VIEW [Demo].events AS
+SELECT
+    *
+FROM
+    OPENROWSET('CosmosDB',
+                'Account=cjoakimiotcosmossql;Database=dev;Key=xxx',
+                events) AS events
+
+===
+
+-- http://www.nikoport.com/2020/01/28/copying-data-into-a-table-in-azure-sql-dw-synapse-analytics/
+
+DROP TABLE [dbo].[NewDimAccount];
+
+CREATE TABLE [dbo].[NewDimAccount]
+WITH
+(
+	DISTRIBUTION = ROUND_ROBIN,
+	CLUSTERED COLUMNSTORE INDEX
+) AS
+SELECT *
+    FROM OPENROWSET('CosmosDB',
+                'Account=cjoakimiotcosmossql;Database=dev;Key=xxx',
+                events) AS events
+
+
+===
+
+DROP DATABASE IF EXISTS Demo
+GO
+
+CREATE DATABASE [Demo];
+GO
+
+-- https://docs.microsoft.com/en-us/azure/synapse-analytics/get-started-analyze-sql-pool
+
+CREATE TABLE [cjdw200].[Trip]
+(
+    [DateID] int NOT NULL,
+    [MedallionID] int NOT NULL,
+    [HackneyLicenseID] int NOT NULL,
+    [PickupTimeID] int NOT NULL,
+    [DropoffTimeID] int NOT NULL,
+    [PickupGeographyID] int NULL,
+    [DropoffGeographyID] int NULL,
+    [PickupLatitude] float NULL,
+    [PickupLongitude] float NULL,
+    [PickupLatLong] varchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+    [DropoffLatitude] float NULL,
+    [DropoffLongitude] float NULL,
+    [DropoffLatLong] varchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+    [PassengerCount] int NULL,
+    [TripDurationSeconds] int NULL,
+    [TripDistanceMiles] float NULL,
+    [PaymentType] varchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+    [FareAmount] money NULL,
+    [SurchargeAmount] money NULL,
+    [TaxAmount] money NULL,
+    [TipAmount] money NULL,
+    [TollsAmount] money NULL,
+    [TotalAmount] money NULL
+);
+
+-- https://docs.microsoft.com/en-us/azure/synapse-analytics/spark/synapse-spark-sql-pool-import-export
+
+

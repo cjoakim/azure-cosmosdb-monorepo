@@ -1,0 +1,11 @@
+{
+  "name": "azure-iot-cosmosdb-synapse",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "node parse_provisioning_output.js generate_bash_env_exports",
+    "test": "node parse_provisioning_output.js generate_bash_env_exports ; cat bash_env_azure_iot.sh"
+  }
+}

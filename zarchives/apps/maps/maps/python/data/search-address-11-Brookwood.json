@@ -1,0 +1,110 @@
+{
+  "results": [
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Forsyth",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Big Creek",
+        "freeformAddress": "Peachtree Parkway, Suwanee, GA 30024",
+        "municipality": "Suwanee",
+        "postalCode": "30024",
+        "streetName": "Peachtree Parkway"
+      },
+      "id": "US/STR/p0/2233400",
+      "position": {
+        "lat": 34.07801,
+        "lon": -84.1627
+      },
+      "score": 10.22519,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.07774,
+          "lon": -84.16258
+        },
+        "topLeftPoint": {
+          "lat": 34.0783,
+          "lon": -84.1628
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Forsyth",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Big Creek",
+        "freeformAddress": "Peachtree Parkway, Suwanee, GA",
+        "municipality": "Suwanee",
+        "postalCode": "30024, 30041",
+        "streetName": "Peachtree Parkway"
+      },
+      "id": "US/STR/p0/2739937",
+      "position": {
+        "lat": 34.09521,
+        "lon": -84.17596
+      },
+      "score": 10.22519,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.09476,
+          "lon": -84.17519
+        },
+        "topLeftPoint": {
+          "lat": 34.09573,
+          "lon": -84.17654
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Forsyth",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Big Creek",
+        "freeformAddress": "Peachtree Parkway, Suwanee, GA",
+        "municipality": "Suwanee, Alpharetta",
+        "postalCode": "30005, 30024",
+        "streetName": "Peachtree Parkway"
+      },
+      "id": "US/STR/p0/10630591",
+      "position": {
+        "lat": 34.07224,
+        "lon": -84.1665
+      },
+      "score": 10.22519,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.07209,
+          "lon": -84.16644
+        },
+        "topLeftPoint": {
+          "lat": 34.07238,
+          "lon": -84.16657
+        }
+      }
+    }
+  ],
+  "search_address": "2635 Peachtree Pkwy Suwanee GA 30024",
+  "summary": {
+    "fuzzyLevel": 1,
+    "numResults": 3,
+    "offset": 0,
+    "query": "2635 peachtree pkwy suwanee ga 30024",
+    "queryTime": 48,
+    "queryType": "NON_NEAR",
+    "totalResults": 112
+  }
+}

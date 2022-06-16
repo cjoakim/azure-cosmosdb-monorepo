@@ -1,0 +1,12 @@
+Azure CosmosDB Cost Calculator Specification File
+
+container:               container23
+provisioning_type:       autoscale
+replication_type:        multi-region
+region_count:            3
+availability_zone:       false
+size_in_gb:              300
+replicated_gb_per_month: 30.0
+ru_per_second:           3000
+synapse_link_enabled:    true
+calculate_costs:         true

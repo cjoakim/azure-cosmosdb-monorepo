@@ -1,0 +1,16 @@
+{
+  "name": "azureblob-documents",
+  "description": null,
+  "type": "azureblob",
+  "subtype": null,
+  "credentials": {
+    "connectionString": "... populate me ..."
+  },
+  "container": {
+    "name": "documents",
+    "query": null
+  },
+  "dataChangeDetectionPolicy": null,
+  "dataDeletionDetectionPolicy": null,
+  "encryptionKey": null
+}

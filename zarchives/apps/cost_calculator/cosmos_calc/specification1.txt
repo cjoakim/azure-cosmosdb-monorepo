@@ -1,0 +1,49 @@
+Sample Costs Specification #1
+This file is passed to Program.cs
+
+container:                   events1
+provisioning_type:          standard
+replication_type:             single
+region_count:                      1
+size_in_gb:                        1
+max_historical_manual_ru:       1000
+max_historical_auto_ru:            0
+ru_per_second:                   500
+availability_zone:             false
+synapse_link_enabled:          false
+calculate_costs:                true
+
+container:                   events2
+provisioning_type:          standard
+replication_type:             single
+region_count:                      1
+size_in_gb:                        1
+max_historical_manual_ru:       1000
+max_historical_auto_ru:            0
+ru_per_second:                   500
+availability_zone:              true
+synapse_link_enabled:           true
+calculate_costs:                true
+
+container:              assignment1a
+provisioning_type:          standard
+replication_type:             single
+region_count:                      1
+size_in_tb:                        1
+max_historical_manual_ru:          0
+max_historical_auto_ru:            0
+ru_per_second:                200000
+availability_zone:             false
+calculate_costs:                true
+
+container:                replicated
+provisioning_type:          standard
+replication_type:             single
+region_count:                      2
+size_in_tb:                       10
+max_historical_manual_ru:          0
+max_historical_auto_ru:            0
+ru_per_second:                100000
+availability_zone:             false
+synapse_link_enabled:           true
+calculate_costs:                true

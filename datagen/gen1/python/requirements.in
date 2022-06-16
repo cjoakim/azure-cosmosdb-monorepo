@@ -1,0 +1,11 @@
+# Chris Joakim, Microsoft, February 2022
+# These libraries are sorted alphabetically
+
+Jinja2
+arrow
+docopt
+faker
+flake8
+humanize
+openpyxl
+requests

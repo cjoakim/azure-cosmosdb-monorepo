@@ -1,0 +1,14 @@
+Sample Costs Specification #3
+This file is passed to Program.cs
+
+container:                   signals
+provisioning_type:         autoscale
+replication_type:             single
+region_count:                      1
+size_in_tb:                       50
+max_historical_manual_ru:       1000
+max_historical_auto_ru:            0
+ru_per_second:                  5000
+availability_zone:             false
+synapse_link_enabled:          false
+calculate_costs:                true

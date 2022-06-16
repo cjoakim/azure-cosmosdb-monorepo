@@ -1,0 +1,196 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  cosmos_calc -> /Users/cjoakim/github/azure-cosmosdb-cost-calculator/cosmos_calc/bin/Debug/net5.0/cosmos_calc.dll
+  cosmos_calc.tests -> /Users/cjoakim/github/azure-cosmosdb-cost-calculator/cosmos_calc.tests/bin/Debug/net5.0/cosmos_calc.tests.dll
+Test run for /Users/cjoakim/github/azure-cosmosdb-cost-calculator/cosmos_calc.tests/bin/Debug/net5.0/cosmos_calc.tests.dll (.NETCoreApp,Version=v5.0)
+Microsoft (R) Test Execution Command Line Tool Version 16.8.1
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Unknown value in SetReplicationType: 
+Unknown value in SetReplicationType: oops
+ProvisioningType 'serverless' is not yet supported
+Unknown value in SetProvisioningType: 
+Unknown value in SetProvisioningType: oops
+case: case4, storage: 500, total: 6324
+case: case1, storage: 1.25, total: 24.546
+case: case3, storage: 500, total: 4868
+egressGB: 12, regionCount: 2, cost: 0.601
+case: case7, storage: 500, total: 4868
+egressGB: 6, regionCount: 2, cost: 0.087
+calc: 0.012, expected: 0.012
+case: case5, storage: 1.25, total: 36.194
+calc: 0.016, expected: 0.016
+calc: 0.015, expected: 0.015
+egressGB: 152, regionCount: 3, cost: 21.71
+calc: 0.012, expected: 0.012
+egressGB: 52, regionCount: 2, cost: 3.8950000000000005
+calc: 0.008, expected: 0.008
+case: case8, storage: 500, total: 6324
+calc: 0.012, expected: 0.012
+egressGB: 0, regionCount: 1, cost: 0
+calc: 0.016, expected: 0.016
+calc: 0.01, expected: 0.01
+{
+  "name": "case8",
+  "sizeInGB": 1000,
+  "provisioningType": "autoscale",
+  "availabilityZone": false,
+  "synapseLinkEnabled": false,
+  "replicationType": "multi-master",
+  "regionCount": 2,
+  "ruPerSecond": 50000,
+  "maxHistoricalManualRu": 0,
+  "maxHistoricalAutoRu": 0,
+  "replicatedGBPerMonth": 0,
+  "calculatedMinRU": 10000,
+  "calculatedRatePer100RU": 0.016,
+  "calculatedRUInHundreds": 500,
+  "calculatedRuDollarsPerHour": 8,
+  "calculatedRuDollarsPerMonth": 5824,
+  "calculatedEgressPerMonth": 0,
+  "calculatedStoragePerMonth": 500,
+  "calculatedAnalyticalStoragePerMonth": 0,
+  "calculatedTotalPerMonth": 6324
+}
+{
+  "name": "events2",
+  "sizeInGB": 1,
+  "provisioningType": "standard",
+  "availabilityZone": true,
+  "synapseLinkEnabled": false,
+  "replicationType": "single",
+  "regionCount": 1,
+  "ruPerSecond": 500,
+  "maxHistoricalManualRu": 1000,
+  "maxHistoricalAutoRu": 0,
+  "replicatedGBPerMonth": 0,
+  "calculatedMinRU": 400,
+  "calculatedRatePer100RU": 0.01,
+  "calculatedRUInHundreds": 5,
+  "calculatedRuDollarsPerHour": 0.05,
+  "calculatedRuDollarsPerMonth": 36.4,
+  "calculatedEgressPerMonth": 0,
+  "calculatedStoragePerMonth": 0.25,
+  "calculatedAnalyticalStoragePerMonth": 0,
+  "calculatedTotalPerMonth": 36.65
+}
+case: case6, storage: 5, total: 114.2
+case: case2, storage: 5, total: 77.8
+{
+  "name": "spec3b",
+  "sizeInGB": 15,
+  "provisioningType": "autoscale",
+  "availabilityZone": false,
+  "synapseLinkEnabled": false,
+  "replicationType": "multi-master",
+  "regionCount": 2,
+  "ruPerSecond": 20000,
+  "maxHistoricalManualRu": 0,
+  "maxHistoricalAutoRu": 0,
+  "replicatedGBPerMonth": 4.9,
+  "calculatedMinRU": 400,
+  "calculatedRatePer100RU": 0.016,
+  "calculatedRUInHundreds": 200,
+  "calculatedRuDollarsPerHour": 3.2,
+  "calculatedRuDollarsPerMonth": 2329.6,
+  "calculatedEgressPerMonth": 0,
+  "calculatedStoragePerMonth": 7.5,
+  "calculatedAnalyticalStoragePerMonth": 0,
+  "calculatedTotalPerMonth": 2337.1
+}
+{
+  "name": "spec3mb",
+  "sizeInGB": 15,
+  "provisioningType": "autoscale",
+  "availabilityZone": false,
+  "synapseLinkEnabled": true,
+  "replicationType": "multi-master",
+  "regionCount": 2,
+  "ruPerSecond": 20000,
+  "maxHistoricalManualRu": 0,
+  "maxHistoricalAutoRu": 0,
+  "replicatedGBPerMonth": 6,
+  "calculatedMinRU": 400,
+  "calculatedRatePer100RU": 0.016,
+  "calculatedRUInHundreds": 200,
+  "calculatedRuDollarsPerHour": 3.2,
+  "calculatedRuDollarsPerMonth": 2329.6,
+  "calculatedEgressPerMonth": 0.087,
+  "calculatedStoragePerMonth": 7.5,
+  "calculatedAnalyticalStoragePerMonth": 0.3,
+  "calculatedTotalPerMonth": 2337.487
+}
+{
+  "name": "spec4",
+  "sizeInGB": 6348.8,
+  "provisioningType": "autoscale",
+  "availabilityZone": false,
+  "synapseLinkEnabled": false,
+  "replicationType": "multi-master",
+  "regionCount": 2,
+  "ruPerSecond": 20000,
+  "maxHistoricalManualRu": 0,
+  "maxHistoricalAutoRu": 0,
+  "replicatedGBPerMonth": 0,
+  "calculatedMinRU": 63500,
+  "calculatedRatePer100RU": 0.016,
+  "calculatedRUInHundreds": 200,
+  "calculatedRuDollarsPerHour": 3.2,
+  "calculatedRuDollarsPerMonth": 2329.6,
+  "calculatedEgressPerMonth": 0,
+  "calculatedStoragePerMonth": 3174.4,
+  "calculatedAnalyticalStoragePerMonth": 0,
+  "calculatedTotalPerMonth": 5504
+}
+{
+  "name": "events1",
+  "sizeInGB": 1,
+  "provisioningType": "standard",
+  "availabilityZone": false,
+  "synapseLinkEnabled": false,
+  "replicationType": "single",
+  "regionCount": 1,
+  "ruPerSecond": 500,
+  "maxHistoricalManualRu": 1000,
+  "maxHistoricalAutoRu": 0,
+  "replicatedGBPerMonth": 0,
+  "calculatedMinRU": 400,
+  "calculatedRatePer100RU": 0.008,
+  "calculatedRUInHundreds": 5,
+  "calculatedRuDollarsPerHour": 0.04,
+  "calculatedRuDollarsPerMonth": 29.12,
+  "calculatedEgressPerMonth": 0,
+  "calculatedStoragePerMonth": 0.25,
+  "calculatedAnalyticalStoragePerMonth": 0,
+  "calculatedTotalPerMonth": 29.37
+}
+{
+  "name": "spec5",
+  "sizeInGB": 67108864,
+  "provisioningType": "autoscale",
+  "availabilityZone": false,
+  "synapseLinkEnabled": false,
+  "replicationType": "multi-master",
+  "regionCount": 2,
+  "ruPerSecond": 100000,
+  "maxHistoricalManualRu": 0,
+  "maxHistoricalAutoRu": 0,
+  "replicatedGBPerMonth": 0,
+  "calculatedMinRU": 671088700,
+  "calculatedRatePer100RU": 0.016,
+  "calculatedRUInHundreds": 1000,
+  "calculatedRuDollarsPerHour": 16,
+  "calculatedRuDollarsPerMonth": 11648,
+  "calculatedEgressPerMonth": 0,
+  "calculatedStoragePerMonth": 33554432,
+  "calculatedAnalyticalStoragePerMonth": 0,
+  "calculatedTotalPerMonth": 33566080
+}
+WARNING: unrecognized statement - what_goes_here
+WARNING: unrecognized statement - recommendation
+
+Attachments:
+  /Users/cjoakim/github/azure-cosmosdb-cost-calculator/cosmos_calc.tests/TestResults/8e09a51f-5715-48d9-aa69-7bd0ba084ca1/coverage.cobertura.xml
+Passed!  - Failed:     0, Passed:    97, Skipped:     0, Total:    97, Duration: 216 ms - /Users/cjoakim/github/azure-cosmosdb-cost-calculator/cosmos_calc.tests/bin/Debug/net5.0/cosmos_calc.tests.dll (net5.0)

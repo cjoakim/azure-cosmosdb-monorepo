@@ -1,3 +1,49 @@
+## cj
+
+**/*.class
+**/*.gz 
+**/*.iml
+**/*.pyc
+**/pyvenv.cfg
+**/*.swp
+**/*.tsv 
+**/*.zip
+
+**/.DS_Store
+**/.classpath
+**/.factorypath
+**/.idea/
+**/.project
+**/.pytest_cache
+**/.settings/
+**/.vs/
+**/.vscode
+
+**/__pycache__
+**/bin/
+**/include/
+**/lib/
+**/lib64/
+**/man/
+**/node_modules/
+**/obj/
+**/out/
+**/output/
+**/share/
+**/target/
+**/tmp/
+**/txt_merged.txt
+**/venv/
+
+
+datagen/gen2/data/*.*
+
+
+
+# =========================================================
+
+# GitHub-generated Python-specific entries below:
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -10,7 +56,7 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
+#dist/
 downloads/
 eggs/
 .eggs/

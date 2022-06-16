@@ -1,0 +1,6 @@
+arrow
+azure-storage-blob
+azure-cosmos==4.1.0
+docopt
+requests
+pytest

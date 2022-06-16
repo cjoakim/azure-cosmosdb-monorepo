@@ -1,0 +1,8 @@
+{
+  "id": "{{ id }}",
+  "flybuyID": "{{ flybuyID }}",
+  "productID": "{{ productID }}",
+  "productDesc": "{{ productDesc }}",
+  "productQty": {{ productQty }},
+  "transactionDate": "{{ transactionDate }}"
+}

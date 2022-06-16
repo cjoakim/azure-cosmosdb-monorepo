@@ -1,0 +1,239 @@
+{
+  "results": [
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Fulton",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Roswell-Alpharetta",
+        "freeformAddress": "5950 State Bridge Road, Duluth, GA 30097",
+        "localName": "Duluth",
+        "municipality": "Duluth, Johns Creek",
+        "municipalitySubdivision": "Duluth, Johns Creek",
+        "postalCode": "30097",
+        "streetName": "State Bridge Road",
+        "streetNumber": "5950"
+      },
+      "entryPoints": [
+        {
+          "position": {
+            "lat": 34.01603,
+            "lon": -84.18748
+          },
+          "type": "main"
+        },
+        {
+          "position": {
+            "lat": 34.0142,
+            "lon": -84.18564
+          },
+          "type": "minor"
+        },
+        {
+          "position": {
+            "lat": 34.01605,
+            "lon": -84.18819
+          },
+          "type": "minor"
+        },
+        {
+          "position": {
+            "lat": 34.01655,
+            "lon": -84.19012
+          },
+          "type": "minor"
+        },
+        {
+          "position": {
+            "lat": 34.0149,
+            "lon": -84.19076
+          },
+          "type": "minor"
+        },
+        {
+          "position": {
+            "lat": 34.01536,
+            "lon": -84.18668
+          },
+          "type": "minor"
+        }
+      ],
+      "id": "US/PAD/p1/38517010",
+      "position": {
+        "lat": 34.01478,
+        "lon": -84.1889
+      },
+      "score": 14.13167,
+      "type": "Point Address",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.01388,
+          "lon": -84.18782
+        },
+        "topLeftPoint": {
+          "lat": 34.01568,
+          "lon": -84.18998
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Fulton",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Roswell-Alpharetta",
+        "freeformAddress": "5950 Abbotts Bridge Road, Johns Creek, GA 30097",
+        "municipality": "Johns Creek, Duluth",
+        "municipalitySubdivision": "Johns Creek, Duluth",
+        "postalCode": "30097",
+        "streetName": "Abbotts Bridge Road",
+        "streetNumber": "5950"
+      },
+      "addressRanges": {
+        "from": {
+          "lat": 34.05177,
+          "lon": -84.18547
+        },
+        "rangeLeft": "5912 - 5954",
+        "rangeRight": "5853 - 5915",
+        "to": {
+          "lat": 34.05159,
+          "lon": -84.18517
+        }
+      },
+      "id": "US/ADDR/p2/18915954",
+      "position": {
+        "lat": 34.05165,
+        "lon": -84.18517
+      },
+      "score": 13.64164,
+      "type": "Address Range",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.05159,
+          "lon": -84.18517
+        },
+        "topLeftPoint": {
+          "lat": 34.05177,
+          "lon": -84.18547
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Gwinnett, Fulton",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Suwanee-Duluth, Roswell-Alpharetta",
+        "freeformAddress": "State Bridge Road, Duluth, GA",
+        "municipality": "Duluth",
+        "municipalitySubdivision": "Duluth, Johns Creek",
+        "postalCode": "30096, 30097",
+        "streetName": "State Bridge Road"
+      },
+      "id": "US/STR/p0/3771982",
+      "position": {
+        "lat": 34.00798,
+        "lon": -84.17974
+      },
+      "score": 12.44169,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.00791,
+          "lon": -84.17951
+        },
+        "topLeftPoint": {
+          "lat": 34.00798,
+          "lon": -84.17974
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Fulton",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Roswell-Alpharetta",
+        "freeformAddress": "State Bridge Road, Duluth, GA 30097",
+        "municipality": "Duluth, Johns Creek",
+        "municipalitySubdivision": "Johns Creek",
+        "postalCode": "30097",
+        "streetName": "State Bridge Road"
+      },
+      "id": "US/STR/p0/11211022",
+      "position": {
+        "lat": 34.0151,
+        "lon": -84.18623
+      },
+      "score": 12.4232,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.0114,
+          "lon": -84.18346
+        },
+        "topLeftPoint": {
+          "lat": 34.01809,
+          "lon": -84.1901
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Gwinnett",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Suwanee-Duluth",
+        "extendedPostalCode": "300972104, 300972106, 300972146, 300972158, 300978454",
+        "freeformAddress": "Abbotts Bridge Road, Duluth, GA 30097",
+        "municipality": "Duluth",
+        "municipalitySubdivision": "Duluth",
+        "postalCode": "30097",
+        "streetName": "Abbotts Bridge Road"
+      },
+      "id": "US/STR/p0/881584",
+      "position": {
+        "lat": 34.01882,
+        "lon": -84.15768
+      },
+      "score": 12.16199,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.01731,
+          "lon": -84.15553
+        },
+        "topLeftPoint": {
+          "lat": 34.02004,
+          "lon": -84.15991
+        }
+      }
+    }
+  ],
+  "search_address": "5950 State Bridge Rd Duluth GA 30097",
+  "summary": {
+    "fuzzyLevel": 1,
+    "numResults": 5,
+    "offset": 0,
+    "query": "5950 state bridge rd duluth ga 30097",
+    "queryTime": 384,
+    "queryType": "NON_NEAR",
+    "totalResults": 128
+  }
+}

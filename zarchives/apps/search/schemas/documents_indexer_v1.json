@@ -1,0 +1,101 @@
+{
+  "@odata.context": "https://cjoakimsearch.search.windows.net/$metadata#indexers/$entity",
+  "@odata.etag": "\"0x8D85C1AF6F77C63\"",
+  "name": "documents",
+  "description": null,
+  "dataSourceName": "azureblob-documents",
+  "skillsetName": "skillset",
+  "targetIndexName": "documents",
+  "disabled": null,
+  "schedule": {
+    "interval": "PT12H",
+    "startTime": "2020-09-18T21:19:46.995Z"
+  },
+  "parameters": {
+    "batchSize": null,
+    "maxFailedItems": null,
+    "maxFailedItemsPerBatch": null,
+    "base64EncodeKeys": null,
+    "configuration": {
+      "dataToExtract": "contentAndMetadata",
+      "imageAction": "generateNormalizedImages"
+    }
+  },
+  "fieldMappings": [
+    {
+      "sourceFieldName": "metadata_storage_size",
+      "targetFieldName": "size",
+      "mappingFunction": null
+    },
+    {
+      "sourceFieldName": "metadata_storage_path",
+      "targetFieldName": "url",
+      "mappingFunction": null
+    },
+    {
+      "sourceFieldName": "metadata_storage_last_modified",
+      "targetFieldName": "last_modified",
+      "mappingFunction": null
+    },
+    {
+      "sourceFieldName": "metadata_storage_name",
+      "targetFieldName": "file_name",
+      "mappingFunction": null
+    },
+    {
+      "sourceFieldName": "metadata_storage_path",
+      "targetFieldName": "id",
+      "mappingFunction": {
+        "name": "base64Encode",
+        "parameters": null
+      }
+    }
+  ],
+  "outputFieldMappings": [
+    {
+      "sourceFieldName": "/document/organizations",
+      "targetFieldName": "organizations"
+    },
+    {
+      "sourceFieldName": "/document/locations",
+      "targetFieldName": "locations"
+    },
+    {
+      "sourceFieldName": "/document/urls",
+      "targetFieldName": "urls"
+    },
+    {
+      "sourceFieldName": "/document/persons",
+      "targetFieldName": "persons"
+    },
+    {
+      "sourceFieldName": "/document/entities",
+      "targetFieldName": "entities"
+    },
+    {
+      "sourceFieldName": "/document/mySentiment",
+      "targetFieldName": "score"
+    },
+    {
+      "sourceFieldName": "/document/keyPhrases",
+      "targetFieldName": "keyPhrases"
+    },
+    {
+      "sourceFieldName": "/document/normalized_images/*/text",
+      "targetFieldName": "imageText"
+    },
+    {
+      "sourceFieldName": "/document/normalized_images/*/description",
+      "targetFieldName": "imageDescription"
+    },
+    {
+      "sourceFieldName": "/document/mergedText",
+      "targetFieldName": "mergedText"
+    },
+    {
+      "sourceFieldName": "/document/topwords",
+      "targetFieldName": "topwords"
+    }
+  ],
+  "encryptionKey": null
+}

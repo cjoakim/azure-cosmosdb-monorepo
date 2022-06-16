@@ -1,0 +1,6 @@
+SELECT
+    *
+INTO
+    [cosmos-events]
+FROM
+    [iothub]

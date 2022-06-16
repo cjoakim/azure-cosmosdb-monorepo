@@ -1,0 +1,199 @@
+{
+  "results": [
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Gwinnett",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Suwanee-Duluth",
+        "freeformAddress": "1480 Satellite Boulevard Northwest, Suwanee, GA 30024",
+        "localName": "Suwanee",
+        "municipality": "Suwanee",
+        "municipalitySubdivision": "Suwanee",
+        "postalCode": "30024",
+        "streetName": "Satellite Boulevard Northwest",
+        "streetNumber": "1480"
+      },
+      "entryPoints": [
+        {
+          "position": {
+            "lat": 34.00333,
+            "lon": -84.08017
+          },
+          "type": "main"
+        }
+      ],
+      "id": "US/PAD/p0/14091950",
+      "position": {
+        "lat": 34.00339,
+        "lon": -84.07995
+      },
+      "score": 11.91501,
+      "type": "Point Address",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.00249,
+          "lon": -84.07887
+        },
+        "topLeftPoint": {
+          "lat": 34.00429,
+          "lon": -84.08103
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Gwinnett",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Suwanee-Duluth",
+        "freeformAddress": "1480 Satellite Boulevard Northeast, Suwanee, GA 30024",
+        "municipality": "Suwanee, Sugar Hill",
+        "postalCode": "30024",
+        "streetName": "Satellite Boulevard Northeast",
+        "streetNumber": "1480"
+      },
+      "addressRanges": {
+        "from": {
+          "lat": 34.06582,
+          "lon": -84.01698
+        },
+        "rangeLeft": "1470 - 1498",
+        "to": {
+          "lat": 34.06567,
+          "lon": -84.01688
+        }
+      },
+      "id": "US/ADDR/p1/7691107",
+      "position": {
+        "lat": 34.06579,
+        "lon": -84.01689
+      },
+      "score": 11.76582,
+      "type": "Address Range",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.06567,
+          "lon": -84.01688
+        },
+        "topLeftPoint": {
+          "lat": 34.06582,
+          "lon": -84.01698
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Gwinnett",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Suwanee-Duluth",
+        "freeformAddress": "Satellite Boulevard, Suwanee, GA 30024",
+        "municipality": "Suwanee",
+        "municipalitySubdivision": "Suwanee",
+        "postalCode": "30024",
+        "streetName": "Satellite Boulevard"
+      },
+      "id": "US/STR/p0/5549206",
+      "position": {
+        "lat": 34.03868,
+        "lon": -84.05316
+      },
+      "score": 10.22519,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.0385,
+          "lon": -84.05315
+        },
+        "topLeftPoint": {
+          "lat": 34.03868,
+          "lon": -84.05331
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Gwinnett",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Suwanee-Duluth",
+        "freeformAddress": "Satellite Boulevard, Suwanee, GA 30024",
+        "municipality": "Suwanee",
+        "postalCode": "30024",
+        "streetName": "Satellite Boulevard"
+      },
+      "id": "US/STR/p0/5549211",
+      "position": {
+        "lat": 34.00216,
+        "lon": -84.08062
+      },
+      "score": 10.22519,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.00216,
+          "lon": -84.08057
+        },
+        "topLeftPoint": {
+          "lat": 34.00229,
+          "lon": -84.0808
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Gwinnett",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Suwanee-Duluth",
+        "freeformAddress": "Satellite Boulevard Northwest, Suwanee, GA 30024",
+        "municipality": "Suwanee",
+        "postalCode": "30024",
+        "streetName": "Satellite Boulevard Northwest"
+      },
+      "id": "US/STR/p0/2023958",
+      "position": {
+        "lat": 34.02533,
+        "lon": -84.06455
+      },
+      "score": 10.18086,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.02497,
+          "lon": -84.06424
+        },
+        "topLeftPoint": {
+          "lat": 34.02595,
+          "lon": -84.0653
+        }
+      }
+    }
+  ],
+  "search_address": "1480 Satellite Blvd Suwanee GA 30024",
+  "summary": {
+    "fuzzyLevel": 1,
+    "numResults": 5,
+    "offset": 0,
+    "query": "1480 satellite blvd suwanee ga 30024",
+    "queryTime": 54,
+    "queryType": "NON_NEAR",
+    "totalResults": 69
+  }
+}

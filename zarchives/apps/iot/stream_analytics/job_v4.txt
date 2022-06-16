@@ -1,0 +1,10 @@
+SELECT
+    *, 
+    CONCAT (
+        GetMetadataPropertyValue(iothub, '[IoTHub].[ConnectionDeviceId]'),
+        '|',
+        GetMetadataPropertyValue(iothub, '[IoTHub].[MessageId]') ) as pk 
+INTO
+    [cosmos-events]
+FROM
+    [iothub]

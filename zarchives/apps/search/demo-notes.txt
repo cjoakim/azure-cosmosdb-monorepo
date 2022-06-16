@@ -1,0 +1,28 @@
+
+./run_airports_indexer.sh (in java dir)
+
+python cosmos.py load_airports dev airports no-duplicates
+python search-client.py list_indexes
+python search-client.py list_indexers
+python search-client.py search_index airports airports_atl
+python search-client.py search_index airports airports_clt
+./recreate_airports.sh
+
+python search-client.py search_index airports airports_clt
+./push.sh (in java dir)
+
+python search-client.py search_index documents top_words_flanagan
+python search-client.py search_index documents us_dot_number
+python search-client.py search_index documents keyphrase_adventurous_little_sloop
+
+$ cat schemas/skillset_v1.json | grep odata
+      "@odata.type": "#Microsoft.Skills.Text.EntityRecognitionSkill",
+      "@odata.type": "#Microsoft.Skills.Text.SentimentSkill",
+      "@odata.type": "#Microsoft.Skills.Text.KeyPhraseExtractionSkill",
+      "@odata.type": "#Microsoft.Skills.Vision.OcrSkill",
+      "@odata.type": "#Microsoft.Skills.Text.MergeSkill",
+      "@odata.type": "#Microsoft.Skills.Vision.ImageAnalysisSkill",
+      "@odata.type": "#Microsoft.Skills.Custom.WebApiSkill",
+    "@odata.type": "#Microsoft.Azure.Search.CognitiveServicesByKey",
+    
+

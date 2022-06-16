@@ -1,0 +1,10 @@
+__author__ = 'Chris Joakim'
+
+import pytest
+
+from pysrc.cjcc.{{ modulename }} import {{ classname }}
+
+# TODO: Implement tests
+
+def test_xxx():
+    assert({{ classname }}.xxx() == 'xxx')

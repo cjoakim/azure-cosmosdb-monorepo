@@ -1,0 +1,220 @@
+{
+  "results": [
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Gwinnett",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Dacula-Rocky Creek",
+        "extendedPostalCode": "300194581",
+        "freeformAddress": "2120 Hamilton Creek Parkway, Dacula, GA 30019",
+        "localName": "Dacula",
+        "municipality": "Dacula",
+        "municipalitySubdivision": "Dacula",
+        "postalCode": "30019",
+        "streetName": "Hamilton Creek Parkway",
+        "streetNumber": "2120"
+      },
+      "entryPoints": [
+        {
+          "position": {
+            "lat": 34.07218,
+            "lon": -83.91201
+          },
+          "type": "main"
+        },
+        {
+          "position": {
+            "lat": 34.07142,
+            "lon": -83.9129
+          },
+          "type": "minor"
+        },
+        {
+          "position": {
+            "lat": 34.07281,
+            "lon": -83.91178
+          },
+          "type": "minor"
+        },
+        {
+          "position": {
+            "lat": 34.07197,
+            "lon": -83.91238
+          },
+          "type": "minor"
+        }
+      ],
+      "id": "US/PAD/p0/51540206",
+      "position": {
+        "lat": 34.07289,
+        "lon": -83.91344
+      },
+      "score": 14.14995,
+      "type": "Point Address",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.07199,
+          "lon": -83.91235
+        },
+        "topLeftPoint": {
+          "lat": 34.07379,
+          "lon": -83.91453
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Gwinnett",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Dacula-Rocky Creek",
+        "freeformAddress": "2120 Hamilton Mill Parkway, Dacula, GA 30019",
+        "municipality": "Dacula",
+        "postalCode": "30019",
+        "streetName": "Hamilton Mill Parkway",
+        "streetNumber": "2120"
+      },
+      "addressRanges": {
+        "from": {
+          "lat": 34.05667,
+          "lon": -83.91103
+        },
+        "rangeLeft": "2120 - 2120",
+        "to": {
+          "lat": 34.05662,
+          "lon": -83.91092
+        }
+      },
+      "id": "US/ADDR/p2/4174824",
+      "position": {
+        "lat": 34.05671,
+        "lon": -83.911
+      },
+      "score": 13.01375,
+      "type": "Address Range",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.05662,
+          "lon": -83.91092
+        },
+        "topLeftPoint": {
+          "lat": 34.05667,
+          "lon": -83.91103
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Gwinnett",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Dacula-Rocky Creek",
+        "freeformAddress": "Hamilton Creek Parkway, Dacula, GA 30019",
+        "municipality": "Dacula",
+        "postalCode": "30019",
+        "streetName": "Hamilton Creek Parkway"
+      },
+      "id": "US/STR/p0/675552",
+      "position": {
+        "lat": 34.07059,
+        "lon": -83.91316
+      },
+      "score": 12.44169,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.07057,
+          "lon": -83.91312
+        },
+        "topLeftPoint": {
+          "lat": 34.07065,
+          "lon": -83.91318
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Gwinnett",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Dacula-Rocky Creek",
+        "freeformAddress": "Hamilton Creek Parkway, Buford, GA",
+        "municipality": "Buford",
+        "postalCode": "30019, 30519",
+        "streetName": "Hamilton Creek Parkway"
+      },
+      "id": "US/STR/p0/675387",
+      "position": {
+        "lat": 34.07087,
+        "lon": -83.91297
+      },
+      "score": 12.25305,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.07065,
+          "lon": -83.91293
+        },
+        "topLeftPoint": {
+          "lat": 34.07093,
+          "lon": -83.91312
+        }
+      }
+    },
+    {
+      "address": {
+        "country": "United States",
+        "countryCode": "US",
+        "countryCodeISO3": "USA",
+        "countrySecondarySubdivision": "Gwinnett",
+        "countrySubdivision": "GA",
+        "countrySubdivisionName": "Georgia",
+        "countryTertiarySubdivision": "Dacula-Rocky Creek",
+        "freeformAddress": "Hamilton Mill Parkway, Dacula, GA 30019",
+        "municipality": "Dacula",
+        "postalCode": "30019",
+        "streetName": "Hamilton Mill Parkway"
+      },
+      "id": "US/STR/p0/674624",
+      "position": {
+        "lat": 34.06137,
+        "lon": -83.9152
+      },
+      "score": 11.4466,
+      "type": "Street",
+      "viewport": {
+        "btmRightPoint": {
+          "lat": 34.05187,
+          "lon": -83.90252
+        },
+        "topLeftPoint": {
+          "lat": 34.06986,
+          "lon": -83.92423
+        }
+      }
+    }
+  ],
+  "search_address": "2120 Hamilton Creek Pkwy Dacula GA 30019",
+  "summary": {
+    "fuzzyLevel": 1,
+    "numResults": 5,
+    "offset": 0,
+    "query": "2120 hamilton creek pkwy dacula ga 30019",
+    "queryTime": 52,
+    "queryType": "NON_NEAR",
+    "totalResults": 17
+  }
+}
