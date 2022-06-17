@@ -1,10 +1,15 @@
 package org.cjoakim.cosmos.mongo.ts;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCursor;
+import com.mongodb.client.model.UpdateOptions;
+import com.mongodb.client.model.Updates;
 import com.mongodb.client.result.DeleteResult;
+import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
+import org.bson.conversions.Bson;
 import org.bson.json.JsonMode;
 import org.bson.json.JsonWriterSettings;
 import org.bson.types.ObjectId;
@@ -18,10 +23,15 @@ import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import static com.mongodb.client.model.Filters.eq;
+
 public class App {
 
     // Class variables
     private static Logger logger = LogManager.getLogger(App.class);
+
+    protected static JsonWriterSettings jsonWriterSettings =
+            JsonWriterSettings.builder().indent(true).build();
 
     private static JsonWriterSettings jws =
             JsonWriterSettings.builder().indent(true).outputMode(JsonMode.SHELL).build();
@@ -73,7 +83,29 @@ public class App {
 
             long count = mu.getCurrentCollection().countDocuments();
             logger.warn("document count: " + count);
+            Bson filter = eq("country", "US");
 
+            if (false) {
+                Document explain = mu.currentCollection.find(filter).explain();
+                logger.warn("find explain: " + explain.toJson(jsonWriterSettings));
+            }
+            FindIterable<Document> findIterable = mu.getCurrentCollection().find(filter);
+            MongoCursor<Document> cursor = findIterable.iterator();
+
+            if (cursor.hasNext()) {
+                Document doc = cursor.next();
+                logger.warn(doc.toJson());
+                doc.put("updated_at", System.currentTimeMillis());
+                logger.warn(doc.toJson());
+
+                Bson updates = Updates.combine(
+                        Updates.set("updated_at", System.currentTimeMillis()));
+                UpdateOptions options = new UpdateOptions().upsert(false);
+                UpdateResult result = mu.getCurrentCollection().updateOne(
+                        doc.toBsonDocument(), updates, options);
+                logger.warn("Modified document count: " + result.getModifiedCount());
+
+            }
 
         }
         catch (Exception e) {
