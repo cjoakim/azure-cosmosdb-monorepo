@@ -91,7 +91,8 @@ public class App {
             Bson notExistsFilter = exists(ttlAttributeName, false);
             Bson filter = notExistsFilter;
 
-            // dev> db.baseball_core_Parks.find({state: "NY"})
+            // dev> db.baseball_core_Parks.find({state: "MA"})
+            // dev> db.baseball_core_Parks.find({"city": "Boston"})
 
             if (explain) {
                 Document xdoc = mu.currentCollection.find(filter).explain();
