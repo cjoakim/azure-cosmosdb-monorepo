@@ -12,6 +12,7 @@
 **/.DS_Store
 **/.classpath
 **/.factorypath
+**/.gradle/
 **/.idea/
 **/.project
 **/.pytest_cache
