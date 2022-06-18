@@ -36,10 +36,6 @@ public class App {
     private static JsonWriterSettings jws =
             JsonWriterSettings.builder().indent(true).outputMode(JsonMode.SHELL).build();
 
-    public String getGreeting() {
-        return "Hello World!";
-    }
-
     public static void main(String[] args) {
 
         if (args.length < 1) {
