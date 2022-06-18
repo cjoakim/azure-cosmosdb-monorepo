@@ -19,6 +19,7 @@
 - https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb/pre-migration-steps
 - https://github.com/AzureCosmosDB/Cosmos-DB-Migration-Assistant-for-API-for-MongoDB  (DMA)
 - https://github.com/Azure-Samples/azure-cosmos-db-mongo-migration  (v1 migration process)
+- https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb/mongodb-time-to-live  (TTL)
 
 ### Cassandra API
 

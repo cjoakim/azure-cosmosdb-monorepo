@@ -26,8 +26,8 @@ application {
     mainClass = 'org.cjoakim.cosmos.mongo.ts.App'
 }
 
-task connectTest(type: JavaExec) {
+task addTimestamp(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     mainClass = 'org.cjoakim.cosmos.mongo.ts.App'
-    args 'connectTest', 'AZURE_ATLAS_CONN_STR', 'dev', 'baseball_core_Parks'
+    args 'addTimestamp', 'AZURE_ATLAS_CONN_STR', 'dev', 'baseball_core_Parks', '--update'
 }
