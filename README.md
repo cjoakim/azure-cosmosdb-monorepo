@@ -14,4 +14,4 @@ Always evolving.
 
 # Links
 
-- [Curated Links](curated_links.md)
+- [Curated Links](docs/curated_links.md)
