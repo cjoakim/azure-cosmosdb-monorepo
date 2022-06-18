@@ -67,10 +67,11 @@ public class App {
     private static void connectTest(String[] args) {
         // args 'connectTest', 'AZURE_ATLAS_CONN_STR', 'dev', 'baseball_core_Parks'
         try {
-            String connStringEnvVarName = args[1];
-            String dbName = args[2];
-            String cName = args[3];
-            String connStr = AppConfig.getEnvVar(connStringEnvVarName);
+            String  connStringEnvVarName = args[1];
+            String  dbName   = args[2];
+            String  cName    = args[3];
+            String  connStr  = AppConfig.getEnvVar(connStringEnvVarName);
+            boolean explain  = AppConfig.booleanArg("--explain");
 
             logger.warn("envVarName: " + connStringEnvVarName);
             logger.warn("connString: " + connStr);
@@ -83,30 +84,28 @@ public class App {
 
             long count = mu.getCurrentCollection().countDocuments();
             logger.warn("document count: " + count);
-            Bson filter = eq("country", "US");
+            Bson filter = eq("state", "NY");
 
-            if (false) {
-                Document explain = mu.currentCollection.find(filter).explain();
-                logger.warn("find explain: " + explain.toJson(jsonWriterSettings));
+            // dev> db.baseball_core_Parks.find({state: "NC"})
+
+            if (explain) {
+                Document xdoc = mu.currentCollection.find(filter).explain();
+                logger.warn("find explain: " + xdoc.toJson(jsonWriterSettings));
             }
             FindIterable<Document> findIterable = mu.getCurrentCollection().find(filter);
             MongoCursor<Document> cursor = findIterable.iterator();
 
-            if (cursor.hasNext()) {
+            while (cursor.hasNext()) {
+                System.out.println("===");
                 Document doc = cursor.next();
-                logger.warn(doc.toJson());
+                System.out.println(doc.toJson());
+                System.out.println("-");
                 doc.put("updated_at", System.currentTimeMillis());
-                logger.warn(doc.toJson());
+                System.out.println(doc.toJson());
 
-                Bson updates = Updates.combine(
-                        Updates.set("updated_at", System.currentTimeMillis()));
-                UpdateOptions options = new UpdateOptions().upsert(false);
-                UpdateResult result = mu.getCurrentCollection().updateOne(
-                        doc.toBsonDocument(), updates, options);
-                logger.warn("Modified document count: " + result.getModifiedCount());
-
+                UpdateResult result = mu.replaceOne(doc);
+                System.out.println("Modified document count: " + result.getModifiedCount());
             }
-
         }
         catch (Exception e) {
             throw new RuntimeException(e);
