@@ -1,6 +1,6 @@
 # azure-cosmosdb-monorepo
 
-A collection of CosmosDB projects, demonstrations, and presentations.  &nbsp;&nbsp; Always evolving.
+A collection of CosmosDB projects, presentations, and code.  &nbsp;&nbsp; Always evolving.
 
 ---
 
