@@ -50,6 +50,12 @@
 - https://spring.io/projects/spring-data-mongodb
 - https://www.mongodb.com/languages/morphia
 
+### Spring Data
+
+- https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/how-to-guides-spring-data-cosmosdb
+- https://search.maven.org/artifact/com.azure/azure-spring-data-cosmos
+- https://search.maven.org/artifact/com.azure/azure-spring-data-cosmos/3.22.0/jar
+
 ### DotNet
 
 - https://devblogs.microsoft.com/dotnet/
