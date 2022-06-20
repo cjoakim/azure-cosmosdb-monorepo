@@ -1,21 +1,23 @@
 
-// This gradle file defines the 'project-swift-multiproject' parent project
+// This gradle file defines the 'monorepo-apis-mongo' parent project
 // See https://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-creating-a-multi-project-build/
 //
 // Chris Joakim, Microsoft
 
 rootProject.name = 'monorepo-apis-mongo'
 
+include 'console_app:app'
 include 'ts:app'
 
 
-
-// $ gradle -q projects
+// PS ...\java> gradle -q projects
 
 // ------------------------------------------------------------
 // Root project 'monorepo-apis-mongo'
 // ------------------------------------------------------------
 
 // Root project 'monorepo-apis-mongo'
+// +--- Project ':console_app'
+// |    \--- Project ':console_app:app'
 // \--- Project ':ts'
 //      \--- Project ':ts:app'
