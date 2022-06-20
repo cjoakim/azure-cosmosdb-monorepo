@@ -50,7 +50,7 @@ public class MongoUtil {
         super();
         ConnectionString connectionString = new ConnectionString(connStr);
         MongoClientSettings settings = MongoClientSettings.builder()
-                .applicationName("ts")
+                .applicationName("console_app")
                 .applyConnectionString(connectionString)
                 .build();
 

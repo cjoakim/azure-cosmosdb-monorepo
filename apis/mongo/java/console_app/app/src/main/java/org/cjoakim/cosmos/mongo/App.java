@@ -1,9 +1,16 @@
 package org.cjoakim.cosmos.mongo;
 
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCursor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.bson.Document;
+import org.bson.conversions.Bson;
 import org.bson.json.JsonMode;
 import org.bson.json.JsonWriterSettings;
+
+import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Filters.exists;
 
 public class App {
 
@@ -26,8 +33,11 @@ public class App {
                 String function = args[0];
 
                 switch (function) {
-                    case "loadContainerFromCsv":
-                        loadContainerFromCsv(args);
+                    case "queryContainer":
+                        queryContainer(args);
+                        break;
+                    case "loadContainerFromJson":
+                        loadContainerFromJson(args);
                         break;
                     case "truncateContainer":
                         truncateContainer(args);
@@ -42,7 +52,47 @@ public class App {
         }
     }
 
-    private static void loadContainerFromCsv(String[] args) {
+    private static void queryContainer(String[] args) {
+
+        try {
+            String connStringEnvVarName = args[1];
+            String dbName  = args[2];
+            String cName   = args[3];
+            String connStr = AppConfig.getEnvVar(connStringEnvVarName);
+
+            logger.warn("envVarName: " + connStringEnvVarName);
+            logger.warn("connString: " + connStr);
+            logger.warn("dbName:     " + dbName);
+            logger.warn("cName:      " + cName);
+
+            MongoUtil mu = new MongoUtil(connStr);
+            mu.setCurrentDatabase(dbName);
+            mu.setCurrentCollection(cName);
+
+            String ttlAttributeName = "_ts";
+
+            // Create the Filter
+            Bson notExistsFilter = exists(ttlAttributeName, false);
+            Bson filter = notExistsFilter;
+
+            FindIterable<Document> findIterable = mu.getCurrentCollection().find(filter);
+            MongoCursor<Document> cursor = findIterable.iterator();
+            long docsFoundCount = 0;
+            long docsUpdatedCount = 0;
+
+            while (cursor.hasNext()) {
+                docsFoundCount++;
+                System.out.println("=== " + docsFoundCount);
+                Document doc = cursor.next();
+                System.out.println(doc.toJson(jsonWriterSettings));
+                System.out.println("-");
+            }
+        }
+        catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+    private static void loadContainerFromJson(String[] args) {
 
         try {
             String connStringEnvVarName = args[1];

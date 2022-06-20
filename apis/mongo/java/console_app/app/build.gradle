@@ -29,6 +29,12 @@ application {
     mainClass = 'org.cjoakim.cosmos.mongo.App'
 }
 
+task queryContainer(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'org.cjoakim.cosmos.mongo.App'
+    args 'queryContainer', 'AZURE_ATLAS_CONN_STR', 'dev', 'baseball_core_Parks'
+}
+
 // gradle uberJar
 tasks.register('uberJar', Jar) {
     archiveClassifier = 'console-app-uber'
