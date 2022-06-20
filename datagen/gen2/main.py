@@ -60,6 +60,8 @@ def create_baseball_base_mongoexport_files():
             for row_idx, row in enumerate(rows):
                 if row_idx == 0:
                     header_row = row
+                    for field_idx, field_name in enumerate(header_row):
+                        header_row[field_idx] = field_name.replace('.','_')
                 else:
                     # doc = dict()
                     # # form json that looks like this: {"_id":{"$oid":"617841b5dcd85d04fa726dcc"},...
