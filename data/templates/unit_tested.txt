@@ -1,4 +1,0 @@
-Header line
-Group: {{ group }}
-Artist: {{ artist }}
-Last line
