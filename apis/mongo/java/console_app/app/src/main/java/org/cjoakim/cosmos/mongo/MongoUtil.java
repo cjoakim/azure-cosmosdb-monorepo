@@ -29,7 +29,8 @@ import java.util.*;
 
 /**
  * This class implements MongoDB database operations, including the CosmosDB/Mongo API.
- * Chris Joakim, Microsoft
+ * @author Chris Joakim, Microsoft
+ * @date   2022/06/20
  */
 
 public class MongoUtil {

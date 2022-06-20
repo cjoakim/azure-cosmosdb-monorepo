@@ -7,7 +7,9 @@ import java.util.ArrayList;
 
 /**
  * Common configuration logic for command-line args and environment-variables.
- * Chris Joakim, Microsoft
+ *
+ * @author Chris Joakim, Microsoft
+ * @date   2022/06/20
  */
 
 public class AppConfig implements AppConstants {

@@ -2,7 +2,8 @@ package org.cjoakim.cosmos.mongo;
 
 /**
  * This interface defines common constant values used in this application.
- * Chris Joakim, Microsoft
+ * @author Chris Joakim, Microsoft
+ * @date   2022/06/20
  */
 
 public interface AppConstants {

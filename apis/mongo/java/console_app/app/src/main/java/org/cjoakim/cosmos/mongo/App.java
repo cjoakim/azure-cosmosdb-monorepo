@@ -14,6 +14,13 @@ import org.bson.json.JsonWriterSettings;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.exists;
 
+/**
+ * This is the entry-point class for this application, see the main() method.
+ *
+ * @author Chris Joakim, Microsoft
+ * @date   2022/06/20
+ */
+
 public class App {
 
     // Class variables
@@ -100,14 +107,14 @@ public class App {
             String connStringEnvVarName = args[1];
             String dbName  = args[2];
             String cName   = args[3];
-            String csvFile = args[4];
+            String infile  = args[4];
             String connStr = AppConfig.getEnvVar(connStringEnvVarName);
 
             logger.warn("envVarName: " + connStringEnvVarName);
             logger.warn("connString: " + connStr);
             logger.warn("dbName:     " + dbName);
             logger.warn("cName:      " + cName);
-            logger.warn("csvFile:    " + csvFile);
+            logger.warn("infile:     " + infile);
 
             MongoUtil mu = new MongoUtil(connStr);
             mu.setCurrentDatabase(dbName);
