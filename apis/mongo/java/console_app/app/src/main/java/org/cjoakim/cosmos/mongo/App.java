@@ -2,6 +2,8 @@ package org.cjoakim.cosmos.mongo;
 
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCursor;
+import com.mongodb.client.model.Filters;
+import com.mongodb.client.result.DeleteResult;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.bson.Document;
@@ -72,8 +74,7 @@ public class App {
             String ttlAttributeName = "_ts";
 
             // Create the Filter
-            Bson notExistsFilter = exists(ttlAttributeName, false);
-            Bson filter = notExistsFilter;
+            Bson filter = Filters.empty();
 
             FindIterable<Document> findIterable = mu.getCurrentCollection().find(filter);
             MongoCursor<Document> cursor = findIterable.iterator();
@@ -92,6 +93,7 @@ public class App {
             throw new RuntimeException(e);
         }
     }
+
     private static void loadContainerFromJson(String[] args) {
 
         try {
@@ -126,6 +128,7 @@ public class App {
             String dbName = args[2];
             String cName = args[3];
             String connStr = AppConfig.getEnvVar(connStringEnvVarName);
+            boolean verbose = AppConfig.booleanArg("--verbose");
 
             logger.warn("envVarName: " + connStringEnvVarName);
             logger.warn("connString: " + connStr);
@@ -135,8 +138,42 @@ public class App {
             MongoUtil mu = new MongoUtil(connStr);
             mu.setCurrentDatabase(dbName);
             mu.setCurrentCollection(cName);
+            boolean continueToProcess = true;
+            long findLoopCounter  = 0;
+            long docsFoundCount   = 0;
+            long docsDeletedCount = 0;
+            Bson filter = Filters.empty();
 
-            // TODO - implement
+            while (continueToProcess) {
+                findLoopCounter++;
+                FindIterable<Document> findIterable = mu.getCurrentCollection().find(filter);
+                MongoCursor<Document> cursor = findIterable.iterator();
+                long loopDocsFoundCount = 0;
+                while (cursor.hasNext()) {
+                    docsFoundCount++;
+                    loopDocsFoundCount++;
+                    Document doc = cursor.next();
+                    if (verbose) {
+                        System.out.println("=== find loop: " + findLoopCounter + ", doc: " + docsFoundCount);
+                        System.out.println(doc.toJson(jsonWriterSettings));
+                    }
+                    DeleteResult result = mu.deleteOne(doc);
+                    docsDeletedCount = docsDeletedCount + result.getDeletedCount();
+                }
+                if (cursor != null) {
+                    cursor.close();
+                }
+                if (loopDocsFoundCount < 1) {
+                    continueToProcess = false;
+                    logger.warn("exiting find loop; no more documents found");
+                }
+                if (findLoopCounter > 10000) {
+                    continueToProcess = false;
+                    logger.warn("exiting find loop; runaway loop");
+                }
+            }
+            logger.warn("docs found:   " + docsFoundCount);
+            logger.warn("docs deleted: " + docsDeletedCount);
         }
         catch (Exception e) {
             throw new RuntimeException(e);
