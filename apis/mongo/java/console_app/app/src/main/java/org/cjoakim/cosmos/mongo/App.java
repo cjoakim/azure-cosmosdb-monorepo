@@ -1,15 +1,23 @@
 package org.cjoakim.cosmos.mongo;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.result.DeleteResult;
+import com.mongodb.client.result.InsertOneResult;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.json.JsonMode;
 import org.bson.json.JsonWriterSettings;
+import org.cjoakim.cosmos.mongo.utils.JsonUtil;
+
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.exists;
@@ -93,7 +101,6 @@ public class App {
                 System.out.println("=== " + docsFoundCount);
                 Document doc = cursor.next();
                 System.out.println(doc.toJson(jsonWriterSettings));
-                System.out.println("-");
             }
         }
         catch (Exception e) {
@@ -120,7 +127,24 @@ public class App {
             mu.setCurrentDatabase(dbName);
             mu.setCurrentCollection(cName);
 
-            // TODO - implement
+            JsonUtil jsonUtil = new JsonUtil();
+            long linesReadCount = 0;
+            long docsWrittenCount = 0;
+
+            Scanner scanner = new Scanner(new File(infile));
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                linesReadCount++;
+                HashMap map = (HashMap) jsonUtil.parseHashMap(line.trim());
+                logger.warn(map);
+                InsertOneResult result = mu.insertDoc(map);
+                String id = result.getInsertedId().toString();
+                if (id  != null) {
+                    docsWrittenCount++;
+                }
+            }
+            logger.warn("lines read:   " + linesReadCount);
+            logger.warn("docs written: " + docsWrittenCount);
         }
         catch (Exception e) {
             throw new RuntimeException(e);

@@ -5,13 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 
-import java.io.IOException;
-
-//import com.fasterxml.jackson.core.JsonParseException;
-//import com.fasterxml.jackson.core.type.TypeReference;
-//import com.fasterxml.jackson.databind.JsonMappingException;
-//import com.fasterxml.jackson.databind.ObjectMapper;
-
+import java.util.HashMap;
 
 /**
  * This class implements reusable JSON parsing and formatting logic.
@@ -22,15 +16,24 @@ import java.io.IOException;
 
 public class JsonUtil {
 
+    // Class variables:
+    private static TypeReference<HashMap<String, String>> hashmapTypeRef = new TypeReference<HashMap<String, String>>() {};
+
     public JsonUtil() {
 
         super();
     }
 
-    public Object parse(String jsonString, TypeReference ref) throws Exception {
+    public Object parse(String jsonString, TypeReference ref) throws JsonProcessingException {
 
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(jsonString, ref);
+    }
+
+    public HashMap parseHashMap(String jsonString) throws JsonProcessingException {
+
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.readValue(jsonString, hashmapTypeRef);
     }
 
     public String pretty(Object obj) {

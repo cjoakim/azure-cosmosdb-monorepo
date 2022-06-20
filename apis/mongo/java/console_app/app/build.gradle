@@ -33,19 +33,19 @@ application {
 task queryContainer(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     mainClass = 'org.cjoakim.cosmos.mongo.App'
-    args 'queryContainer', 'AZURE_ATLAS_CONN_STR', 'dev', 'baseball_core_Parks'
+    args 'queryContainer', 'AZURE_ATLAS_CONN_STR', 'dev', 'countries'
 }
 
 task loadContainerFromJson(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     mainClass = 'org.cjoakim.cosmos.mongo.App'
-    args 'loadContainerFromJson', 'AZURE_ATLAS_CONN_STR', 'dev', 'baseball_core_Parks', '/Users/chris/github/azure-cosmosdb-monorepo/datagen/gen2/data/baseball_core_Parks.json', '--verbose'
+    args 'loadContainerFromJson', 'AZURE_ATLAS_CONN_STR', 'dev', 'countries', '/Users/chris/github/azure-cosmosdb-monorepo/data/openflights/countries.json', '--verbose'
 }
 
 task truncateContainer(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     mainClass = 'org.cjoakim.cosmos.mongo.App'
-    args 'truncateContainer', 'AZURE_ATLAS_CONN_STR', 'dev', 'baseball_core_Parks', '--verbose'
+    args 'truncateContainer', 'AZURE_ATLAS_CONN_STR', 'dev', 'countries', '--verbose'
 }
 
 // gradle uberJar
