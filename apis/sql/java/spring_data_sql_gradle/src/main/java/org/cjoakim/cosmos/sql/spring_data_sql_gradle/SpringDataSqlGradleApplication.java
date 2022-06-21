@@ -31,27 +31,32 @@ public class SpringDataSqlGradleApplication implements CommandLineRunner {
 	@Autowired
 	private ApplicationContext applicationContext;
 
+	@Autowired
+	private AppConfiguration appConfiguration;
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringDataSqlGradleApplication.class, args);
 	}
 
 	public void run(String... var1) {
 
-		final User testUser = new User("testId", "testFirstName", "testLastName");
+		logger.warn("uri: " + appConfiguration.getUri());
 
-		repository.deleteAll();
-		repository.save(testUser);
-
-		// to find by Id, please specify partition key value if collection is partitioned
-		final User result = repository.findOne(testUser.getId(), testUser.getLastName());
-
-		//  Switch to secondary key
-		UserRepositoryConfiguration bean =
-				applicationContext.getBean(UserRepositoryConfiguration.class);
-		bean.switchToSecondaryKey();
-
-		//  Now repository will use secondary key
-		repository.save(testUser);
+//		final User testUser = new User("testId", "testFirstName", "testLastName");
+//
+//		repository.deleteAll();
+//		repository.save(testUser);
+//
+//		// to find by Id, please specify partition key value if collection is partitioned
+//		final User result = repository.findOne(testUser.getId(), testUser.getLastName());
+//
+//		//  Switch to secondary key
+//		UserRepositoryConfiguration bean =
+//				applicationContext.getBean(UserRepositoryConfiguration.class);
+//		bean.switchToSecondaryKey();
+//
+//		//  Now repository will use secondary key
+//		repository.save(testUser);
 
 	}
 }

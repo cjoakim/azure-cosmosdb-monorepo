@@ -1,21 +1,14 @@
-package org.cjoakim.cosmos.sql.spring_data_sql_gradle;
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+package com.azure.spring.data.cosmos;
 
 import com.azure.spring.data.cosmos.core.mapping.Container;
-import com.azure.spring.data.cosmos.core.mapping.CosmosUniqueKey;
-import com.azure.spring.data.cosmos.core.mapping.CosmosUniqueKeyPolicy;
 import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 
-// See https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/how-to-guides-spring-data-cosmosdb
-// See https://github.com/Azure/azure-sdk-for-java/blob/spring-cloud-azure_4.2.0/sdk/cosmos/azure-spring-data-cosmos/src/samples/java/com/azure/spring/data/cosmos/User.java
-
-@Container(containerName="users")  //, autoScale=true, ru="4000")
-//@CosmosUniqueKeyPolicy(uniqueKeys = {
-//        @CosmosUniqueKey(paths = {"/lastName", "/zipCode"}),
-//        @CosmosUniqueKey(paths = {"/city"})
-//})
+// BEGIN: readme-sample-User
+@Container(containerName = "myContainer", ru = "400")
 public class User {
     private String id;
-    private String pk;
     private String firstName;
 
 
@@ -30,8 +23,7 @@ public class User {
     public User(String id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
-        this.lastName  = lastName;
-        this.pk        = this.lastName;
+        this.lastName = lastName;
     }
 
     @Override
@@ -61,14 +53,6 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-        this.pk = this.lastName;
-    }
-
-    public String getPk() {
-        return pk;
-    }
-
-    public void setPk(String pk) {
-        this.pk = pk;
     }
 }
+// END: readme-sample-User

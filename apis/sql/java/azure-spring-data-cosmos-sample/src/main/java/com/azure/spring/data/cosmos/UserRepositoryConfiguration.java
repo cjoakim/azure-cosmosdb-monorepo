@@ -1,5 +1,11 @@
-package org.cjoakim.cosmos.sql.spring_data_sql_gradle;
-
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+package com.azure.spring.data.cosmos;
+/**
+ * WARNING: MODIFYING THIS FILE WILL REQUIRE CORRESPONDING UPDATES TO README.md FILE. LINE NUMBERS
+ * ARE USED TO EXTRACT APPROPRIATE CODE SEGMENTS FROM THIS FILE. ADD NEW CODE AT THE BOTTOM TO AVOID CHANGING
+ * LINE NUMBERS OF EXISTING CODE SAMPLES.
+ */
 
 import com.azure.core.credential.AzureKeyCredential;
 import com.azure.cosmos.CosmosClientBuilder;
@@ -21,10 +27,6 @@ import org.springframework.lang.Nullable;
 @EnableConfigurationProperties(CosmosProperties.class)
 @EnableReactiveCosmosRepositories
 @PropertySource("classpath:application.properties")
-
-// See https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/how-to-guides-spring-data-cosmosdb
-// See https://github.com/Azure/azure-sdk-for-java/blob/spring-cloud-azure_4.2.0/sdk/cosmos/azure-spring-data-cosmos/src/samples/java/com/azure/spring/data/cosmos/UserRepositoryConfiguration.java
-
 public class UserRepositoryConfiguration extends AbstractCosmosConfiguration {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserRepositoryConfiguration.class);
 
@@ -40,11 +42,12 @@ public class UserRepositoryConfiguration extends AbstractCosmosConfiguration {
     }
 
     @Bean
-    public CosmosConfig cosmosConfiguration() {
+    public CosmosConfig cosmosConfig() {
         return CosmosConfig.builder()
-                .responseDiagnosticsProcessor(new ResponseDiagnosticsProcessorImplementation())
-                .enableQueryMetrics(properties.isQueryMetricsEnabled())
-                .build();
+                           .responseDiagnosticsProcessor(new ResponseDiagnosticsProcessorImplementation())
+                           .enableQueryMetrics(properties.isQueryMetricsEnabled())
+                           .maxDegreeOfParallelism(properties.getMaxDegreeOfParallelism())
+                           .build();
     }
 
     public void switchToSecondaryKey() {
@@ -61,7 +64,7 @@ public class UserRepositoryConfiguration extends AbstractCosmosConfiguration {
 
     @Override
     protected String getDatabaseName() {
-        return "dev";
+        return "testdb";
     }
 
     private static class ResponseDiagnosticsProcessorImplementation implements ResponseDiagnosticsProcessor {
