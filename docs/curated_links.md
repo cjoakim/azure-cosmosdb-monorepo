@@ -52,10 +52,21 @@
 
 ### Spring Data
 
+- https://spring.io/projects/spring-data
+- https://github.com/spring-projects/spring-data-book
+
+
+### Spring Data - CosmosDB SQL API
+
 - https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/how-to-guides-spring-data-cosmosdb
+- https://github.com/Azure/azure-sdk-for-java/tree/spring-cloud-azure_4.2.0/sdk/cosmos/azure-spring-data-cosmos/src/samples/java/com/azure/spring/data/cosmos
 - https://search.maven.org/artifact/com.azure/azure-spring-data-cosmos
 - https://search.maven.org/artifact/com.azure/azure-spring-data-cosmos/3.22.0/jar
 - https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/cosmos/azure-spring-data-cosmos
+
+### Spring Data - CosmosDB Mongo API
+
+- https://spring.io/projects/spring-data-mongodb
 
 ### DotNet
 
