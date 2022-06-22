@@ -8,18 +8,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-//@SpringBootApplication
-//public class SpringDataSqlGradleApplication {
-//
-//	public static void main(String[] args) {
-//		SpringApplication.run(SpringDataSqlGradleApplication.class, args);
-//	}
-//
-//}
-
-// See https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/how-to-guides-spring-data-cosmosdb
-// See https://github.com/Azure/azure-sdk-for-java/blob/spring-cloud-azure_4.2.0/sdk/cosmos/azure-spring-data-cosmos/src/samples/java/com/azure/spring/data/cosmos/SampleApplication.java
-
 @SpringBootApplication
 public class SpringDataSqlGradleApplication implements CommandLineRunner {
 

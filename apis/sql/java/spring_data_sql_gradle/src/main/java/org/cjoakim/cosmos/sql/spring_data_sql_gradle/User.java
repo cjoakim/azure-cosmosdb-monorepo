@@ -5,9 +5,6 @@ import com.azure.spring.data.cosmos.core.mapping.CosmosUniqueKey;
 import com.azure.spring.data.cosmos.core.mapping.CosmosUniqueKeyPolicy;
 import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 
-// See https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/how-to-guides-spring-data-cosmosdb
-// See https://github.com/Azure/azure-sdk-for-java/blob/spring-cloud-azure_4.2.0/sdk/cosmos/azure-spring-data-cosmos/src/samples/java/com/azure/spring/data/cosmos/User.java
-
 @Container(containerName="users")  //, autoScale=true, ru="4000")
 //@CosmosUniqueKeyPolicy(uniqueKeys = {
 //        @CosmosUniqueKey(paths = {"/lastName", "/zipCode"}),
