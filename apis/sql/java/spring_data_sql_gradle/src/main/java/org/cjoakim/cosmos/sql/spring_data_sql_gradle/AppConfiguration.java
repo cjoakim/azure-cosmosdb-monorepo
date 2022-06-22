@@ -24,14 +24,14 @@ public class AppConfiguration extends AbstractCosmosConfiguration {
 
     private static final Logger logger = LoggerFactory.getLogger(AppConfiguration.class);
 
-    @Value("${AZURE_COSMOSDB_SQLDB_URI}")
+    @Value("${azure.cosmos.uri}")
     private String uri;
 
     @Value("${azure.cosmos.key}")
     private String key;
 
-    @Value("${azure.cosmos.secondaryKey}")
-    private String secondaryKey;
+//    @Value("${azure.cosmos.secondaryKey}")
+//    private String secondaryKey;
 
     @Value("${azure.cosmos.database}")
     private String dbName;
@@ -61,7 +61,7 @@ public class AppConfiguration extends AbstractCosmosConfiguration {
     }
 
     public void switchToSecondaryKey() {
-        this.azureKeyCredential.update(secondaryKey);
+        //this.azureKeyCredential.update(secondaryKey);
     }
 
     @Override
@@ -85,9 +85,9 @@ public class AppConfiguration extends AbstractCosmosConfiguration {
         return key;
     }
 
-    public String getSecondaryKey() {
-        return secondaryKey;
-    }
+//    public String getSecondaryKey() {
+//        return secondaryKey;
+//    }
 
     public String getDbName() {
         return dbName;

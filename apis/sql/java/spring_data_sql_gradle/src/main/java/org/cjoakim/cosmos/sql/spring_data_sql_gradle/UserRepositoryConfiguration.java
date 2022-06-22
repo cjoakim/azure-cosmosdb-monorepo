@@ -48,7 +48,7 @@ public class UserRepositoryConfiguration extends AbstractCosmosConfiguration {
     }
 
     public void switchToSecondaryKey() {
-        this.azureKeyCredential.update(properties.getSecondaryKey());
+        //this.azureKeyCredential.update(properties.getSecondaryKey());
     }
 
     public void switchToPrimaryKey() {

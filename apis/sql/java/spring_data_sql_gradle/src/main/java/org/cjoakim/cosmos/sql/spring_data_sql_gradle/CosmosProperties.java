@@ -12,7 +12,7 @@ public class CosmosProperties {
 
     private String key;
 
-    private String secondaryKey;
+    //private String secondaryKey;
 
     private String database;
 
@@ -34,13 +34,13 @@ public class CosmosProperties {
         this.key = key;
     }
 
-    public String getSecondaryKey() {
-        return secondaryKey;
-    }
-
-    public void setSecondaryKey(String secondaryKey) {
-        this.secondaryKey = secondaryKey;
-    }
+//    public String getSecondaryKey() {
+//        return secondaryKey;
+//    }
+//
+//    public void setSecondaryKey(String secondaryKey) {
+//        this.secondaryKey = secondaryKey;
+//    }
 
     public String getDatabase() {
         return database;
