@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.lang.Nullable;
 
-// BEGIN: readme-sample-AppConfiguration
+// BEGIN: readme-sample-SampleAppConfiguration
 @Configuration
 @EnableCosmosRepositories
 public class AppConfiguration extends AbstractCosmosConfiguration {
@@ -90,4 +90,4 @@ public class AppConfiguration extends AbstractCosmosConfiguration {
     }
 
 }
-// END: readme-sample-AppConfiguration
+// END: readme-sample-SampleAppConfiguration

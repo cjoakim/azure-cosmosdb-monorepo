@@ -13,7 +13,7 @@ class SpringDataSqlGradleApplicationTests {
 //	}
 
 //	@Test public void instanceIsNotNull() {
-//		AppConfiguration appConfig = new AppConfiguration();
+//		SampleAppConfiguration appConfig = new SampleAppConfiguration();
 //		assertTrue("URI is incorrect", appConfig.getUri().contains(".documents.azure.com:443"));
 //	}
 

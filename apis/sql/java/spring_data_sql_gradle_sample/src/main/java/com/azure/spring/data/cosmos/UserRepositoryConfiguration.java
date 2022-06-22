@@ -42,7 +42,7 @@ public class UserRepositoryConfiguration extends AbstractCosmosConfiguration {
     }
 
     @Bean
-    public CosmosConfig cosmosConfig() {
+    public CosmosConfig cosmosConfiguration() {
 
 // CJOAKIM, commented this out
 //        return CosmosConfig.builder()

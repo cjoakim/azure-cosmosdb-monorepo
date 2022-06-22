@@ -17,69 +17,74 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.lang.Nullable;
 
-@Configuration
-@EnableCosmosRepositories
-public class AppConfigurationCodeSnippet extends AbstractCosmosConfiguration {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(AppConfigurationCodeSnippet.class);
+public class AppConfigurationCodeSnippet {
 
-    // configuration code
-    @Value("${azure.cosmos.uri}")
-    private String uri;
-
-    @Value("${azure.cosmos.key}")
-    private String key;
-
-    @Value("${azure.cosmos.secondaryKey}")
-    private String secondaryKey;
-
-    @Value("${azure.cosmos.database}")
-    private String dbName;
-
-    @Value("${azure.cosmos.queryMetricsEnabled}")
-    private boolean queryMetricsEnabled;
-
-    @Value("${azure.cosmos.maxDegreeOfParallelism}")
-    private int maxDegreeOfParallelism;
-
-    // BEGIN: readme-sample-AppConfigurationCodeSnippet
-    @Bean
-    public CosmosClientBuilder getCosmosClientBuilder() {
-
-        DirectConnectionConfig directConnectionConfig = new DirectConnectionConfig();
-        GatewayConnectionConfig gatewayConnectionConfig = new GatewayConnectionConfig();
-        return new CosmosClientBuilder()
-            .endpoint(uri)
-            .directMode(directConnectionConfig, gatewayConnectionConfig);
-    }
-
-    @Override
-    public CosmosConfig cosmosConfig() {
-
-// CJOAKIM, commented this out
-//        return CosmosConfig.builder()
-//                           .enableQueryMetrics(queryMetricsEnabled)
-//                           .maxDegreeOfParallelism(maxDegreeOfParallelism)
-//                           .responseDiagnosticsProcessor(new ResponseDiagnosticsProcessorImplementation())
-//                           .build();
-
-        return CosmosConfig.builder()
-                .enableQueryMetrics(queryMetricsEnabled)
-                .responseDiagnosticsProcessor(new ResponseDiagnosticsProcessorImplementation())
-                .build();
-    }
-    // END: readme-sample-AppConfigurationCodeSnippet
-
-    @Override
-    protected String getDatabaseName() {
-        return dbName;
-    }
-
-    private static class ResponseDiagnosticsProcessorImplementation implements ResponseDiagnosticsProcessor {
-
-        @Override
-        public void processResponseDiagnostics(@Nullable ResponseDiagnostics responseDiagnostics) {
-            LOGGER.info("Response Diagnostics {}", responseDiagnostics);
-        }
-    }
 }
+
+//@Configuration
+//@EnableCosmosRepositories
+//public class AppConfigurationCodeSnippet extends AbstractCosmosConfiguration {
+//
+//    private static final Logger LOGGER = LoggerFactory.getLogger(AppConfigurationCodeSnippet.class);
+//
+//    // configuration code
+//    @Value("${azure.cosmos.uri}")
+//    private String uri;
+//
+//    @Value("${azure.cosmos.key}")
+//    private String key;
+//
+//    @Value("${azure.cosmos.secondaryKey}")
+//    private String secondaryKey;
+//
+//    @Value("${azure.cosmos.database}")
+//    private String dbName;
+//
+//    @Value("${azure.cosmos.queryMetricsEnabled}")
+//    private boolean queryMetricsEnabled;
+//
+//    @Value("${azure.cosmos.maxDegreeOfParallelism}")
+//    private int maxDegreeOfParallelism;
+//
+//    // BEGIN: readme-sample-AppConfigurationCodeSnippet
+//    @Bean
+//    public CosmosClientBuilder getCosmosClientBuilder() {
+//
+//        DirectConnectionConfig directConnectionConfig = new DirectConnectionConfig();
+//        GatewayConnectionConfig gatewayConnectionConfig = new GatewayConnectionConfig();
+//        return new CosmosClientBuilder()
+//            .endpoint(uri)
+//            .directMode(directConnectionConfig, gatewayConnectionConfig);
+//    }
+//
+//    @Override
+//    public CosmosConfig cosmosConfig() {
+//
+//// CJOAKIM, commented this out
+////        return CosmosConfig.builder()
+////                           .enableQueryMetrics(queryMetricsEnabled)
+////                           .maxDegreeOfParallelism(maxDegreeOfParallelism)
+////                           .responseDiagnosticsProcessor(new ResponseDiagnosticsProcessorImplementation())
+////                           .build();
+//
+//        return CosmosConfig.builder()
+//                .enableQueryMetrics(queryMetricsEnabled)
+//                .responseDiagnosticsProcessor(new ResponseDiagnosticsProcessorImplementation())
+//                .build();
+//    }
+//    // END: readme-sample-AppConfigurationCodeSnippet
+//
+//    @Override
+//    protected String getDatabaseName() {
+//        return dbName;
+//    }
+//
+//    private static class ResponseDiagnosticsProcessorImplementation implements ResponseDiagnosticsProcessor {
+//
+//        @Override
+//        public void processResponseDiagnostics(@Nullable ResponseDiagnostics responseDiagnostics) {
+//            LOGGER.info("Response Diagnostics {}", responseDiagnostics);
+//        }
+//    }
+//}
