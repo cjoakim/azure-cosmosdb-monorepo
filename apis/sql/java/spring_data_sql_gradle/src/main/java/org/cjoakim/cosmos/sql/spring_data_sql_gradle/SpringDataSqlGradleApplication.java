@@ -40,8 +40,8 @@ public class SpringDataSqlGradleApplication implements CommandLineRunner {
 
 		final User testUser1 = new User(
 				"" + System.currentTimeMillis(),
-				"George",
-				"Foreman");
+				"Chris",
+				"Joakim");
 		logger.warn("testUser1 created: " + testUser1);
 
 		repository.save(testUser1);
