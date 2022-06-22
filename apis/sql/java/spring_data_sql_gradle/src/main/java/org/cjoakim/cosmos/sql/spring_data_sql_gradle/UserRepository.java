@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends CosmosRepository<User, String> {
 
-    Iterable<User> findByFirstName(String firstName);
-
-    long countByFirstName(String firstName);
-
-    User findOne(String id, String lastName);
+//    Iterable<User> findByFirstName(String firstName);
+//
+//    long countByFirstName(String firstName);
+//
+//    User findOne(String id, String lastName);
 }

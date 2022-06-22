@@ -39,24 +39,28 @@ public class SpringDataSqlGradleApplication implements CommandLineRunner {
 	}
 
 	public void run(String... var1) {
+		logger.warn("start of run() method");
 
-		logger.warn("uri: " + appConfiguration.getUri());
+		boolean deleteAll = false;
+		logger.warn("deleteAll: " + deleteAll);
 
-//		final User testUser = new User("testId", "testFirstName", "testLastName");
-//
-//		repository.deleteAll();
-//		repository.save(testUser);
-//
-//		// to find by Id, please specify partition key value if collection is partitioned
-//		final User result = repository.findOne(testUser.getId(), testUser.getLastName());
-//
-//		//  Switch to secondary key
-//		UserRepositoryConfiguration bean =
-//				applicationContext.getBean(UserRepositoryConfiguration.class);
-//		bean.switchToSecondaryKey();
-//
-//		//  Now repository will use secondary key
-//		repository.save(testUser);
+		if (deleteAll) {
+			logger.warn("deleteAll starting");
+			repository.deleteAll();
+			logger.warn("deleteAll completed");
+		}
 
+		final User testUser1 = new User(
+				"" + System.currentTimeMillis(),
+				"George",
+				"Foreman");
+		logger.warn("testUser1 created: " + testUser1);
+
+		repository.save(testUser1);
+		logger.warn("testUser1 saved");
+
+		logger.warn("spring app exiting");
+		SpringApplication.exit(this.applicationContext);
+		logger.warn("spring app exit completed");
 	}
 }

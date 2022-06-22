@@ -16,28 +16,34 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.lang.Nullable;
 
-// See https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/how-to-guides-spring-data-cosmosdb
+// See https://docs.microsoft.com/en-us/java/api/overview/azure/spring-data-cosmos-readme?view=azure-java-stable
 
 @Configuration
 @EnableCosmosRepositories
 public class AppConfiguration extends AbstractCosmosConfiguration {
 
-    private static final Logger logger = LoggerFactory.getLogger(AppConfiguration.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(AppConfiguration.class);
 
-    @Value("${azure.cosmos.uri}")
+    //@Value("${azure.cosmos.uri}")
+    @Value("${spring.cloud.azure.cosmos.endpoint}")
     private String uri;
 
-    @Value("${azure.cosmos.key}")
+    //@Value("${azure.cosmos.key}")
+    @Value("${spring.cloud.azure.cosmos.key}")
     private String key;
 
-//    @Value("${azure.cosmos.secondaryKey}")
-//    private String secondaryKey;
+    @Value("${azure.cosmos.secondaryKey}")
+    private String secondaryKey;
 
-    @Value("${azure.cosmos.database}")
+    //@Value("${azure.cosmos.database}")
+    @Value("${spring.cloud.azure.cosmos.database}")
     private String dbName;
 
     @Value("${azure.cosmos.queryMetricsEnabled}")
     private boolean queryMetricsEnabled;
+
+    @Value("${azure.cosmos.maxDegreeOfParallelism}")
+    private int maxDegreeOfParallelism;
 
     private AzureKeyCredential azureKeyCredential;
 
@@ -56,48 +62,26 @@ public class AppConfiguration extends AbstractCosmosConfiguration {
     public CosmosConfig cosmosConfig() {
         return CosmosConfig.builder()
                 .enableQueryMetrics(queryMetricsEnabled)
+                //.maxDegreeOfParallelism(maxDegreeOfParallelism)
                 .responseDiagnosticsProcessor(new ResponseDiagnosticsProcessorImplementation())
                 .build();
     }
 
     public void switchToSecondaryKey() {
-        //this.azureKeyCredential.update(secondaryKey);
+        this.azureKeyCredential.update(secondaryKey);
     }
 
     @Override
     protected String getDatabaseName() {
-        return "testdb";
+        return "dev";
     }
 
     private static class ResponseDiagnosticsProcessorImplementation implements ResponseDiagnosticsProcessor {
 
         @Override
         public void processResponseDiagnostics(@Nullable ResponseDiagnostics responseDiagnostics) {
-            logger.info("Response Diagnostics {}", responseDiagnostics);
+            LOGGER.info("Response Diagnostics {}", responseDiagnostics);
         }
     }
 
-    public String getUri() {
-        return uri;
-    }
-
-    public String getKey() {
-        return key;
-    }
-
-//    public String getSecondaryKey() {
-//        return secondaryKey;
-//    }
-
-    public String getDbName() {
-        return dbName;
-    }
-
-    public boolean isQueryMetricsEnabled() {
-        return queryMetricsEnabled;
-    }
-
-    public AzureKeyCredential getAzureKeyCredential() {
-        return azureKeyCredential;
-    }
 }
