@@ -4,6 +4,7 @@
 Jinja2
 arrow
 azure-cosmos
+beautifulsoup4
 docopt
 flake8
 humanize
