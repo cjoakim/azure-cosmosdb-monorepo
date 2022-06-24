@@ -1,0 +1,638 @@
+[
+  {
+    "name": "app1",
+    "writers_apps": [
+      "app8"
+    ],
+    "reader_apps": [
+      "app10",
+      "app11",
+      "app5"
+    ],
+    "owners": [
+      {
+        "name": "Angela Smith",
+        "roles": [
+          "app_app1_owner"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Patricia Lopez"
+      },
+      {
+        "name": "Tiffany Austin"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Adam Hull"
+      },
+      {
+        "name": "Christopher Rosario"
+      },
+      {
+        "name": "Colton Solomon"
+      },
+      {
+        "name": "Gabriel Curtis"
+      },
+      {
+        "name": "Jacob Lee"
+      },
+      {
+        "name": "Leslie Pineda"
+      },
+      {
+        "name": "Tyler Christian"
+      }
+    ]
+  },
+  {
+    "name": "app2",
+    "writers_apps": [
+      "app9"
+    ],
+    "reader_apps": [
+      "app11",
+      "app12",
+      "app4",
+      "app5",
+      "app7",
+      "app8",
+      "app9"
+    ],
+    "owners": [
+      {
+        "name": "Cole Duran",
+        "roles": [
+          "app_app2_owner"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Pam Hopkins"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Colton Solomon"
+      }
+    ]
+  },
+  {
+    "name": "app3",
+    "writers_apps": [
+      "app6"
+    ],
+    "reader_apps": [
+      "app5"
+    ],
+    "owners": [
+      {
+        "name": "Colleen Garcia",
+        "roles": [
+          "app_app3_owner"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Marvin Reed"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Angela Smith"
+      },
+      {
+        "name": "Gabriela Thompson"
+      },
+      {
+        "name": "Katie Freeman"
+      },
+      {
+        "name": "Michael White"
+      }
+    ]
+  },
+  {
+    "name": "app4",
+    "writers_apps": [
+      "app1"
+    ],
+    "reader_apps": [
+      "app11",
+      "app12",
+      "app13",
+      "app2",
+      "app5"
+    ],
+    "owners": [
+      {
+        "name": "Emily Pacheco",
+        "roles": [
+          "app_app4_owner"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "James Hawkins"
+      },
+      {
+        "name": "Jason Jackson"
+      },
+      {
+        "name": "Marvin Reed"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Alicia Weaver"
+      },
+      {
+        "name": "Dana Stevenson"
+      },
+      {
+        "name": "Danielle Hoffman"
+      },
+      {
+        "name": "David Avila"
+      },
+      {
+        "name": "Derek Wilson"
+      },
+      {
+        "name": "Gabriel Curtis"
+      },
+      {
+        "name": "Jay Morris"
+      },
+      {
+        "name": "Leslie Pineda"
+      },
+      {
+        "name": "Mrs. Dawn Wilson"
+      },
+      {
+        "name": "Rebecca Murphy"
+      },
+      {
+        "name": "Sharon Miller"
+      }
+    ]
+  },
+  {
+    "name": "app5",
+    "writers_apps": [
+      "app4"
+    ],
+    "reader_apps": [
+      "app1"
+    ],
+    "owners": [
+      {
+        "name": "Jennifer Holland",
+        "roles": [
+          "app_app5_owner"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Aaron Horton"
+      },
+      {
+        "name": "Michael Miller"
+      },
+      {
+        "name": "Todd Oneal"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Christopher Rosario"
+      },
+      {
+        "name": "Jason Beck"
+      },
+      {
+        "name": "Nicole Griffith"
+      }
+    ]
+  },
+  {
+    "name": "app6",
+    "writers_apps": [],
+    "reader_apps": [
+      "app1",
+      "app10",
+      "app11",
+      "app5",
+      "app7",
+      "app8",
+      "app9"
+    ],
+    "owners": [
+      {
+        "name": "Jennifer Scott",
+        "roles": [
+          "app_app6_owner"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Mary Harrington"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Blake Schmitt"
+      },
+      {
+        "name": "Colleen Gutierrez"
+      },
+      {
+        "name": "Jean Miller"
+      },
+      {
+        "name": "Mrs. Christina Harris"
+      },
+      {
+        "name": "Nicholas White"
+      },
+      {
+        "name": "Philip Allen"
+      },
+      {
+        "name": "Rachel Merritt"
+      },
+      {
+        "name": "Thomas Ellis"
+      },
+      {
+        "name": "Zachary Yates"
+      }
+    ]
+  },
+  {
+    "name": "app7",
+    "writers_apps": [
+      "app3"
+    ],
+    "reader_apps": [
+      "app11",
+      "app13",
+      "app2",
+      "app3",
+      "app4",
+      "app5",
+      "app8"
+    ],
+    "owners": [
+      {
+        "name": "John Park",
+        "roles": [
+          "app_app7_owner"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Jeanne Fletcher"
+      },
+      {
+        "name": "Seth Martin"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Matthew Vazquez"
+      }
+    ]
+  },
+  {
+    "name": "app8",
+    "writers_apps": [
+      "app2"
+    ],
+    "reader_apps": [
+      "app10",
+      "app5",
+      "app6"
+    ],
+    "owners": [
+      {
+        "name": "Joshua Clarke",
+        "roles": [
+          "app_app8_owner"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Philip Allen"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "David Wright"
+      },
+      {
+        "name": "Devin Delgado"
+      },
+      {
+        "name": "Kevin Copeland"
+      },
+      {
+        "name": "Matthew Adams"
+      },
+      {
+        "name": "Nicole Griffith"
+      },
+      {
+        "name": "Tiffany Austin"
+      },
+      {
+        "name": "William Fletcher"
+      },
+      {
+        "name": "William Reed"
+      }
+    ]
+  },
+  {
+    "name": "app9",
+    "writers_apps": [
+      "app10",
+      "app8"
+    ],
+    "reader_apps": [
+      "app13",
+      "app4",
+      "app5",
+      "app6",
+      "app7"
+    ],
+    "owners": [
+      {
+        "name": "Lisa Butler",
+        "roles": [
+          "app_app9_owner"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Adam Davis"
+      },
+      {
+        "name": "Michelle Parker"
+      },
+      {
+        "name": "Todd Oneal"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Carla Shields"
+      },
+      {
+        "name": "David Wright"
+      },
+      {
+        "name": "Donna Dunn"
+      },
+      {
+        "name": "John Kirby"
+      },
+      {
+        "name": "Jonathan Fernandez"
+      },
+      {
+        "name": "Kimberly Berry"
+      },
+      {
+        "name": "Michael White"
+      },
+      {
+        "name": "Nicholas White"
+      },
+      {
+        "name": "Peter Martinez"
+      }
+    ]
+  },
+  {
+    "name": "app10",
+    "writers_apps": [
+      "app2"
+    ],
+    "reader_apps": [
+      "app5"
+    ],
+    "owners": [
+      {
+        "name": "Michael Reynolds",
+        "roles": [
+          "app_app10_owner"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Adam Davis"
+      },
+      {
+        "name": "Frederick Brown"
+      },
+      {
+        "name": "Kimberly Mata"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Gabriela Thompson"
+      },
+      {
+        "name": "Jason Jackson"
+      },
+      {
+        "name": "John Turner"
+      },
+      {
+        "name": "Marcus Williams"
+      },
+      {
+        "name": "Philip Allen"
+      }
+    ]
+  },
+  {
+    "name": "app11",
+    "writers_apps": [
+      "app2"
+    ],
+    "reader_apps": [],
+    "owners": [
+      {
+        "name": "Patricia Lopez",
+        "roles": [
+          "app_app11_owner"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Joseph Lewis"
+      },
+      {
+        "name": "Raven Christensen"
+      },
+      {
+        "name": "Richard Tate"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Chad Lam"
+      },
+      {
+        "name": "Colleen Gutierrez"
+      },
+      {
+        "name": "Nathaniel Nelson"
+      },
+      {
+        "name": "Nicole Griffith"
+      },
+      {
+        "name": "Rebecca Murphy"
+      }
+    ]
+  },
+  {
+    "name": "app12",
+    "writers_apps": [
+      "app6"
+    ],
+    "reader_apps": [
+      "app13",
+      "app8"
+    ],
+    "owners": [
+      {
+        "name": "Samantha Green",
+        "roles": [
+          "app_app12_owner"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Aaron Horton"
+      },
+      {
+        "name": "Ann Brooks"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Colleen Gutierrez"
+      },
+      {
+        "name": "David Avila"
+      },
+      {
+        "name": "Deborah Flores"
+      },
+      {
+        "name": "Gabriel Curtis"
+      },
+      {
+        "name": "Jennifer Castro"
+      },
+      {
+        "name": "Michael Miller"
+      },
+      {
+        "name": "Patricia Lopez"
+      },
+      {
+        "name": "Rachel Merritt"
+      },
+      {
+        "name": "Richard Mcconnell"
+      },
+      {
+        "name": "Sharon Miller"
+      },
+      {
+        "name": "Thomas Ellis"
+      }
+    ]
+  },
+  {
+    "name": "app13",
+    "writers_apps": [
+      "app9"
+    ],
+    "reader_apps": [
+      "app10",
+      "app4",
+      "app9"
+    ],
+    "owners": [
+      {
+        "name": "Stephen Wallace",
+        "roles": [
+          "app_app13_owner"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Dawn Hill"
+      },
+      {
+        "name": "Eileen Dunn"
+      },
+      {
+        "name": "Marcus Williams"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Ann Brooks"
+      },
+      {
+        "name": "Cody Conley"
+      },
+      {
+        "name": "Jay Morris"
+      },
+      {
+        "name": "Jonathan Fernandez"
+      },
+      {
+        "name": "Joseph Lewis"
+      },
+      {
+        "name": "Kevin Smith"
+      },
+      {
+        "name": "Kimberly Mata"
+      },
+      {
+        "name": "Raven Christensen"
+      },
+      {
+        "name": "Tyler Christian"
+      }
+    ]
+  }
+]
