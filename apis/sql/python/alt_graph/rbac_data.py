@@ -31,9 +31,9 @@ from pysrc.env import Env
 from pysrc.fs import FS
 from pysrc.rcache import RCache
 
-PARSED_AZURE_ROLES_JSON = 'data/rbac/azure_roles.json'
+PARSED_AZURE_ROLES_JSON          = 'data/rbac/azure_roles.json'
 PARSED_AD_ROLES_PERMISSIONS_JSON = 'data/rbac/azure_ad_roles_permissions.json'
-AGGREGATED_APPS_JSON = 'data/rbac/aggregated_apps.json'
+GENERATED_APP_RBAC_DATA_JSON     = 'data/rbac/generated_application_rbac_data.json'
 
 def print_options(msg):
     print(msg)
@@ -195,6 +195,10 @@ def generate_cosmosdb_datasets(app_count):
     print('loaded {}, count: {}'.format(PARSED_AZURE_ROLES_JSON, len(azure_roles_data)))
     azure_ad_data = FS.read_json(PARSED_AD_ROLES_PERMISSIONS_JSON)
     print('loaded {}, count: {}'.format(PARSED_AD_ROLES_PERMISSIONS_JSON, len(azure_ad_data)))
+    azure_ad_roles = list()
+    for obj in azure_ad_data:
+        if obj['type'] == 'role':
+            azure_ad_roles.append(obj)
 
     # generate n-number of "applications" - with fake name
     # app -> has roles
@@ -209,6 +213,7 @@ def generate_cosmosdb_datasets(app_count):
     # user -> has roles  (a list of the roles they have in the scope of each app)
 
     owner_names, developer_names = generate_random_human_names(app_count)
+    people_list = generate_people_list(owner_names, developer_names)
 
     apps_list = generate_random_apps(app_count)
     for app_idx, app in enumerate(apps_list):
@@ -217,11 +222,17 @@ def generate_cosmosdb_datasets(app_count):
         assign_app_contributors(app, app_idx, developer_names)
 
     for app_idx, app in enumerate(apps_list):
-        augment_app_owners(app, app_idx, azure_roles_data, azure_ad_data)
-        augment_app_administrators(app, app_idx, azure_roles_data, azure_ad_data)
-        augment_app_contributors(app, app_idx, azure_roles_data, azure_ad_data)
+        augment_app_owners(app, app_idx, azure_roles_data, azure_ad_roles)
+        augment_app_administrators(app, app_idx, azure_roles_data, azure_ad_roles)
+        augment_app_contributors(app, app_idx, azure_roles_data, azure_ad_roles)
 
-    FS.write_json(apps_list, AGGREGATED_APPS_JSON)
+    # create one aggregate data structure for all data needs for this sample app
+    agg_data = dict()
+    agg_data['apps'] = apps_list
+    agg_data['people'] = people_list
+    agg_data['azure_roles_data'] = azure_roles_data
+    agg_data['azure_ad_data'] = azure_ad_data
+    FS.write_json(agg_data, GENERATED_APP_RBAC_DATA_JSON)
 
 def generate_random_apps(app_count):
     app_names, apps = list(), list()
@@ -260,6 +271,25 @@ def generate_random_human_names(count):
         developer_names[name] = ''
     return (sorted(owner_names.keys()), sorted(developer_names.keys()))
 
+def generate_people_list(owner_names, developer_names):
+    names, people = list(), list()
+    faker = Faker()
+    for name in owner_names:
+        names.append(name)
+    for name in developer_names:
+        names.append(name)
+
+    for name_idx, name in enumerate(names):
+        person = dict()
+        person['name'] = name
+        person['empl_id'] = name_idx + 1
+        person['hire_date'] = faker.date()
+        person['city']      = faker.city()
+        person['state']     = faker.state()
+        people.append(person)
+
+    return people
+
 def assign_app_owners(app, app_idx, owner_names):
     person = dict()
     person['name'] = owner_names[app_idx]
@@ -293,26 +323,49 @@ def assign_app_contributors(app, app_idx, developer_names):
         person = contributors[name]
         app['contributors'].append(person)
 
-def augment_app_owners(app, app_idx, azure_roles_data, azure_ad_data):
-    for owner in app['owners']:
+def augment_app_owners(app, app_idx, azure_roles_data, azure_ad_roles):
+    for person in app['owners']:
         role_name = 'app_{}_owner'.format(app['name'])
-        owner['roles'] = list()
-        owner['roles'].append(role_name)
-        azure_role_count = random.randint(0, 3)
-        for n in range(azure_role_count):
+        person['roles'] = list()
+        person['roles'].append(role_name)
+        for n in range(random.randint(0, 3)):
             ridx = random.randint(0, len(azure_roles_data) - 1)
-            
+            role = azure_roles_data[ridx]
+            person['roles'].append(role['role'])
+        for n in range(random.randint(0, 3)):
+            ridx = random.randint(0, len(azure_ad_roles) - 1)
+            role = azure_ad_roles[ridx]
+            person['roles'].append(role['role'])
 
-        ad_role_count = random.randint(0, 8)
+
+def augment_app_administrators(app, app_idx, azure_roles_data, azure_ad_roles):
+    for person in app['administrators']:
+        role_name = 'app_{}_administrator'.format(app['name'])
+        person['roles'] = list()
+        person['roles'].append(role_name)
+        for n in range(random.randint(0, 3)):
+            ridx = random.randint(0, len(azure_roles_data) - 1)
+            role = azure_roles_data[ridx]
+            person['roles'].append(role['role'])
+        for n in range(random.randint(2, 6)):
+            ridx = random.randint(0, len(azure_ad_roles) - 1)
+            role = azure_ad_roles[ridx]
+            person['roles'].append(role['role'])
 
 
-
-
-def augment_app_administrators(app, app_idx, azure_roles_data, azure_ad_data):
-    pass
-
-def augment_app_contributors(app, app_idx, azure_roles_data, azure_ad_data):
-    pass
+def augment_app_contributors(app, app_idx, azure_roles_data, azure_ad_roles):
+    for person in app['contributors']:
+        role_name = 'app_{}_contributor'.format(app['name'])
+        person['roles'] = list()
+        person['roles'].append(role_name)
+        for n in range(random.randint(0, 3)):
+            ridx = random.randint(0, len(azure_roles_data) - 1)
+            role = azure_roles_data[ridx]
+            person['roles'].append(role['role'])
+        for n in range(random.randint(3, 12)):
+            ridx = random.randint(0, len(azure_ad_roles) - 1)
+            role = azure_ad_roles[ridx]
+            person['roles'].append(role['role'])
 
 
 if __name__ == "__main__":
