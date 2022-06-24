@@ -75,16 +75,20 @@ def parse_azure_rbac_roles_html():
                 link = td1.find_all('a', href=True)[0]
                 href = link['href'].replace('#','')
                 desc = td2.text
-                id   = td3.text
+                id   = td3.text.strip()
+
+                if len(id) > 0:
+                    obj = dict()
+                    obj['role'] = role
+                    obj['href'] = href
+                    obj['desc'] = desc
+                    obj['id']   = id
+                    print(json.dumps(obj, indent=2, sort_keys=False))
+                    roles_list.append(obj)
             except:
-                print('unable to parse row {} {}'.format(tr_idx, tr))
-            obj = dict()
-            obj['role'] = role
-            obj['href'] = href
-            obj['desc'] = desc
-            obj['id']   = id
-            print(json.dumps(obj, indent=2, sort_keys=False))
-            roles_list.append(obj)
+                print('ERROR: unable to parse row {} {}'.format(tr_idx, tr))
+
+
     print('parsed roles count: {}'.format(len(roles_list)))
     FS.write_json(roles_list, 'data/rbac/azure_roles.json')
 
@@ -139,7 +143,7 @@ def parse_azure_ad_rbac_permissions_roles_html():
                             print(json.dumps(obj, indent=2, sort_keys=False))
                             objects_list.append(obj)
                     except:
-                        print('unable to parse row {} in {}'.format(tr_idx, h2_title))    
+                        print('ERROR: unable to parse row {} in {}'.format(tr_idx, h2_title))    
             else:
                 if ignore_this_section(h2_title):
                     pass
@@ -160,10 +164,9 @@ def parse_azure_ad_rbac_permissions_roles_html():
                                 print(json.dumps(obj, indent=2, sort_keys=False))
                                 objects_list.append(obj) 
                         except:
-                            print('unable to parse row {} in {}'.format(tr_idx, h2_title))   
+                            print('ERROR: unable to parse row {} in {}'.format(tr_idx, h2_title))   
     print('parsed permissions count: {}'.format(len(objects_list)))
     FS.write_json(objects_list, 'data/rbac/azure_ad_roles_permissions.json')
-
 
 def ignore_this_section(h2_title):
     if h2_title == "How to understand role permissions":

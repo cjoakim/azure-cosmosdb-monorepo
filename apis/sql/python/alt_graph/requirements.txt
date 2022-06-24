@@ -18,6 +18,8 @@ chardet==4.0.0
     # via requests
 docopt==0.6.2
     # via -r requirements.in
+faker==13.14.0
+    # via -r requirements.in
 flake8==3.8.4
     # via -r requirements.in
 humanize==3.2.0
@@ -35,7 +37,9 @@ pycodestyle==2.6.0
 pyflakes==2.2.0
     # via flake8
 python-dateutil==2.8.1
-    # via arrow
+    # via
+    #   arrow
+    #   faker
 redis==3.5.3
     # via -r requirements.in
 requests==2.25.1

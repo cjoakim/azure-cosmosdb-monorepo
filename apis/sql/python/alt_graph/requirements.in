@@ -1,6 +1,7 @@
 # Chris Joakim, Microsoft, 2022/06/24
 # These libraries are sorted alphabetically
 
+Faker
 Jinja2
 arrow
 azure-cosmos
