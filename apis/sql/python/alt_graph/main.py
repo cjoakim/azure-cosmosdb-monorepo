@@ -35,17 +35,16 @@ def print_options(msg):
     print(arguments)
 
 def parse_azure_rbac_docs_html():
-    print('parse_azure_rbac_docs_html')
-    roles_html = FS.read('data/rbac/roles.html')
-    perms_html = FS.read('data/rbac/permissions.html')
+    parse_azure_rbac_roles_html()
+    parse_azure_ad_rbac_permissions_roles_html()
+
+def parse_azure_rbac_roles_html():
+    print('parse_azure_rbac_roles_html')
+    roles_html = FS.read('data/rbac/azure_roles.html')
     print('roles_html length: {}'.format(len(roles_html)))
-    print('perms_html length: {}'.format(len(perms_html)))
     roles_list = list()
-    perms_list = list()
 
-    soup = BeautifulSoup(roles_html, "html.parser")
-    # <table id="all_table">    <-- I added the id on line 546 after <h2 id="all">All</h2>
-
+    # <table id="all_table">    <-- I added the id on line 546, after <h2 id="all">All</h2>
     # Example html and parsed output:
     # tr: <tr>
     # <td><a data-linktype="self-bookmark" href="#scheduler-job-collections-contributor">Scheduler Job Collections Contributor</a></td>
@@ -59,6 +58,7 @@ def parse_azure_rbac_docs_html():
     #   "id": "188a0f2f-5c9e-469b-ae67-2aa5ce574b94"
     # }
 
+    soup = BeautifulSoup(roles_html, "html.parser")
     all_table = soup.find(id='all_table')
     rows = all_table.find_all('tr')
     for tr_idx, tr in enumerate(rows):
@@ -86,7 +86,46 @@ def parse_azure_rbac_docs_html():
             print(json.dumps(obj, indent=2, sort_keys=False))
             roles_list.append(obj)
     print('parsed roles count: {}'.format(len(roles_list)))
-    FS.write_json(roles_list, 'data/rbac/roles.json')
+    FS.write_json(roles_list, 'data/rbac/azure_roles.json')
+
+def parse_azure_ad_rbac_permissions_roles_html():
+    print('parse_azure_ad_rbac_permissions_roles_html')
+    perms_html = FS.read('data/rbac/azure_ad_roles_permissions.html')
+    print('perms_html length: {}'.format(len(perms_html)))
+    perms_list = list()
+
+    soup = BeautifulSoup(perms_html, "html.parser")
+    # <table id="all_table">    <-- I added the id on line 546 after <h2 id="all">All</h2>
+
+
+    all_table = soup.find(id='all_table')
+    rows = all_table.find_all('tr')
+    for tr_idx, tr in enumerate(rows):
+        tds = tr.find_all('td')
+        if len(tds) == 17:
+            role, href, desc, id = '', '', '', ''
+            print('---')
+            print('tr: {}'.format(tr))
+            td1 = tds[0]
+            td2 = tds[1]
+            td3 = tds[2]
+            try:
+                role = td1.text
+                link = td1.find_all('a', href=True)[0]
+                href = link['href'].replace('#','')
+                desc = td2.text
+                id   = td3.text
+            except:
+                print('unable to parse row {} {}'.format(tr_idx, tr))
+            obj = dict()
+            obj['role'] = role
+            obj['href'] = href
+            obj['desc'] = desc
+            obj['id']   = id
+            print(json.dumps(obj, indent=2, sort_keys=False))
+            perms_list.append(obj)
+    print('parsed permissions count: {}'.format(len(perms_list)))
+    FS.write_json(perms_list, 'data/rbac/azure_ad_roles_permissions.json')
 
 
 if __name__ == "__main__":
