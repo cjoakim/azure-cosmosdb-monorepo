@@ -13,6 +13,12 @@
 - https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/cosmos/azure-spring-data-cosmos  (SDK and Samples)
 - https://github.com/Azure/azure-sdk-for-java/blob/spring-cloud-azure_4.2.0/sdk/cosmos/azure-spring-data-cosmos/src/samples/java/com/azure/spring/data/cosmos/SampleApplication.java
 
+## Other Interesting Libraries
+
+- Lombok
+  - https://projectlombok.org/features/all
+  - https://www.baeldung.com/intro-to-project-lombok
+
 ---
 
 ## This Application
