@@ -4,6 +4,8 @@ import com.azure.spring.data.cosmos.core.mapping.Container;
 import com.azure.spring.data.cosmos.core.mapping.CosmosUniqueKey;
 import com.azure.spring.data.cosmos.core.mapping.CosmosUniqueKeyPolicy;
 import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Container(containerName="users")  //, autoScale=true, ru="4000")
 //@CosmosUniqueKeyPolicy(uniqueKeys = {
@@ -15,6 +17,7 @@ public class User {
     private String pk;
     private String firstName;
 
+    private Object other;
 
     @PartitionKey
     private String lastName;
@@ -67,5 +70,17 @@ public class User {
 
     public void setPk(String pk) {
         this.pk = pk;
+    }
+
+    public Object getOther() {
+        return other;
+    }
+
+    public void setOther(Object other) {
+        this.other = other;
+    }
+
+    public String toJson() throws JsonProcessingException {
+        return new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(this);
     }
 }

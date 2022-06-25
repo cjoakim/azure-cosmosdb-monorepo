@@ -6,6 +6,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 import com.azure.cosmos.models.PartitionKey;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,7 @@ public class App implements CommandLineRunner, AppConstants {
 		SpringApplication.run(App.class, args);
 	}
 
-	public void run(String[] args) {
+	public void run(String[] args) throws Exception {
 		logger.warn("start of run() method");
 		AppConfiguration.setCommandLineArgs(args);
 
@@ -69,8 +70,15 @@ public class App implements CommandLineRunner, AppConstants {
 			logger.warn("findById: not present");
 		}
 
+		logger.warn("getUsersInPk ...");
 		List<User> pkUsers = repository.getUsersInPk("Joakim");
-		pkUsers.forEach(user -> logger.warn("getUsersInPk: " + user));
+		pkUsers.forEach(user -> {
+			try {
+				System.out.println(user.toJson());
+			}
+			catch (JsonProcessingException e) {
+				e.printStackTrace();
+			}});
 
 		pkUsers = repository.getUsersInPk("Miles");
 		pkUsers.forEach(user -> logger.warn("getUsersInPk: " + user));
@@ -95,6 +103,9 @@ public class App implements CommandLineRunner, AppConstants {
 			String id = UUID.randomUUID().toString();
 			logger.warn("first: " + first + "  last: " + last + "  id: " + id);
 			final User user = new User(id, first, last);
+			if (i > 0) {
+				user.setOther(userObjects.get(i - 1)); // turtles all the way down
+			}
 			logger.warn("user object created: " + user);
 			repository.save(user);
 			logger.warn("user object saved");
