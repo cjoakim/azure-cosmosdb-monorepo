@@ -1,5 +1,4 @@
-__author__ = 'Chris Joakim'
-__version__ = '0.2.0'
+# Chris Joakim, Microsoft, June 2022
 
 VERSION = __version__
 

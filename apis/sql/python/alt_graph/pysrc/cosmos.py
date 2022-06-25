@@ -1,7 +1,4 @@
-__author__  = 'Chris Joakim'
-__email__   = "chjoakim@microsoft.com"
-__license__ = "MIT"
-__version__ = "2021.11.29"
+# Chris Joakim, Microsoft, June 2022
 
 import json
 import os

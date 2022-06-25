@@ -8,10 +8,7 @@ Options:
   --version     Show version.
 """
 
-__author__  = 'Chris Joakim'
-__email__   = "chjoakim@microsoft.com"
-__license__ = "MIT"
-__version__ = "2022/06/24"
+# Chris Joakim, Microsoft, June 2022
 
 import json
 import sys

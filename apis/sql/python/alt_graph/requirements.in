@@ -1,6 +1,6 @@
-# Chris Joakim, Microsoft, 2022/06/24
-# These libraries are sorted alphabetically
+# Chris Joakim, Microsoft, June 2022
 
+# Libraries used by the console apps
 Faker
 Jinja2
 arrow
@@ -11,3 +11,7 @@ flake8
 humanize
 redis
 requests
+
+# Libraries used by Jupyter
+jupyter
+ipycytoscape

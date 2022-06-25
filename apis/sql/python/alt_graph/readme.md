@@ -55,3 +55,19 @@ object_id:
 object_pk:  
 predicate:  owner, administrator, contributor, reader_app, writer_app, etc 
 ```
+
+---
+
+## Graph Visualization
+
+### Cytoscape - a JavaScript graph visualization library
+
+- https://js.cytoscape.org
+
+#### ipycytoscape - Cytoscape in Jupyter Notebooks
+
+- https://blog.jupyter.org/interactive-graph-visualization-in-jupyter-with-ipycytoscape-a8828a54ab63
+- https://github.com/cytoscape/ipycytoscape
+- https://github.com/cytoscape/ipycytoscape/tree/master/examples
+
+
