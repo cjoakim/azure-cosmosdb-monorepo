@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
-public class SpringDataSqlGradleApplication implements CommandLineRunner {
+public class App implements CommandLineRunner {
 
-	private static final Logger logger = LoggerFactory.getLogger(SpringDataSqlGradleApplication.class);
+	private static final Logger logger = LoggerFactory.getLogger(App.class);
 
 	@Autowired
 	private UserRepository repository;
@@ -23,7 +23,7 @@ public class SpringDataSqlGradleApplication implements CommandLineRunner {
 	private AppConfiguration appConfiguration;
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringDataSqlGradleApplication.class, args);
+		SpringApplication.run(App.class, args);
 	}
 
 	public void run(String... var1) {
