@@ -18,9 +18,71 @@ import org.springframework.lang.Nullable;
 
 @Configuration
 @EnableCosmosRepositories
-public class AppConfiguration extends AbstractCosmosConfiguration {
+public class AppConfiguration extends AbstractCosmosConfiguration
+        implements AppConstants {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(AppConfiguration.class);
+    private static final Logger logger = LoggerFactory.getLogger(AppConfiguration.class);
+    private static String[] commandLineArgs = null;
+
+    protected static void setCommandLineArgs(String[] args) {
+        commandLineArgs = args;
+        if (commandLineArgs == null) {
+            logger.warn("setCommandLineArgs; null");
+        }
+        else {
+            logger.warn("setCommandLineArgs; length: " + commandLineArgs.length);
+            for (int i = 0; i < commandLineArgs.length; i++) {
+                logger.warn("setCommandLineArgs, idx: " + i + " -> " + commandLineArgs[i]);
+            }
+        }
+    }
+
+    public static String flagArg(String flagArg) {
+
+        for (int i = 0; i < commandLineArgs.length; i++) {
+            if (commandLineArgs[i].equalsIgnoreCase(flagArg)) {
+                return commandLineArgs[i + 1];
+            }
+        }
+        return null;
+    }
+
+    public static boolean booleanArg(String flagArg) {
+
+        for (int i = 0; i < commandLineArgs.length; i++) {
+            if (commandLineArgs[i].equalsIgnoreCase(flagArg)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static long longFlagArg(String flagArg, long defaultValue) {
+
+        try {
+            return Long.parseLong(flagArg(flagArg));
+        }
+        catch (NumberFormatException e) {
+            return defaultValue;
+        }
+    }
+
+    public static boolean isVerbose() {
+
+        return booleanArg(VERBOSE_FLAG);
+    }
+
+    public static boolean isSilent() {
+
+        return booleanArg(SILENT_FLAG);
+    }
+
+    public static boolean isPretty() {
+
+        return booleanArg(PRETTY_FLAG);
+    }
+
+
 
     //@Value("${azure.cosmos.uri}")
     @Value("${spring.cloud.azure.cosmos.endpoint}")
@@ -78,7 +140,7 @@ public class AppConfiguration extends AbstractCosmosConfiguration {
 
         @Override
         public void processResponseDiagnostics(@Nullable ResponseDiagnostics responseDiagnostics) {
-            LOGGER.info("Response Diagnostics {}", responseDiagnostics);
+            logger.info("Response Diagnostics {}", responseDiagnostics);
         }
     }
 

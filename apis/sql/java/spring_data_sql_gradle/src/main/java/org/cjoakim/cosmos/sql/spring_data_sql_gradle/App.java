@@ -1,5 +1,8 @@
 package org.cjoakim.cosmos.sql.spring_data_sql_gradle;
 
+import java.util.ArrayList;
+import java.util.UUID;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
-public class App implements CommandLineRunner {
+public class App implements CommandLineRunner, AppConstants {
 
 	private static final Logger logger = LoggerFactory.getLogger(App.class);
 
@@ -26,10 +29,11 @@ public class App implements CommandLineRunner {
 		SpringApplication.run(App.class, args);
 	}
 
-	public void run(String... var1) {
+	public void run(String[] args) {
 		logger.warn("start of run() method");
+		AppConfiguration.setCommandLineArgs(args);
 
-		boolean deleteAll = false;
+		boolean deleteAll = AppConfiguration.booleanArg(AppConstants.DELETE_ALL);
 		logger.warn("deleteAll: " + deleteAll);
 
 		if (deleteAll) {
@@ -38,17 +42,30 @@ public class App implements CommandLineRunner {
 			logger.warn("deleteAll completed");
 		}
 
-		final User testUser1 = new User(
-				"" + System.currentTimeMillis(),
-				"Chris",
-				"Joakim");
-		logger.warn("testUser1 created: " + testUser1);
-
-		repository.save(testUser1);
-		logger.warn("testUser1 saved");
+		createUsers();
 
 		logger.warn("spring app exiting");
 		SpringApplication.exit(this.applicationContext);
 		logger.warn("spring app exit completed");
+	}
+
+	private void createUsers() {
+
+		ArrayList<String> namePairs = new ArrayList<String>();
+		namePairs.add("Chris,Joakim");
+		namePairs.add("Elsa,Joakim");
+		namePairs.add("Miles,Joakim");
+
+		for (int i = 0; i < namePairs.size(); i++) {
+			String[] tokens = namePairs.get(i).split(",");
+			String first = tokens[0];
+			String last  = tokens[1];
+			String id = UUID.randomUUID().toString();
+			logger.warn("first: " + first + "  last: " + last + "  id: " + id);
+			final User user = new User(id, first, last);
+			logger.warn("user object created: " + user);
+			repository.save(user);
+			logger.warn("user object saved");
+		}
 	}
 }

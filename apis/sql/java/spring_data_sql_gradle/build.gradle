@@ -16,6 +16,8 @@ ext {
 	set('springCloudAzureVersion', "4.2.0")
 }
 
+// gradle bootRun --args='--delete-all --verbose --pretty'
+
 dependencies {
 	implementation 'com.azure.spring:spring-cloud-azure-starter-data-cosmos'
 	implementation 'com.azure.spring:spring-cloud-azure-starter-storage-blob'
