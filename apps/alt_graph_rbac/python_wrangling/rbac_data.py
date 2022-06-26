@@ -2,7 +2,7 @@
 Usage:
   python rbac_data.py <func> <args...>
   python rbac_data.py parse_azure_rbac_docs_html
-  python rbac_data.py generate_cosmosdb_datasets 1000
+  python rbac_data.py generate_cosmosdb_datasets 100
 Options:
   -h --help     Show this screen.
   --version     Show version.
@@ -28,9 +28,9 @@ from pysrc.env import Env
 from pysrc.fs import FS
 from pysrc.rcache import RCache
 
-PARSED_AZURE_ROLES_JSON          = 'data/rbac/azure_roles.json'
-PARSED_AD_ROLES_PERMISSIONS_JSON = 'data/rbac/azure_ad_roles_permissions.json'
-GENERATED_APP_RBAC_DATA_JSON     = 'data/rbac/generated_application_rbac_data.json'
+PARSED_AZURE_ROLES_JSON          = 'data/raw/azure_roles.json'
+PARSED_AD_ROLES_PERMISSIONS_JSON = 'data/raw/azure_ad_roles_permissions.json'
+GENERATED_APP_RBAC_DATA_JSON     = 'data/raw/generated_application_rbac_data.json'
 
 def print_options(msg):
     print(msg)
@@ -43,7 +43,7 @@ def parse_azure_rbac_docs_html():
 
 def parse_azure_rbac_roles_html():
     print('parse_azure_rbac_roles_html')
-    html = FS.read('data/rbac/azure_roles.html')
+    html = FS.read('data/raw/azure_roles.html')
     print('roles_html length: {}'.format(len(html)))
     roles_list = list()
 
@@ -97,7 +97,7 @@ def parse_azure_rbac_roles_html():
 
 def parse_azure_ad_rbac_permissions_roles_html():
     print('parse_azure_ad_rbac_permissions_roles_html')
-    html = FS.read('data/rbac/azure_ad_roles_permissions.html')
+    html = FS.read('data/raw/azure_ad_roles_permissions.html')
     print('perms_html length: {}'.format(len(html)))
     objects_list = list()
 
@@ -238,8 +238,8 @@ def generate_random_apps(app_count):
     for app_name in app_names:
         app = dict()
         app['name'] = app_name
-        app['writers_apps'] = random_app_names(app_name, app_names, 0, 3)
-        app['reader_apps']  = random_app_names(app_name, app_names, 0, 10)
+        app['writer_apps'] = random_app_names(app_name, app_names, 0, 3)
+        app['reader_apps'] = random_app_names(app_name, app_names, 0, 10)
         apps.append(app)
     return apps
 

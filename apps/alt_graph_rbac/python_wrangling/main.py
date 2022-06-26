@@ -32,8 +32,18 @@ from pysrc.rcache import RCache
 
 PARSED_AZURE_ROLES_JSON          = 'data/raw/azure_roles.json'
 PARSED_AD_ROLES_PERMISSIONS_JSON = 'data/raw/azure_ad_roles_permissions.json'
-GENERATED_APP_RBAC_DATA_JSON     = 'data/raw/application_rbac_data.json'
+GENERATED_APP_RBAC_DATA_JSON     = 'data/raw/generated_application_rbac_data.json'
+
 COSMOSDB_ID_ATTR                 = 'id'
+COSMOSDB_PK_ATTR                 = 'pk'
+COSMOSDB_DOCTYPE_ATTR            = 'doctype'
+
+APPS_MAP                 = dict()
+PEOPLE_MAP               = dict()
+AZURE_ROLES_MAP          = dict()
+AZURE_AD_ROLES_MAP       = dict()
+AZURE_AD_PERMISSIONS_MAP = dict()
+
 
 def print_options(msg):
     print(msg)
@@ -337,7 +347,6 @@ def augment_app_owners(app, app_idx, azure_roles_data, azure_ad_roles):
             role = azure_ad_roles[ridx]
             person['roles'].append(role['role'])
 
-
 def augment_app_administrators(app, app_idx, azure_roles_data, azure_ad_roles):
     for person in app['administrators']:
         role_name = 'app_{}_administrator'.format(app['name'])
@@ -370,89 +379,245 @@ def generate_cosmosdb_load_files():
     print('generate_cosmosdb_load_files')
     app_data = FS.read_json(GENERATED_APP_RBAC_DATA_JSON)
     print(sorted(app_data.keys())) # ['apps', 'azure_ad_data', 'azure_roles_data', 'people']
-    generate_cosmosdb_apps_load_file(app_data)
-    generate_cosmosdb_people_load_file(app_data)
+
     generate_cosmosdb_azure_roles_load_file(app_data)
     generate_cosmosdb_azure_ad_load_files(app_data)
+    generate_cosmosdb_people_load_file(app_data)
+    generate_cosmosdb_apps_load_file(app_data)
+    generate_cosmosdb_edges_load_file(app_data)
 
-def generate_cosmosdb_apps_load_file(app_data):
-    objects = app_data['apps']
-    lines = list()
-    for obj in objects:
-        doc = id_map()
-        doc.update(obj)
-        lines.append(json.dumps(doc) + os.linesep)
-    print('generate_cosmosdb_apps_load_file - {} lines'.format(len(lines)))
-    FS.write_lines(lines, 'data/load/apps.json')
-
-def generate_cosmosdb_people_load_file(app_data):
-    objects = app_data['people']
-    lines = list()
-    for obj in objects:
-        doc = id_map()
-        doc.update(obj)
-        lines.append(json.dumps(doc) + os.linesep)
-    print('generate_cosmosdb_people_load_file - {} lines'.format(len(lines)))
-    FS.write_lines(lines, 'data/load/people.json')
+    FS.write_json(APPS_MAP,                 'data/load/apps_map.json')
+    FS.write_json(PEOPLE_MAP,               'data/load/people_map.json')
+    FS.write_json(AZURE_ROLES_MAP,          'data/load/azure_roles_map.json')
+    FS.write_json(AZURE_AD_ROLES_MAP,       'data/load/azure_ad_roles_map.json')
+    FS.write_json(AZURE_AD_PERMISSIONS_MAP, 'data/load/azure_ad_permissions_map.json')
 
 def generate_cosmosdb_azure_roles_load_file(app_data):
     objects = app_data['azure_roles_data']
-    lines = list()
+    azure_role_lines = list()
     for obj in objects:
-        doc = id_map()
+        doc = id_map('azure_role')
+        doc[COSMOSDB_PK_ATTR] = obj['role']
         doc.update(obj)
-        lines.append(json.dumps(doc) + os.linesep)
-    print('generate_cosmosdb_azure_roles_load_file - {} lines'.format(len(lines)))
-    FS.write_lines(lines, 'data/load/azure_roles.json')
+        role = doc['role']
+        AZURE_ROLES_MAP[role] = doc[COSMOSDB_ID_ATTR]
+        azure_role_lines.append(json.dumps(doc) + os.linesep)
+
+    FS.write_lines(azure_role_lines, 'data/load/azure_roles.json')
 
 def generate_cosmosdb_azure_ad_load_files(app_data):
     objects = app_data['azure_ad_data']
-    role_map, role_lines, perm_lines = dict(), list(), list()
+    ad_role_lines, ad_perm_lines = list(), list()
 
     # roles
     for obj in objects:
         obj_type = obj['type']
         if obj_type == 'role':
             del obj['id']
-            doc = id_map()
+            doc = id_map('ad_role')
+            doc[COSMOSDB_PK_ATTR] = obj['role']
             doc.update(obj)
-            role_name = doc['role']
-            role_map[role_name] = doc[COSMOSDB_ID_ATTR]
-            role_lines.append(json.dumps(doc) + os.linesep)
+            role = doc['role']
+            AZURE_AD_ROLES_MAP[role] = doc[COSMOSDB_ID_ATTR]
+            ad_role_lines.append(json.dumps(doc) + os.linesep)
 
     # permissions
     for obj in objects:
         obj_type = obj['type']
         if obj_type == 'permission':
-            doc = id_map()
+            category = obj['cat']
+            doc = id_map('ad_permission')
+            doc[COSMOSDB_PK_ATTR] = category
             doc.update(obj)
-            category = doc['cat']
-            doc['cat_id'] = role_map[category]
-            perm_lines.append(json.dumps(doc) + os.linesep)
+            #doc['cat_id'] = AZURE_AD_ROLES_MAP[category]
+            actions = doc['actions']
+            AZURE_AD_PERMISSIONS_MAP[actions] = doc[COSMOSDB_ID_ATTR]
+            ad_perm_lines.append(json.dumps(doc) + os.linesep)
 
-    FS.write_json(role_map,    'data/load/azure_ad_role_map.json')
-    FS.write_lines(role_lines, 'data/load/azure_ad_roles.json')
-    FS.write_lines(perm_lines, 'data/load/azure_ad_permissions.json')
+    FS.write_lines(ad_role_lines, 'data/load/azure_ad_roles.json')
+    FS.write_lines(ad_perm_lines, 'data/load/azure_ad_permissions.json')
 
+def generate_cosmosdb_people_load_file(app_data):
+    objects = app_data['people']
+    people_lines = list()
+    for obj in objects:
+        doc = id_map('person')
+        doc[COSMOSDB_PK_ATTR] = obj['name']
+        doc.update(obj)
+        name = doc['name']
+        PEOPLE_MAP[name] = doc[COSMOSDB_ID_ATTR]
+        people_lines.append(json.dumps(doc) + os.linesep)
 
-    # {
-    #   "cat": "All roles",
-    #   "type": "role",
-    #   "role": "Application Administrator",
-    #   "href": "application-administrator",
-    #   "desc": "Can create and manage all aspects of app registrations and enterprise apps.",
-    #   "id": "9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3"
-    # },
-    # {
-    #   "cat": "Application Administrator",
-    #   "type": "permission",
-    #   "actions": "microsoft.directory/adminConsentRequestPolicy/allProperties/allTasks",
-    #   "desc": "Manage admin consent request policies in Azure AD"
-    # },
+    FS.write_lines(people_lines, 'data/load/people.json')
 
-def id_map():
+def generate_cosmosdb_apps_load_file(app_data):
+    objects = app_data['apps']
+    app_lines = list()
+    for obj in objects:
+        doc = id_map('app')
+        name = obj['name']
+        doc[COSMOSDB_PK_ATTR] = name
+        doc.update(obj)
+        APPS_MAP[name] = doc[COSMOSDB_ID_ATTR]
+        app_lines.append(json.dumps(doc) + os.linesep)
+
+    FS.write_lines(app_lines, 'data/load/apps.json')
+
+def generate_cosmosdb_edges_load_file(app_data):
+    print('generate_cosmosdb_edges_load_file')
+    edge_lines = list()
+    generate_edges_apps_and_apps(app_data, edge_lines)
+    generate_edges_apps_and_people(app_data, edge_lines)
+    generate_edges_ad_roles_permissions(app_data, edge_lines)
+
+    FS.write_lines(edge_lines, 'data/load/edges.json')
+
+def generate_edges_apps_and_apps(app_data, edge_lines):
+    apps = app_data['apps']
+    for app in apps:
+        app_name = app['name']
+
+        for subject_app in app['reader_apps']:
+            edge = empty_edge_doc()
+            edge['subject'] = app_name
+            edge['subject_doctype'] = 'app'
+            edge['subject_id'] = APPS_MAP[app_name]
+            edge['subject_pk'] = app_name
+            edge['predicate'] = 'reader'
+            edge['object'] = subject_app
+            edge['object_doctype'] = 'app'
+            edge['object_id'] = APPS_MAP[subject_app]
+            edge['object_pk'] = subject_app
+            edge_lines.append(json.dumps(edge) + os.linesep)
+
+            iedge = inverse_edge(edge, 'read_by')
+            edge_lines.append(json.dumps(iedge) + os.linesep)
+
+        for subject_app in app['writer_apps']:
+            edge = empty_edge_doc()
+            edge['subject'] = app_name
+            edge['subject_doctype'] = 'app'
+            edge['subject_id'] = APPS_MAP[app_name]
+            edge['subject_pk'] = app_name
+            edge['predicate'] = 'writer'
+            edge['object'] = subject_app
+            edge['object_doctype'] = 'app'
+            edge['object_id'] = APPS_MAP[subject_app]
+            edge['object_pk'] = subject_app
+            edge_lines.append(json.dumps(edge) + os.linesep)
+            
+            iedge = inverse_edge(edge, 'written_by')
+            edge_lines.append(json.dumps(iedge) + os.linesep)
+
+def generate_edges_apps_and_people(app_data, edge_lines):
+    apps = app_data['apps']
+    for app in apps:
+        app_name = app['name']
+        for person in app['owners']:
+            person_name = person['name']
+            edge = empty_edge_doc()
+            edge['subject'] = app_name
+            edge['subject_doctype'] = 'app'
+            edge['subject_id'] = APPS_MAP[app_name]
+            edge['subject_pk'] = app_name
+            edge['predicate'] = 'owned_by'
+            edge['object'] = person_name
+            edge['object_doctype'] = 'person'
+            edge['object_id'] = PEOPLE_MAP[person_name]
+            edge['object_pk'] = person_name
+            edge_lines.append(json.dumps(edge) + os.linesep)
+
+            iedge = inverse_edge(edge, 'owns')
+            edge_lines.append(json.dumps(iedge) + os.linesep)
+
+        for person in app['administrators']:
+            person_name = person['name']
+            edge = empty_edge_doc()
+            edge['subject'] = app_name
+            edge['subject_doctype'] = 'app'
+            edge['subject_id'] = APPS_MAP[app_name]
+            edge['subject_pk'] = app_name
+            edge['predicate'] = 'administered_by'
+            edge['object'] = person_name
+            edge['object_doctype'] = 'person'
+            edge['object_id'] = PEOPLE_MAP[person_name]
+            edge['object_pk'] = person_name
+            edge_lines.append(json.dumps(edge) + os.linesep)
+
+            iedge = inverse_edge(edge, 'administers')
+            edge_lines.append(json.dumps(iedge) + os.linesep)
+
+        for person in app['contributors']:
+            person_name = person['name']
+            edge = empty_edge_doc()
+            edge['subject'] = app_name
+            edge['subject_doctype'] = 'app'
+            edge['subject_id'] = APPS_MAP[app_name]
+            edge['subject_pk'] = app_name
+            edge['predicate'] = 'contributor_by'
+            edge['object'] = person_name
+            edge['object_doctype'] = 'person'
+            edge['object_id'] = PEOPLE_MAP[person_name]
+            edge['object_pk'] = person_name
+            edge_lines.append(json.dumps(edge) + os.linesep)
+
+            iedge = inverse_edge(edge, 'contributes_to')
+            edge_lines.append(json.dumps(iedge) + os.linesep)
+
+def generate_edges_ad_roles_permissions(app_data, edge_lines):
+    ad_data = app_data['azure_ad_data']
+    for data in ad_data:
+        data_type = data['type']
+        if data_type == 'permission':
+            role_name = data['cat']
+            actions   = data['actions']
+
+            edge = empty_edge_doc()
+            edge['subject'] = role_name
+            edge['subject_doctype'] = 'ad_role'
+            edge['subject_id'] = AZURE_AD_ROLES_MAP[role_name]
+            edge['subject_pk'] = role_name
+            edge['predicate'] = 'contains_ad_permission'
+            edge['object']    = actions
+            edge['object_doctype'] = 'ad_permission'
+            edge['object_id'] = AZURE_AD_PERMISSIONS_MAP[actions]
+            edge['object_pk'] = role_name
+            edge_lines.append(json.dumps(edge) + os.linesep)
+
+            iedge = inverse_edge(edge, 'in_ad_role')
+            edge_lines.append(json.dumps(iedge) + os.linesep)
+
+def empty_edge_doc():
+    # stub-out the edge, caller to populate these attributes
+    doc = id_map('edge')
+    doc['subject'] = ''
+    doc['subject_doctype'] = ''
+    doc['subject_id'] = ''
+    doc['subject_pk'] = ''
+    doc['predicate'] = ''
+    doc['object'] = ''
+    doc['object_doctype'] = ''
+    doc['object_id'] = ''
+    doc['object_pk'] = ''
+    return doc
+
+def inverse_edge(edge, predicate):
+    doc = empty_edge_doc()
+    doc['subject']         = edge['object']
+    doc['subject_doctype'] = edge['object_doctype']
+    doc['subject_id']      = edge['object_id']
+    doc['subject_pk']      = edge['object_pk']
+    doc['predicate']       = predicate
+    doc['object']          = edge['subject']
+    doc['object_doctype']  = edge['subject_doctype']
+    doc['object_id']       = edge['subject_id']
+    doc['object_pk']       = edge['subject_pk']
+    return doc
+
+def id_map(doctype):
     map = dict()
     map[COSMOSDB_ID_ATTR] = str(uuid.uuid4())
+    map[COSMOSDB_DOCTYPE_ATTR] = doctype
     return map
 
 
