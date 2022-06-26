@@ -62,6 +62,14 @@ class FS(object):
                 print('file written: {}'.format(outfile))
 
     @classmethod
+    def write_lines(cls, lines, outfile, verbose=True):
+        with open(outfile, 'w') as f:
+            for line in lines:
+                f.write(line)
+            if verbose == True:
+                print('file written: {}'.format(outfile))
+
+    @classmethod
     def text_file_iterator(cls, infile):
         # return a line generator that can be iterated with iterate()
         with open(infile, 'rt') as f:

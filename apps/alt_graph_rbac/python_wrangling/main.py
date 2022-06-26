@@ -3,6 +3,7 @@ Usage:
   python main.py <func> <args...>
   python main.py parse_azure_rbac_docs_html
   python main.py generate_application_data 1000
+  python main.py generate_cosmosdb_load_files
 Options:
   -h --help     Show this screen.
   --version     Show version.
@@ -34,7 +35,7 @@ GENERATED_APP_RBAC_DATA_JSON     = 'data/raw/application_rbac_data.json'
 
 def print_options(msg):
     print(msg)
-    arguments = docopt(__doc__, version=__version__)
+    arguments = docopt(__doc__, version='1.0.0')
     print(arguments)
 
 def parse_azure_rbac_docs_html():
@@ -349,7 +350,6 @@ def augment_app_administrators(app, app_idx, azure_roles_data, azure_ad_roles):
             role = azure_ad_roles[ridx]
             person['roles'].append(role['role'])
 
-
 def augment_app_contributors(app, app_idx, azure_roles_data, azure_ad_roles):
     for person in app['contributors']:
         role_name = 'app_{}_contributor'.format(app['name'])
@@ -364,14 +364,67 @@ def augment_app_contributors(app, app_idx, azure_roles_data, azure_ad_roles):
             role = azure_ad_roles[ridx]
             person['roles'].append(role['role'])
 
+def generate_cosmosdb_load_files():
+    print('generate_cosmosdb_load_files')
+    app_data = FS.read_json(GENERATED_APP_RBAC_DATA_JSON)
+    print(sorted(app_data.keys())) # ['apps', 'azure_ad_data', 'azure_roles_data', 'people']
+    generate_cosmosdb_apps_load_file(app_data)
+    generate_cosmosdb_people_load_file(app_data)
+    generate_cosmosdb_azure_roles_load_file(app_data)
+    generate_cosmosdb_azure_ad_load_files(app_data)
+
+def generate_cosmosdb_apps_load_file(app_data):
+    objects = app_data['apps']
+    lines = list()
+    for obj in objects:
+        lines.append(json.dumps(obj) + os.linesep)
+    print('generate_cosmosdb_apps_load_file - {} lines'.format(len(lines)))
+    FS.write_lines(lines, 'data/load/apps.json')
+
+def generate_cosmosdb_people_load_file(app_data):
+    objects = app_data['people']
+    lines = list()
+    for obj in objects:
+        lines.append(json.dumps(obj) + os.linesep)
+    print('generate_cosmosdb_people_load_file - {} lines'.format(len(lines)))
+    FS.write_lines(lines, 'data/load/people.json')
+
+def generate_cosmosdb_azure_roles_load_file(app_data):
+    objects = app_data['azure_roles_data']
+    lines = list()
+    for obj in objects:
+        lines.append(json.dumps(obj) + os.linesep)
+    print('generate_cosmosdb_azure_roles_load_file - {} lines'.format(len(lines)))
+    FS.write_lines(lines, 'data/load/azure_roles.json')
+
+def generate_cosmosdb_azure_ad_load_files(app_data):
+    objects = app_data['azure_ad_data']
+    lines = list()
+    for obj in objects:
+        lines.append(json.dumps(obj) + os.linesep)
+    print('generate_cosmosdb_azure_ad_load_files - {} lines'.format(len(lines)))
+    FS.write_lines(lines, 'data/load/azure_ad_roles.json')
+
+
 
 if __name__ == "__main__":
-    func = sys.argv[1].lower()
 
-    if func == 'parse_azure_rbac_docs_html':
-        parse_azure_rbac_docs_html()
-    elif func == 'generate_application_data':
-        app_count = int(sys.argv[2])
-        generate_application_data(app_count)
+    print(sys.argv)
+
+    if len(sys.argv) > 1:
+        func = sys.argv[1].lower()
+
+        if func == 'parse_azure_rbac_docs_html':
+            parse_azure_rbac_docs_html()
+
+        elif func == 'generate_application_data':
+            app_count = int(sys.argv[2])
+            generate_application_data(app_count)
+
+        elif func == 'generate_cosmosdb_load_files':
+            generate_cosmosdb_load_files()
+
+        else:
+            print_options('Error: invalid function: {}'.format(func))
     else:
-        print_options('Error: invalid function: {}'.format(func))
+            print_options('Error: no command-line arguments')
