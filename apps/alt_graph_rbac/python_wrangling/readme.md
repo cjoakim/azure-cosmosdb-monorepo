@@ -42,18 +42,58 @@ A **triple** is a data entity composed of **subject-predicate-object**, like "Bo
 
 See https://en.wikipedia.org/wiki/Triplestore
 
-### Example Edge - Modeled after RDF/Triplestore database "Triples"
+### Example Edges - Modeled after RDF/Triplestore database "Triples"
+
+The first two edge documents
 
 ```
-attribute:  example values
+{
+  "id": "2ca8be4a-0633-41c5-b9ed-59afeb60fd7b",
+  "doctype": "edge",
+  "subject": "app1",
+  "subject_doctype": "app",
+  "subject_id": "9675e19f-f67d-4645-9bfe-f53f0a71e50d",
+  "subject_pk": "app1",
+  "predicate": "reader",
+  "object": "app24",
+  "object_doctype": "app",
+  "object_id": "01ee532d-1413-4565-adff-6cfa016320ab",
+  "object_pk": "app24"
+}
 
-subject:    app1, Teresa Higgins
-subject_id: <cosmosdb _id>
-subject_pk: 
-object:     
-object_id:  
-object_pk:  
-predicate:  owner, administrator, contributor, reader_app, writer_app, etc 
+{
+  "id": "0540c5ae-1a03-42c4-9131-30c852ccfaab",
+  "doctype": "edge",
+  "subject": "app24",
+  "subject_doctype": "app",
+  "subject_id": "01ee532d-1413-4565-adff-6cfa016320ab",
+  "subject_pk": "app24",
+  "predicate": "read_by",
+  "object": "app1",
+  "object_doctype": "app",
+  "object_id": "9675e19f-f67d-4645-9bfe-f53f0a71e50d",
+  "object_pk": "app1"
+}
+```
+
+---
+
+## Execution
+
+
+```
+cd data/raw
+./curl.sh
+
+do minor edits of the two html files downloaded by curl, see comments in rbac_data.py
+
+cd ../cc
+
+python rbac_data.py parse_azure_rbac_docs_html
+
+python rbac_data.py generate_cosmosdb_datasets 100
+
+./generate_cosmosdb_load_files.sh
 ```
 
 ---

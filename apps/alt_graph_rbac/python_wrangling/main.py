@@ -38,12 +38,13 @@ COSMOSDB_ID_ATTR                 = 'id'
 COSMOSDB_PK_ATTR                 = 'pk'
 COSMOSDB_DOCTYPE_ATTR            = 'doctype'
 
+APP_COUNT = 0;
 APPS_MAP                 = dict()
 PEOPLE_MAP               = dict()
 AZURE_ROLES_MAP          = dict()
 AZURE_AD_ROLES_MAP       = dict()
 AZURE_AD_PERMISSIONS_MAP = dict()
-
+AZURE_APP_ROLES_MAP      = dict()
 
 def print_options(msg):
     print(msg)
@@ -238,6 +239,7 @@ def generate_application_data(app_count):
 
     # create one aggregate data structure for all data needs for this sample app
     agg_data = dict()
+    agg_data['app_count'] = app_count
     agg_data['apps'] = apps_list
     agg_data['people'] = people_list
     agg_data['azure_roles_data'] = azure_roles_data
@@ -380,6 +382,7 @@ def generate_cosmosdb_load_files():
     app_data = FS.read_json(GENERATED_APP_RBAC_DATA_JSON)
     print(sorted(app_data.keys())) # ['apps', 'azure_ad_data', 'azure_roles_data', 'people']
 
+    generate_application_roles(app_data)
     generate_cosmosdb_azure_roles_load_file(app_data)
     generate_cosmosdb_azure_ad_load_files(app_data)
     generate_cosmosdb_people_load_file(app_data)
@@ -391,6 +394,17 @@ def generate_cosmosdb_load_files():
     FS.write_json(AZURE_ROLES_MAP,          'data/load/azure_roles_map.json')
     FS.write_json(AZURE_AD_ROLES_MAP,       'data/load/azure_ad_roles_map.json')
     FS.write_json(AZURE_AD_PERMISSIONS_MAP, 'data/load/azure_ad_permissions_map.json')
+
+def generate_application_roles(app_data):
+    app_roles = app_data['app_roles']
+    application_role_lines = list()
+    for app_role in app_roles:
+        doc = id_map('application_role')
+        doc[COSMOSDB_PK_ATTR] = app_role
+        doc['name'] = app_role
+        application_role_lines.append(json.dumps(doc) + os.linesep)
+        AZURE_APP_ROLES_MAP[app_role] = doc[COSMOSDB_PK_ATTR]
+    FS.write_lines(application_role_lines, 'data/load/application_roles.json')
 
 def generate_cosmosdb_azure_roles_load_file(app_data):
     objects = app_data['azure_roles_data']
@@ -469,6 +483,7 @@ def generate_cosmosdb_edges_load_file(app_data):
     generate_edges_apps_and_apps(app_data, edge_lines)
     generate_edges_apps_and_people(app_data, edge_lines)
     generate_edges_ad_roles_permissions(app_data, edge_lines)
+    generate_edges_people_roles(app_data, edge_lines)
 
     FS.write_lines(edge_lines, 'data/load/edges.json')
 
@@ -587,6 +602,41 @@ def generate_edges_ad_roles_permissions(app_data, edge_lines):
             iedge = inverse_edge(edge, 'in_ad_role')
             edge_lines.append(json.dumps(iedge) + os.linesep)
 
+def generate_edges_people_roles(app_data, edge_lines):
+    apps = app_data['apps']
+    for app in apps:
+        app_name = app['name']
+        for app_role_type in 'owners,administrators,contributors'.split(','):
+            for person_obj in app[app_role_type]:
+                person_name = person_obj['name']
+                person_roles = person_obj['roles']
+                for person_role in person_roles:
+                    id, role_type = lookup_role_id(person_role)
+
+                    edge = empty_edge_doc()
+                    edge['subject'] = person_name
+                    edge['subject_doctype'] = 'person'
+                    edge['subject_id'] = id
+                    edge['subject_pk'] = person_role
+                    edge['predicate'] = 'has_role'
+                    edge['object']    = app_name
+                    edge['object_doctype'] = 'app'
+                    edge['object_id'] = APPS_MAP[app_name]
+                    edge['object_pk'] = app_name
+                    edge_lines.append(json.dumps(edge) + os.linesep)
+
+                    iedge = inverse_edge(edge, 'has_person')
+                    edge_lines.append(json.dumps(iedge) + os.linesep)
+
+def lookup_role_id(role_name):
+    if role_name in AZURE_APP_ROLES_MAP.keys():
+        return (AZURE_APP_ROLES_MAP[role_name], 'application_role')
+    if role_name in AZURE_ROLES_MAP.keys():
+        return (AZURE_ROLES_MAP[role_name], 'azure_role')
+    if role_name in AZURE_AD_ROLES_MAP.keys():
+        return (AZURE_AD_ROLES_MAP[role_name], 'ad_role')
+    return ('','undefined_role')
+
 def empty_edge_doc():
     # stub-out the edge, caller to populate these attributes
     doc = id_map('edge')
@@ -620,6 +670,20 @@ def id_map(doctype):
     map[COSMOSDB_DOCTYPE_ATTR] = doctype
     return map
 
+def scan_generated_cosmosdb_load_files():
+    print('scan_generated_cosmosdb_load_files')
+    files = FS.walk('data/load')
+    file_count, total_lines_count = 0, 0
+    for file in files:
+        path = file['full']
+        if path.endswith('.json'):
+            file_count = file_count + 1
+            file_lines = FS.read_lines(path)
+            file_line_count = len(file_lines)
+            total_lines_count = total_lines_count + file_line_count
+            print('{} lines in file {}'.format(file_line_count, path))
+    print('{} total lines in {} json files'.format(total_lines_count, file_count))
+
 
 if __name__ == "__main__":
 
@@ -637,6 +701,9 @@ if __name__ == "__main__":
 
         elif func == 'generate_cosmosdb_load_files':
             generate_cosmosdb_load_files()
+
+        elif func == 'scan_generated_cosmosdb_load_files':
+            scan_generated_cosmosdb_load_files()
 
         else:
             print_options('Error: invalid function: {}'.format(func))

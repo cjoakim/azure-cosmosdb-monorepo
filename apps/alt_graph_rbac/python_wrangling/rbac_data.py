@@ -212,6 +212,8 @@ def generate_cosmosdb_datasets(app_count):
     owner_names, developer_names = generate_random_human_names(app_count)
     people_list = generate_people_list(owner_names, developer_names)
 
+    app_roles = generate_app_roles(app_count)
+
     apps_list = generate_random_apps(app_count)
     for app_idx, app in enumerate(apps_list):
         assign_app_owners(app, app_idx, owner_names)
@@ -225,11 +227,22 @@ def generate_cosmosdb_datasets(app_count):
 
     # create one aggregate data structure for all data needs for this sample app
     agg_data = dict()
+    agg_data['app_count'] = app_count
+    agg_data['app_roles'] = app_roles
     agg_data['apps'] = apps_list
     agg_data['people'] = people_list
     agg_data['azure_roles_data'] = azure_roles_data
     agg_data['azure_ad_data'] = azure_ad_data
     FS.write_json(agg_data, GENERATED_APP_RBAC_DATA_JSON)
+
+def generate_app_roles(app_count):
+    app_roles = list()
+    for n in range(app_count):
+        app_name = ('app{}'.format(n + 1))
+        app_roles.append('app_{}_owner'.format(app_name))
+        app_roles.append('app_{}_administrator'.format(app_name))
+        app_roles.append('app_{}_contributor'.format(app_name))
+    return app_roles
 
 def generate_random_apps(app_count):
     app_names, apps = list(), list()
