@@ -16,6 +16,7 @@ import sys
 import random
 import time
 import os
+import uuid
 
 import arrow 
 
@@ -32,6 +33,7 @@ from pysrc.rcache import RCache
 PARSED_AZURE_ROLES_JSON          = 'data/raw/azure_roles.json'
 PARSED_AD_ROLES_PERMISSIONS_JSON = 'data/raw/azure_ad_roles_permissions.json'
 GENERATED_APP_RBAC_DATA_JSON     = 'data/raw/application_rbac_data.json'
+COSMOSDB_ID_ATTR                 = 'id'
 
 def print_options(msg):
     print(msg)
@@ -377,7 +379,9 @@ def generate_cosmosdb_apps_load_file(app_data):
     objects = app_data['apps']
     lines = list()
     for obj in objects:
-        lines.append(json.dumps(obj) + os.linesep)
+        doc = id_map()
+        doc.update(obj)
+        lines.append(json.dumps(doc) + os.linesep)
     print('generate_cosmosdb_apps_load_file - {} lines'.format(len(lines)))
     FS.write_lines(lines, 'data/load/apps.json')
 
@@ -385,7 +389,9 @@ def generate_cosmosdb_people_load_file(app_data):
     objects = app_data['people']
     lines = list()
     for obj in objects:
-        lines.append(json.dumps(obj) + os.linesep)
+        doc = id_map()
+        doc.update(obj)
+        lines.append(json.dumps(doc) + os.linesep)
     print('generate_cosmosdb_people_load_file - {} lines'.format(len(lines)))
     FS.write_lines(lines, 'data/load/people.json')
 
@@ -393,18 +399,61 @@ def generate_cosmosdb_azure_roles_load_file(app_data):
     objects = app_data['azure_roles_data']
     lines = list()
     for obj in objects:
-        lines.append(json.dumps(obj) + os.linesep)
+        doc = id_map()
+        doc.update(obj)
+        lines.append(json.dumps(doc) + os.linesep)
     print('generate_cosmosdb_azure_roles_load_file - {} lines'.format(len(lines)))
     FS.write_lines(lines, 'data/load/azure_roles.json')
 
 def generate_cosmosdb_azure_ad_load_files(app_data):
     objects = app_data['azure_ad_data']
-    lines = list()
-    for obj in objects:
-        lines.append(json.dumps(obj) + os.linesep)
-    print('generate_cosmosdb_azure_ad_load_files - {} lines'.format(len(lines)))
-    FS.write_lines(lines, 'data/load/azure_ad_roles.json')
+    role_map, role_lines, perm_lines = dict(), list(), list()
 
+    # roles
+    for obj in objects:
+        obj_type = obj['type']
+        if obj_type == 'role':
+            del obj['id']
+            doc = id_map()
+            doc.update(obj)
+            role_name = doc['role']
+            role_map[role_name] = doc[COSMOSDB_ID_ATTR]
+            role_lines.append(json.dumps(doc) + os.linesep)
+
+    # permissions
+    for obj in objects:
+        obj_type = obj['type']
+        if obj_type == 'permission':
+            doc = id_map()
+            doc.update(obj)
+            category = doc['cat']
+            doc['cat_id'] = role_map[category]
+            perm_lines.append(json.dumps(doc) + os.linesep)
+
+    FS.write_json(role_map,    'data/load/azure_ad_role_map.json')
+    FS.write_lines(role_lines, 'data/load/azure_ad_roles.json')
+    FS.write_lines(perm_lines, 'data/load/azure_ad_permissions.json')
+
+
+    # {
+    #   "cat": "All roles",
+    #   "type": "role",
+    #   "role": "Application Administrator",
+    #   "href": "application-administrator",
+    #   "desc": "Can create and manage all aspects of app registrations and enterprise apps.",
+    #   "id": "9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3"
+    # },
+    # {
+    #   "cat": "Application Administrator",
+    #   "type": "permission",
+    #   "actions": "microsoft.directory/adminConsentRequestPolicy/allProperties/allTasks",
+    #   "desc": "Manage admin consent request policies in Azure AD"
+    # },
+
+def id_map():
+    map = dict()
+    map[COSMOSDB_ID_ATTR] = str(uuid.uuid4())
+    return map
 
 
 if __name__ == "__main__":
