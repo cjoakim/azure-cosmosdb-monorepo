@@ -1,6 +1,6 @@
 # Chris Joakim, Microsoft, June 2022
 
-VERSION = __version__
+VERSION = '1.0.0'
 
 import arrow
 import math
