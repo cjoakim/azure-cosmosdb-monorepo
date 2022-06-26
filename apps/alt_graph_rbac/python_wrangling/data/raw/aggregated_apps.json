@@ -1,0 +1,1958 @@
+[
+  {
+    "name": "app1",
+    "writers_apps": [
+      "app13"
+    ],
+    "reader_apps": [
+      "app10",
+      "app12",
+      "app2",
+      "app4",
+      "app5",
+      "app7",
+      "app8"
+    ],
+    "owners": [
+      {
+        "name": "Cody Castillo",
+        "roles": [
+          "app_app1_owner",
+          "Site Recovery Reader",
+          "Tag Contributor"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Carol Gallagher",
+        "roles": [
+          "app_app1_administrator",
+          "Azure Maps Data Contributor",
+          "Authentication Policy Administrator",
+          "Teams Administrator",
+          "Azure DevOps Administrator"
+        ]
+      },
+      {
+        "name": "Steven Gomez",
+        "roles": [
+          "app_app1_administrator",
+          "Device Update Content Administrator",
+          "Managed Identity Operator",
+          "Media Services Media Operator",
+          "Insights Analyst",
+          "Security Administrator",
+          "Authentication Administrator",
+          "External ID User Flow Attribute Administrator",
+          "Usage Summary Reports Reader"
+        ]
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Brandon Parker",
+        "roles": [
+          "app_app1_contributor",
+          "Usage Summary Reports Reader",
+          "Security Reader",
+          "Usage Summary Reports Reader",
+          "Directory Synchronization Accounts",
+          "Search Administrator",
+          "Cloud Device Administrator",
+          "Domain Name Administrator",
+          "Windows 365 Administrator",
+          "Cloud Device Administrator",
+          "Power Platform Administrator"
+        ]
+      },
+      {
+        "name": "Catherine Church",
+        "roles": [
+          "app_app1_contributor",
+          "EventGrid Data Sender",
+          "Privileged Role Administrator",
+          "Attribute Assignment Reader",
+          "SharePoint Administrator",
+          "Office Apps Administrator",
+          "Modern Commerce User",
+          "Billing Administrator",
+          "Password Administrator",
+          "Azure Information Protection Administrator",
+          "Global Administrator",
+          "Usage Summary Reports Reader",
+          "B2C IEF Keyset Administrator"
+        ]
+      },
+      {
+        "name": "Donna Roth",
+        "roles": [
+          "app_app1_contributor",
+          "Azure Kubernetes Service RBAC Reader",
+          "Attack Payload Author",
+          "Network Administrator",
+          "Kaizala Administrator",
+          "Partner Tier2 Support"
+        ]
+      },
+      {
+        "name": "George Mcguire",
+        "roles": [
+          "app_app1_contributor",
+          "Disk Backup Reader",
+          "B2C IEF Keyset Administrator",
+          "Attribute Definition Administrator",
+          "Knowledge Manager",
+          "Azure DevOps Administrator",
+          "Knowledge Manager",
+          "Modern Commerce User",
+          "Identity Governance Administrator"
+        ]
+      },
+      {
+        "name": "Jesus Mclean",
+        "roles": [
+          "app_app1_contributor",
+          "Data Operator for Managed Disks",
+          "Storage Queue Data Contributor",
+          "Application Developer",
+          "Directory Writers",
+          "Application Administrator",
+          "Compliance Administrator",
+          "Service Support Administrator",
+          "Attack Payload Author",
+          "Teams Administrator",
+          "External ID User Flow Attribute Administrator",
+          "B2C IEF Policy Administrator",
+          "Intune Administrator",
+          "Password Administrator",
+          "Authentication Administrator"
+        ]
+      },
+      {
+        "name": "John Garza",
+        "roles": [
+          "app_app1_contributor",
+          "Microsoft Sentinel Reader",
+          "Azure Spring Cloud Config Server Reader",
+          "Device Update Content Administrator",
+          "Exchange Administrator",
+          "SharePoint Administrator",
+          "External Identity Provider Administrator",
+          "Directory Writers",
+          "Desktop Analytics Administrator"
+        ]
+      },
+      {
+        "name": "Michelle Pearson",
+        "roles": [
+          "app_app1_contributor",
+          "Message Center Privacy Reader",
+          "Global Reader",
+          "Azure Information Protection Administrator",
+          "Attribute Definition Administrator",
+          "Insights Analyst"
+        ]
+      },
+      {
+        "name": "Mr. Ronald King MD",
+        "roles": [
+          "app_app1_contributor",
+          "CDN Profile Contributor",
+          "Managed HSM contributor",
+          "Identity Governance Administrator",
+          "Insights Administrator",
+          "B2C IEF Policy Administrator",
+          "Search Editor",
+          "Printer Technician",
+          "Cloud App Security Administrator"
+        ]
+      },
+      {
+        "name": "Pamela Murphy",
+        "roles": [
+          "app_app1_contributor",
+          "CDN Endpoint Contributor",
+          "Device Update Administrator",
+          "Attribute Assignment Administrator",
+          "Search Administrator",
+          "Intune Administrator",
+          "Message Center Privacy Reader",
+          "Customer LockBox Access Approver",
+          "External ID User Flow Attribute Administrator",
+          "Desktop Analytics Administrator",
+          "Attribute Assignment Administrator"
+        ]
+      },
+      {
+        "name": "Rachel Hall",
+        "roles": [
+          "app_app1_contributor",
+          "Azure Arc Kubernetes Admin",
+          "Microsoft Sentinel Automation Contributor",
+          "FHIR Data Contributor",
+          "Directory Synchronization Accounts",
+          "Dynamics 365 Administrator",
+          "Partner Tier2 Support",
+          "Groups Administrator",
+          "SharePoint Administrator",
+          "Compliance Data Administrator",
+          "Domain Name Administrator",
+          "Office Apps Administrator"
+        ]
+      },
+      {
+        "name": "Richard Hernandez",
+        "roles": [
+          "app_app1_contributor",
+          "Domain Services Contributor",
+          "Attribute Assignment Reader",
+          "Customer LockBox Access Approver",
+          "Insights Administrator",
+          "Message Center Reader",
+          "Exchange Administrator",
+          "Hybrid Identity Administrator",
+          "Cloud Application Administrator",
+          "Usage Summary Reports Reader",
+          "Groups Administrator",
+          "Hybrid Identity Administrator",
+          "Intune Administrator"
+        ]
+      },
+      {
+        "name": "Robert Clark",
+        "roles": [
+          "app_app1_contributor",
+          "Attribute Definition Reader",
+          "Office Apps Administrator",
+          "Security Operator",
+          "Security Reader",
+          "Search Administrator",
+          "Message Center Privacy Reader",
+          "Global Administrator",
+          "Cloud Application Administrator",
+          "Virtual Visits Administrator",
+          "Windows Update Deployment Administrator",
+          "Exchange Administrator",
+          "Authentication Policy Administrator"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "app2",
+    "writers_apps": [
+      "app8"
+    ],
+    "reader_apps": [],
+    "owners": [
+      {
+        "name": "Crystal Mercer",
+        "roles": [
+          "app_app2_owner",
+          "Reservation Purchaser",
+          "Usage Summary Reports Reader",
+          "Azure DevOps Administrator"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Christopher Berg",
+        "roles": [
+          "app_app2_administrator",
+          "IoT Hub Data Contributor",
+          "Cosmos DB Account Reader Role",
+          "Cosmos DB Operator",
+          "Knowledge Manager",
+          "External Identity Provider Administrator",
+          "Windows Update Deployment Administrator",
+          "Privileged Role Administrator",
+          "External ID User Flow Attribute Administrator"
+        ]
+      },
+      {
+        "name": "Denise Horton",
+        "roles": [
+          "app_app2_administrator",
+          "Avere Operator",
+          "Policy Insights Data Writer (Preview)",
+          "Cloud Application Administrator",
+          "Reports Reader"
+        ]
+      },
+      {
+        "name": "Miranda Irwin",
+        "roles": [
+          "app_app2_administrator",
+          "Managed Identity Operator",
+          "Device Update Administrator",
+          "Security Administrator",
+          "Identity Governance Administrator",
+          "Knowledge Manager",
+          "Insights Business Leader",
+          "Authentication Policy Administrator"
+        ]
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Cheryl Jones",
+        "roles": [
+          "app_app2_contributor",
+          "Cognitive Services User",
+          "Media Services Policy Administrator",
+          "Azure Spring Cloud Data Reader",
+          "Intune Administrator",
+          "Message Center Reader",
+          "Application Developer",
+          "Application Developer",
+          "Cloud Application Administrator"
+        ]
+      },
+      {
+        "name": "Jasmine Berry",
+        "roles": [
+          "app_app2_contributor",
+          "Billing Administrator",
+          "Desktop Analytics Administrator",
+          "Insights Administrator",
+          "Partner Tier2 Support",
+          "Search Administrator"
+        ]
+      },
+      {
+        "name": "Laurie Franklin",
+        "roles": [
+          "app_app2_contributor",
+          "Virtual Machine User Login",
+          "Resource Policy Contributor",
+          "Printer Technician",
+          "Insights Administrator",
+          "Groups Administrator",
+          "Guest Inviter",
+          "Insights Analyst",
+          "Compliance Administrator",
+          "Search Administrator",
+          "Service Support Administrator",
+          "Teams Devices Administrator",
+          "Edge Administrator",
+          "Teams Devices Administrator",
+          "Printer Administrator"
+        ]
+      },
+      {
+        "name": "Rachael Solomon",
+        "roles": [
+          "app_app2_contributor",
+          "CDN Profile Contributor",
+          "Search Service Contributor",
+          "Key Vault Crypto User",
+          "Message Center Reader",
+          "Windows 365 Administrator",
+          "Security Administrator",
+          "Attack Simulation Administrator",
+          "Domain Name Administrator",
+          "Virtual Visits Administrator",
+          "Azure Information Protection Administrator",
+          "Attribute Assignment Reader"
+        ]
+      },
+      {
+        "name": "Teresa King",
+        "roles": [
+          "app_app2_contributor",
+          "Reservation Purchaser",
+          "Microsoft Sentinel Responder",
+          "External ID User Flow Administrator",
+          "Windows Update Deployment Administrator",
+          "Billing Administrator",
+          "B2C IEF Policy Administrator",
+          "Printer Technician"
+        ]
+      },
+      {
+        "name": "Traci Tyler",
+        "roles": [
+          "app_app2_contributor",
+          "Monitoring Metrics Publisher",
+          "Application Insights Component Contributor",
+          "SharePoint Administrator",
+          "Attribute Assignment Administrator",
+          "Application Administrator",
+          "Message Center Reader",
+          "Usage Summary Reports Reader",
+          "Teams Devices Administrator",
+          "SharePoint Administrator",
+          "Kaizala Administrator"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "app3",
+    "writers_apps": [
+      "app2",
+      "app4"
+    ],
+    "reader_apps": [
+      "app1",
+      "app11",
+      "app13",
+      "app2",
+      "app9"
+    ],
+    "owners": [
+      {
+        "name": "Deborah Richardson",
+        "roles": [
+          "app_app3_owner",
+          "Attack Payload Author",
+          "Teams Communications Support Engineer"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "John Garza",
+        "roles": [
+          "app_app3_administrator",
+          "Groups Administrator",
+          "Conditional Access Administrator"
+        ]
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Terry Miller",
+        "roles": [
+          "app_app3_contributor",
+          "Lab Creator",
+          "Key Vault Secrets Officer",
+          "Hybrid Identity Administrator",
+          "Azure DevOps Administrator",
+          "Guest Inviter",
+          "Dynamics 365 Administrator",
+          "Security Reader",
+          "B2C IEF Policy Administrator"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "app4",
+    "writers_apps": [
+      "app13",
+      "app5"
+    ],
+    "reader_apps": [
+      "app2",
+      "app3",
+      "app8",
+      "app9"
+    ],
+    "owners": [
+      {
+        "name": "Derek Hughes",
+        "roles": [
+          "app_app4_owner",
+          "API Management Service Operator Role",
+          "Azure Spring Cloud Config Server Contributor",
+          "Teams Administrator",
+          "Authentication Policy Administrator"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Kenneth Gomez",
+        "roles": [
+          "app_app4_administrator",
+          "Privileged Role Administrator",
+          "Azure AD Joined Device Local Administrator",
+          "Attack Simulation Administrator",
+          "Azure DevOps Administrator",
+          "Privileged Authentication Administrator"
+        ]
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Amanda Lewis",
+        "roles": [
+          "app_app4_contributor",
+          "Log Analytics Reader",
+          "BizTalk Contributor",
+          "Power BI Administrator",
+          "Global Administrator",
+          "Domain Name Administrator",
+          "Attribute Definition Administrator",
+          "Reports Reader",
+          "Teams Communications Administrator",
+          "Search Administrator",
+          "Attribute Assignment Reader"
+        ]
+      },
+      {
+        "name": "Carrie Winters MD",
+        "roles": [
+          "app_app4_contributor",
+          "Storage Blob Data Reader",
+          "CDN Endpoint Contributor",
+          "Managed Applications Reader",
+          "Partner Tier2 Support",
+          "Service Support Administrator",
+          "Intune Administrator",
+          "Groups Administrator",
+          "Teams Communications Support Specialist",
+          "Teams Devices Administrator",
+          "Authentication Policy Administrator",
+          "Windows 365 Administrator"
+        ]
+      },
+      {
+        "name": "Charles Glass",
+        "roles": [
+          "app_app4_contributor",
+          "Power Platform Administrator",
+          "Attribute Definition Administrator",
+          "Conditional Access Administrator",
+          "Authentication Policy Administrator",
+          "Exchange Administrator",
+          "Compliance Administrator",
+          "Power BI Administrator",
+          "Insights Analyst",
+          "Azure DevOps Administrator",
+          "Attribute Definition Administrator",
+          "Message Center Reader",
+          "Knowledge Manager"
+        ]
+      },
+      {
+        "name": "Debra Hill",
+        "roles": [
+          "app_app4_contributor",
+          "Desktop Virtualization Host Pool Reader",
+          "Dynamics 365 Administrator",
+          "Virtual Visits Administrator",
+          "Usage Summary Reports Reader",
+          "External ID User Flow Attribute Administrator",
+          "User Administrator"
+        ]
+      },
+      {
+        "name": "Julie Kemp",
+        "roles": [
+          "app_app4_contributor",
+          "CosmosBackupOperator",
+          "Storage Blob Delegator",
+          "Cost Management Contributor",
+          "Security Administrator",
+          "Teams Devices Administrator",
+          "Teams Communications Support Engineer",
+          "Authentication Policy Administrator",
+          "Desktop Analytics Administrator"
+        ]
+      },
+      {
+        "name": "Manuel Reynolds",
+        "roles": [
+          "app_app4_contributor",
+          "Application Insights Snapshot Debugger",
+          "Monitoring Contributor",
+          "Services Hub Operator",
+          "Virtual Visits Administrator",
+          "Teams Devices Administrator",
+          "Security Operator",
+          "Message Center Privacy Reader",
+          "Azure DevOps Administrator",
+          "Modern Commerce User",
+          "Reports Reader",
+          "Printer Technician",
+          "Helpdesk Administrator",
+          "Service Support Administrator"
+        ]
+      },
+      {
+        "name": "Monica Sanchez",
+        "roles": [
+          "app_app4_contributor",
+          "External ID User Flow Administrator",
+          "Insights Analyst",
+          "Partner Tier1 Support",
+          "Azure Information Protection Administrator",
+          "Message Center Reader",
+          "B2C IEF Keyset Administrator",
+          "Network Administrator",
+          "Teams Devices Administrator"
+        ]
+      },
+      {
+        "name": "Steven Gomez",
+        "roles": [
+          "app_app4_contributor",
+          "Services Hub Operator",
+          "Blueprint Contributor",
+          "License Administrator",
+          "B2C IEF Policy Administrator",
+          "Network Administrator",
+          "License Administrator",
+          "Intune Administrator",
+          "Edge Administrator",
+          "Authentication Administrator",
+          "Cloud App Security Administrator",
+          "Privileged Authentication Administrator"
+        ]
+      },
+      {
+        "name": "Tammy Simon",
+        "roles": [
+          "app_app4_contributor",
+          "Compliance Data Administrator",
+          "Modern Commerce User",
+          "Printer Administrator",
+          "Security Reader",
+          "Power Platform Administrator"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "app5",
+    "writers_apps": [],
+    "reader_apps": [
+      "app10",
+      "app2",
+      "app4",
+      "app6",
+      "app9"
+    ],
+    "owners": [
+      {
+        "name": "Donna Roth",
+        "roles": [
+          "app_app5_owner",
+          "Web Plan Contributor",
+          "Blueprint Operator",
+          "Cognitive Services Data Reader (Preview)",
+          "Global Administrator",
+          "Attack Payload Author",
+          "Search Administrator"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Cody Castillo",
+        "roles": [
+          "app_app5_administrator",
+          "SQL Server Contributor",
+          "Azure Maps Data Reader",
+          "FHIR Data Writer",
+          "Search Editor",
+          "Customer LockBox Access Approver"
+        ]
+      }
+    ],
+    "contributors": [
+      {
+        "name": "April Conner",
+        "roles": [
+          "app_app5_contributor",
+          "Cognitive Services Metrics Advisor Administrator",
+          "Desktop Virtualization Host Pool Contributor",
+          "Management Group Reader",
+          "Application Administrator",
+          "Skype for Business Administrator",
+          "Cloud Application Administrator",
+          "Insights Business Leader",
+          "Security Reader"
+        ]
+      },
+      {
+        "name": "Bailey Roberts",
+        "roles": [
+          "app_app5_contributor",
+          "Desktop Virtualization User",
+          "Conditional Access Administrator",
+          "Authentication Policy Administrator",
+          "Partner Tier1 Support"
+        ]
+      },
+      {
+        "name": "Cheryl Mcintosh",
+        "roles": [
+          "app_app5_contributor",
+          "Azure Event Hubs Data Owner",
+          "Microsoft Sentinel Responder",
+          "Microsoft Sentinel Responder",
+          "Attribute Definition Reader",
+          "Power Platform Administrator",
+          "Printer Technician",
+          "Helpdesk Administrator",
+          "Teams Communications Administrator",
+          "Message Center Reader",
+          "Intune Administrator",
+          "Directory Synchronization Accounts",
+          "Teams Administrator",
+          "Compliance Administrator"
+        ]
+      },
+      {
+        "name": "Donna Roth",
+        "roles": [
+          "app_app5_contributor",
+          "Storage File Data SMB Share Elevated Contributor",
+          "EventGrid Contributor",
+          "Log Analytics Contributor",
+          "Search Editor",
+          "Office Apps Administrator",
+          "Attribute Assignment Reader",
+          "Attack Simulation Administrator",
+          "Usage Summary Reports Reader",
+          "Application Administrator",
+          "Domain Name Administrator",
+          "Conditional Access Administrator",
+          "Cloud App Security Administrator"
+        ]
+      },
+      {
+        "name": "Kimberly Johnson",
+        "roles": [
+          "app_app5_contributor",
+          "Power Platform Administrator",
+          "Directory Readers",
+          "Attack Simulation Administrator",
+          "Compliance Administrator",
+          "Authentication Policy Administrator",
+          "Message Center Privacy Reader",
+          "User Administrator",
+          "Partner Tier2 Support"
+        ]
+      },
+      {
+        "name": "Richard Hernandez",
+        "roles": [
+          "app_app5_contributor",
+          "Helpdesk Administrator",
+          "Service Support Administrator",
+          "Helpdesk Administrator",
+          "SharePoint Administrator",
+          "Insights Administrator"
+        ]
+      },
+      {
+        "name": "Teresa King",
+        "roles": [
+          "app_app5_contributor",
+          "Knowledge Manager",
+          "Edge Administrator",
+          "Kaizala Administrator",
+          "Exchange Administrator",
+          "Authentication Administrator",
+          "Office Apps Administrator",
+          "Authentication Administrator"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "app6",
+    "writers_apps": [
+      "app11",
+      "app12",
+      "app2"
+    ],
+    "reader_apps": [
+      "app1",
+      "app10",
+      "app12",
+      "app13",
+      "app2",
+      "app3",
+      "app9"
+    ],
+    "owners": [
+      {
+        "name": "Emily Hopkins",
+        "roles": [
+          "app_app6_owner",
+          "Media Services Streaming Endpoints Administrator",
+          "Network Administrator",
+          "Attribute Assignment Administrator"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Crystal Rodriguez",
+        "roles": [
+          "app_app6_administrator",
+          "Managed Identity Operator",
+          "Guest Inviter",
+          "Teams Communications Administrator",
+          "Azure AD Joined Device Local Administrator",
+          "Hybrid Identity Administrator",
+          "Exchange Recipient Administrator",
+          "Kaizala Administrator"
+        ]
+      },
+      {
+        "name": "James Brown",
+        "roles": [
+          "app_app6_administrator",
+          "AcrDelete",
+          "Search Service Contributor",
+          "Azure Arc Kubernetes Cluster Admin",
+          "Hybrid Identity Administrator",
+          "Customer LockBox Access Approver",
+          "Teams Administrator",
+          "Modern Commerce User",
+          "Knowledge Administrator"
+        ]
+      },
+      {
+        "name": "Kimberly Marquez",
+        "roles": [
+          "app_app6_administrator",
+          "Azure Service Bus Data Sender",
+          "External Identity Provider Administrator",
+          "Guest Inviter",
+          "Helpdesk Administrator",
+          "Network Administrator",
+          "Modern Commerce User",
+          "Conditional Access Administrator"
+        ]
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Cheryl Guerra",
+        "roles": [
+          "app_app6_contributor",
+          "Azure Service Bus Data Sender",
+          "Azure Spring Cloud Data Reader",
+          "Directory Synchronization Accounts",
+          "Directory Readers",
+          "Insights Business Leader"
+        ]
+      },
+      {
+        "name": "Hannah Brown",
+        "roles": [
+          "app_app6_contributor",
+          "Disk Restore Operator",
+          "External ID User Flow Administrator",
+          "Cloud Device Administrator",
+          "External ID User Flow Administrator",
+          "Global Reader",
+          "Windows Update Deployment Administrator",
+          "Teams Devices Administrator",
+          "Modern Commerce User"
+        ]
+      },
+      {
+        "name": "Kaitlyn Hernandez",
+        "roles": [
+          "app_app6_contributor",
+          "Spatial Anchors Account Owner",
+          "Remote Rendering Administrator",
+          "Edge Administrator",
+          "Partner Tier1 Support",
+          "Insights Business Leader",
+          "Authentication Policy Administrator",
+          "Identity Governance Administrator",
+          "Search Editor",
+          "Insights Business Leader",
+          "Cloud Device Administrator"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "app7",
+    "writers_apps": [
+      "app6"
+    ],
+    "reader_apps": [],
+    "owners": [
+      {
+        "name": "John Rice",
+        "roles": [
+          "app_app7_owner",
+          "CosmosBackupOperator",
+          "Desktop Virtualization Reader",
+          "AcrDelete"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Courtney Davis",
+        "roles": [
+          "app_app7_administrator",
+          "Groups Administrator",
+          "Identity Governance Administrator",
+          "User Administrator",
+          "Cloud Device Administrator",
+          "Service Support Administrator"
+        ]
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Amanda Lewis",
+        "roles": [
+          "app_app7_contributor",
+          "Data Lake Analytics Developer",
+          "Security Operator",
+          "Security Operator",
+          "Azure Information Protection Administrator"
+        ]
+      },
+      {
+        "name": "April Conner",
+        "roles": [
+          "app_app7_contributor",
+          "Backup Reader",
+          "Billing Administrator",
+          "Customer LockBox Access Approver",
+          "Office Apps Administrator"
+        ]
+      },
+      {
+        "name": "Carrie Winters MD",
+        "roles": [
+          "app_app7_contributor",
+          "Disk Restore Operator",
+          "Desktop Virtualization Application Group Contributor",
+          "External ID User Flow Administrator",
+          "Groups Administrator",
+          "SharePoint Administrator",
+          "Insights Business Leader"
+        ]
+      },
+      {
+        "name": "Cheryl Mcintosh",
+        "roles": [
+          "app_app7_contributor",
+          "Cloud App Security Administrator",
+          "Skype for Business Administrator",
+          "B2C IEF Policy Administrator",
+          "Application Developer",
+          "Insights Analyst"
+        ]
+      },
+      {
+        "name": "Crystal Mercer",
+        "roles": [
+          "app_app7_contributor",
+          "Azure Kubernetes Service Cluster User Role",
+          "Insights Analyst",
+          "Cloud Application Administrator",
+          "Privileged Role Administrator"
+        ]
+      },
+      {
+        "name": "Darren Stewart",
+        "roles": [
+          "app_app7_contributor",
+          "Authentication Administrator",
+          "Message Center Reader",
+          "Azure AD Joined Device Local Administrator",
+          "Insights Administrator",
+          "Virtual Visits Administrator"
+        ]
+      },
+      {
+        "name": "Jasmine Berry",
+        "roles": [
+          "app_app7_contributor",
+          "Key Vault Administrator",
+          "Teams Communications Administrator",
+          "Attribute Assignment Administrator",
+          "Directory Writers",
+          "Insights Analyst",
+          "User Administrator",
+          "Partner Tier2 Support",
+          "Authentication Administrator"
+        ]
+      },
+      {
+        "name": "Jeffrey Gibson",
+        "roles": [
+          "app_app7_contributor",
+          "Office Apps Administrator",
+          "Security Reader",
+          "Dynamics 365 Administrator",
+          "Attribute Assignment Reader",
+          "Exchange Recipient Administrator",
+          "Power BI Administrator"
+        ]
+      },
+      {
+        "name": "Mary Brown",
+        "roles": [
+          "app_app7_contributor",
+          "Virtual Visits Administrator",
+          "Windows Update Deployment Administrator",
+          "Identity Governance Administrator",
+          "Domain Name Administrator",
+          "Privileged Authentication Administrator",
+          "B2C IEF Policy Administrator",
+          "Search Editor",
+          "Desktop Analytics Administrator",
+          "Usage Summary Reports Reader"
+        ]
+      },
+      {
+        "name": "Michael Stephens",
+        "roles": [
+          "app_app7_contributor",
+          "AcrPull",
+          "Network Administrator",
+          "Teams Communications Administrator",
+          "License Administrator",
+          "Azure AD Joined Device Local Administrator",
+          "Network Administrator"
+        ]
+      },
+      {
+        "name": "Monica Sanchez",
+        "roles": [
+          "app_app7_contributor",
+          "SQL Managed Instance Contributor",
+          "Key Vault Certificates Officer",
+          "Privileged Role Administrator",
+          "Security Operator",
+          "Guest Inviter",
+          "Global Administrator",
+          "Partner Tier2 Support",
+          "Attribute Definition Administrator"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "app8",
+    "writers_apps": [
+      "app11"
+    ],
+    "reader_apps": [
+      "app11",
+      "app12",
+      "app13",
+      "app2",
+      "app3",
+      "app4",
+      "app5",
+      "app6",
+      "app9"
+    ],
+    "owners": [
+      {
+        "name": "Kenneth Gomez",
+        "roles": [
+          "app_app8_owner",
+          "Cosmos DB Account Reader Role",
+          "Avere Operator",
+          "Billing Administrator"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Cheryl Jones",
+        "roles": [
+          "app_app8_administrator",
+          "API Management Service Contributor",
+          "Storage Blob Delegator",
+          "Desktop Virtualization Host Pool Contributor",
+          "Billing Administrator",
+          "External ID User Flow Attribute Administrator",
+          "Directory Synchronization Accounts",
+          "Printer Technician"
+        ]
+      },
+      {
+        "name": "Cheyenne Campbell",
+        "roles": [
+          "app_app8_administrator",
+          "App Configuration Data Owner",
+          "Media Services Live Events Administrator",
+          "Attribute Definition Administrator",
+          "External ID User Flow Administrator",
+          "Conditional Access Administrator",
+          "Azure Information Protection Administrator",
+          "Groups Administrator",
+          "Kaizala Administrator"
+        ]
+      },
+      {
+        "name": "Courtney Hawkins",
+        "roles": [
+          "app_app8_administrator",
+          "Customer LockBox Access Approver",
+          "Insights Analyst",
+          "Compliance Data Administrator"
+        ]
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Rachael Solomon",
+        "roles": [
+          "app_app8_contributor",
+          "Avere Contributor",
+          "Office Apps Administrator",
+          "Azure AD Joined Device Local Administrator",
+          "Network Administrator",
+          "Reports Reader",
+          "Power BI Administrator",
+          "Attack Simulation Administrator",
+          "Azure DevOps Administrator",
+          "Edge Administrator",
+          "Printer Administrator",
+          "Global Reader",
+          "Security Administrator"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "app9",
+    "writers_apps": [
+      "app4",
+      "app5"
+    ],
+    "reader_apps": [
+      "app1",
+      "app12",
+      "app13",
+      "app3",
+      "app6",
+      "app7",
+      "app8"
+    ],
+    "owners": [
+      {
+        "name": "Michael Becker",
+        "roles": [
+          "app_app9_owner",
+          "Site Recovery Reader",
+          "Azure Kubernetes Service Cluster User Role",
+          "Data Factory Contributor"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Kimberly Johnson",
+        "roles": [
+          "app_app9_administrator",
+          "Cognitive Services Custom Vision Reader",
+          "AcrPush",
+          "Key Vault Reader",
+          "Insights Analyst",
+          "Search Editor",
+          "Modern Commerce User",
+          "User Administrator",
+          "Attribute Assignment Administrator"
+        ]
+      },
+      {
+        "name": "Michelle Walker",
+        "roles": [
+          "app_app9_administrator",
+          "Storage Blob Data Contributor",
+          "Search Service Contributor",
+          "Cognitive Services Custom Vision Labeler",
+          "Teams Communications Support Specialist",
+          "Conditional Access Administrator",
+          "Power BI Administrator",
+          "Groups Administrator",
+          "Hybrid Identity Administrator"
+        ]
+      },
+      {
+        "name": "Rachel Hall",
+        "roles": [
+          "app_app9_administrator",
+          "Exchange Administrator",
+          "Security Reader",
+          "Edge Administrator",
+          "Security Operator"
+        ]
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Carol Gallagher",
+        "roles": [
+          "app_app9_contributor",
+          "Office Apps Administrator",
+          "Attack Payload Author",
+          "B2C IEF Keyset Administrator",
+          "Attribute Definition Reader",
+          "Insights Administrator",
+          "Printer Technician",
+          "Kaizala Administrator",
+          "Helpdesk Administrator",
+          "External Identity Provider Administrator"
+        ]
+      },
+      {
+        "name": "Carol Watson DDS",
+        "roles": [
+          "app_app9_contributor",
+          "Cloud App Security Administrator",
+          "Compliance Administrator",
+          "Directory Readers",
+          "Knowledge Manager",
+          "Partner Tier2 Support",
+          "Cloud Device Administrator",
+          "Directory Synchronization Accounts",
+          "External ID User Flow Attribute Administrator",
+          "Teams Communications Support Specialist",
+          "Exchange Administrator"
+        ]
+      },
+      {
+        "name": "George Mcguire",
+        "roles": [
+          "app_app9_contributor",
+          "HDInsight Cluster Operator",
+          "Teams Communications Support Engineer",
+          "Insights Business Leader",
+          "Printer Administrator",
+          "Attribute Assignment Administrator",
+          "Attack Payload Author",
+          "Teams Communications Administrator"
+        ]
+      },
+      {
+        "name": "Joseph Robinson",
+        "roles": [
+          "app_app9_contributor",
+          "B2C IEF Keyset Administrator",
+          "Service Support Administrator",
+          "Virtual Visits Administrator",
+          "Security Operator",
+          "Attribute Definition Administrator",
+          "Desktop Analytics Administrator",
+          "Knowledge Manager",
+          "SharePoint Administrator",
+          "External ID User Flow Administrator",
+          "Partner Tier2 Support",
+          "Domain Name Administrator"
+        ]
+      },
+      {
+        "name": "Kelly Walker",
+        "roles": [
+          "app_app9_contributor",
+          "Azure Kubernetes Service RBAC Reader",
+          "Knowledge Manager",
+          "Attribute Assignment Administrator",
+          "Domain Name Administrator",
+          "Compliance Data Administrator",
+          "Exchange Recipient Administrator",
+          "Insights Analyst"
+        ]
+      },
+      {
+        "name": "Robin Richard",
+        "roles": [
+          "app_app9_contributor",
+          "Azure Kubernetes Service RBAC Writer",
+          "DNS Zone Contributor",
+          "Resource Policy Contributor",
+          "Teams Devices Administrator",
+          "Power BI Administrator",
+          "Windows Update Deployment Administrator",
+          "Search Administrator",
+          "Global Administrator",
+          "Power BI Administrator",
+          "Skype for Business Administrator",
+          "Usage Summary Reports Reader"
+        ]
+      },
+      {
+        "name": "Steven Anthony",
+        "roles": [
+          "app_app9_contributor",
+          "Attack Payload Author",
+          "Knowledge Manager",
+          "Azure DevOps Administrator",
+          "Cloud Device Administrator",
+          "Cloud App Security Administrator",
+          "Helpdesk Administrator",
+          "Teams Communications Support Engineer",
+          "Directory Writers",
+          "Authentication Policy Administrator",
+          "Message Center Reader"
+        ]
+      },
+      {
+        "name": "Teresa King",
+        "roles": [
+          "app_app9_contributor",
+          "Classic Storage Account Key Operator Service Role",
+          "Remote Rendering Administrator",
+          "Azure Relay Listener",
+          "Authentication Policy Administrator",
+          "Teams Communications Support Specialist",
+          "User Administrator"
+        ]
+      },
+      {
+        "name": "Toni Moore",
+        "roles": [
+          "app_app9_contributor",
+          "Automation Job Operator",
+          "Backup Reader",
+          "Management Group Contributor",
+          "Windows Update Deployment Administrator",
+          "Teams Administrator",
+          "Attribute Assignment Reader",
+          "Power Platform Administrator"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "app10",
+    "writers_apps": [
+      "app11",
+      "app13",
+      "app7"
+    ],
+    "reader_apps": [
+      "app12",
+      "app8"
+    ],
+    "owners": [
+      {
+        "name": "Michael Berry",
+        "roles": [
+          "app_app10_owner",
+          "CosmosBackupOperator",
+          "Teams Devices Administrator",
+          "Teams Communications Support Engineer",
+          "Domain Name Administrator"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "April Conner",
+        "roles": [
+          "app_app10_administrator",
+          "Hierarchy Settings Administrator",
+          "Device Update Administrator",
+          "Security Operator",
+          "Helpdesk Administrator",
+          "Power Platform Administrator",
+          "Authentication Policy Administrator",
+          "Global Reader",
+          "Search Editor"
+        ]
+      },
+      {
+        "name": "Courtney Davis",
+        "roles": [
+          "app_app10_administrator",
+          "User Access Administrator",
+          "Monitoring Metrics Publisher",
+          "Disk Backup Reader",
+          "Attribute Assignment Reader",
+          "Groups Administrator",
+          "Security Operator",
+          "Attribute Assignment Administrator"
+        ]
+      },
+      {
+        "name": "Shannon Flores",
+        "roles": [
+          "app_app10_administrator",
+          "CDN Endpoint Contributor",
+          "Security Reader",
+          "Cost Management Contributor",
+          "Attribute Assignment Administrator",
+          "Attack Payload Author"
+        ]
+      }
+    ],
+    "contributors": [
+      {
+        "name": "James Brown",
+        "roles": [
+          "app_app10_contributor",
+          "Classic Virtual Machine Contributor",
+          "Reader and Data Access",
+          "Reservation Purchaser",
+          "Printer Technician",
+          "Attribute Definition Administrator",
+          "Insights Administrator",
+          "Privileged Role Administrator",
+          "Application Administrator",
+          "Cloud Application Administrator",
+          "Cloud App Security Administrator",
+          "Power BI Administrator",
+          "Service Support Administrator"
+        ]
+      },
+      {
+        "name": "Nathan Moss",
+        "roles": [
+          "app_app10_contributor",
+          "Virtual Machine User Login",
+          "Security Reader",
+          "Teams Communications Support Engineer",
+          "Application Administrator",
+          "Teams Administrator",
+          "Guest Inviter",
+          "B2C IEF Policy Administrator",
+          "Helpdesk Administrator",
+          "Message Center Reader"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "app11",
+    "writers_apps": [
+      "app3",
+      "app6"
+    ],
+    "reader_apps": [],
+    "owners": [
+      {
+        "name": "Michele Peterson",
+        "roles": [
+          "app_app11_owner",
+          "Attribute Definition Reader",
+          "Authentication Policy Administrator",
+          "License Administrator"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Joann Reynolds",
+        "roles": [
+          "app_app11_administrator",
+          "AcrImageSigner",
+          "CDN Endpoint Reader",
+          "Windows Update Deployment Administrator",
+          "User Administrator",
+          "Search Editor"
+        ]
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Angela Ball",
+        "roles": [
+          "app_app11_contributor",
+          "Desktop Virtualization User Session Operator",
+          "Billing Administrator",
+          "Service Support Administrator",
+          "Windows Update Deployment Administrator",
+          "Office Apps Administrator"
+        ]
+      },
+      {
+        "name": "Benjamin Cobb",
+        "roles": [
+          "app_app11_contributor",
+          "Media Services Streaming Endpoints Administrator",
+          "Managed HSM contributor",
+          "Azure DevOps Administrator",
+          "Teams Devices Administrator",
+          "Azure Information Protection Administrator",
+          "Reports Reader",
+          "Helpdesk Administrator"
+        ]
+      },
+      {
+        "name": "Crystal Rodriguez",
+        "roles": [
+          "app_app11_contributor",
+          "Helpdesk Administrator",
+          "Service Support Administrator",
+          "Conditional Access Administrator",
+          "Attribute Definition Reader",
+          "Directory Writers",
+          "Knowledge Administrator",
+          "Service Support Administrator",
+          "Reports Reader",
+          "Attribute Assignment Administrator"
+        ]
+      },
+      {
+        "name": "Donna Roth",
+        "roles": [
+          "app_app11_contributor",
+          "Key Vault Secrets Officer",
+          "Windows 365 Administrator",
+          "Attribute Assignment Administrator",
+          "Security Reader",
+          "Billing Administrator",
+          "Global Reader",
+          "Partner Tier2 Support",
+          "Application Administrator",
+          "Insights Administrator"
+        ]
+      },
+      {
+        "name": "Joseph Robinson",
+        "roles": [
+          "app_app11_contributor",
+          "Logic App Operator",
+          "Cloud Application Administrator",
+          "Customer LockBox Access Approver",
+          "Conditional Access Administrator",
+          "Power Platform Administrator",
+          "Cloud App Security Administrator",
+          "Teams Communications Support Engineer",
+          "User Administrator"
+        ]
+      },
+      {
+        "name": "Julie Kemp",
+        "roles": [
+          "app_app11_contributor",
+          "Device Update Administrator",
+          "Quota Request Operator",
+          "Billing Administrator",
+          "Attribute Definition Reader",
+          "Identity Governance Administrator",
+          "Privileged Role Administrator"
+        ]
+      },
+      {
+        "name": "Lisa Johnson",
+        "roles": [
+          "app_app11_contributor",
+          "Azure Connected Machine Resource Administrator",
+          "Log Analytics Contributor",
+          "Modern Commerce User",
+          "Customer LockBox Access Approver",
+          "Modern Commerce User",
+          "Kaizala Administrator",
+          "B2C IEF Policy Administrator",
+          "Attribute Assignment Administrator",
+          "Cloud Device Administrator",
+          "External Identity Provider Administrator",
+          "Insights Analyst",
+          "Compliance Administrator"
+        ]
+      },
+      {
+        "name": "Mary Frazier",
+        "roles": [
+          "app_app11_contributor",
+          "External ID User Flow Attribute Administrator",
+          "Message Center Reader",
+          "Attack Payload Author",
+          "Message Center Reader",
+          "Directory Writers",
+          "Search Administrator",
+          "Attribute Assignment Administrator",
+          "Teams Communications Support Specialist",
+          "Insights Administrator",
+          "Azure DevOps Administrator"
+        ]
+      },
+      {
+        "name": "Richard Hernandez",
+        "roles": [
+          "app_app11_contributor",
+          "Policy Insights Data Writer (Preview)",
+          "Lab Creator",
+          "Automation Runbook Operator",
+          "License Administrator",
+          "External ID User Flow Attribute Administrator",
+          "External Identity Provider Administrator",
+          "Desktop Analytics Administrator",
+          "Windows 365 Administrator",
+          "Privileged Role Administrator",
+          "Teams Communications Support Engineer",
+          "Application Developer",
+          "External Identity Provider Administrator",
+          "Directory Synchronization Accounts",
+          "Intune Administrator",
+          "Cloud Device Administrator"
+        ]
+      },
+      {
+        "name": "Shannon Flores",
+        "roles": [
+          "app_app11_contributor",
+          "Desktop Virtualization User Session Operator",
+          "Cosmos DB Account Reader Role",
+          "Modern Commerce User",
+          "Application Administrator",
+          "Insights Administrator",
+          "Helpdesk Administrator",
+          "Security Reader",
+          "Application Developer",
+          "Teams Communications Support Specialist",
+          "Attribute Definition Reader",
+          "Modern Commerce User",
+          "B2C IEF Keyset Administrator",
+          "Attribute Definition Reader"
+        ]
+      },
+      {
+        "name": "Steven Parker",
+        "roles": [
+          "app_app11_contributor",
+          "Backup Reader",
+          "Key Vault Crypto Officer",
+          "Password Administrator",
+          "Security Administrator",
+          "Modern Commerce User",
+          "Guest Inviter",
+          "Teams Communications Administrator",
+          "Reports Reader",
+          "Compliance Administrator",
+          "Intune Administrator",
+          "Intune Administrator",
+          "Attribute Assignment Administrator"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "app12",
+    "writers_apps": [
+      "app13",
+      "app2",
+      "app9"
+    ],
+    "reader_apps": [
+      "app1",
+      "app10",
+      "app3",
+      "app5",
+      "app7",
+      "app8",
+      "app9"
+    ],
+    "owners": [
+      {
+        "name": "Nicole Morales",
+        "roles": [
+          "app_app12_owner",
+          "Storage Table Data Contributor",
+          "Network Contributor"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Cody Castillo",
+        "roles": [
+          "app_app12_administrator",
+          "Kubernetes Cluster - Azure Arc Onboarding",
+          "Helpdesk Administrator",
+          "Insights Administrator",
+          "Knowledge Administrator"
+        ]
+      },
+      {
+        "name": "Joann Reynolds",
+        "roles": [
+          "app_app12_administrator",
+          "App Configuration Data Reader",
+          "Backup Reader",
+          "Helpdesk Administrator",
+          "Directory Writers",
+          "Domain Name Administrator",
+          "Attribute Definition Reader",
+          "Network Administrator",
+          "Attribute Definition Administrator"
+        ]
+      },
+      {
+        "name": "Kelly Walker",
+        "roles": [
+          "app_app12_administrator",
+          "Security Admin",
+          "Global Reader",
+          "Attribute Assignment Reader",
+          "Intune Administrator",
+          "Search Editor",
+          "Message Center Reader",
+          "Network Administrator"
+        ]
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Beth Murphy",
+        "roles": [
+          "app_app12_contributor",
+          "IoT Hub Data Reader",
+          "Microsoft Sentinel Automation Contributor",
+          "Cloud Application Administrator",
+          "Password Administrator",
+          "Authentication Policy Administrator",
+          "Guest Inviter",
+          "External ID User Flow Administrator",
+          "Privileged Role Administrator",
+          "Application Developer"
+        ]
+      },
+      {
+        "name": "Christopher Sanchez",
+        "roles": [
+          "app_app12_contributor",
+          "Teams Devices Administrator",
+          "Dynamics 365 Administrator",
+          "Virtual Visits Administrator"
+        ]
+      },
+      {
+        "name": "Courtney Hawkins",
+        "roles": [
+          "app_app12_contributor",
+          "Services Hub Operator",
+          "Identity Governance Administrator",
+          "Skype for Business Administrator",
+          "Teams Administrator",
+          "Edge Administrator",
+          "Compliance Data Administrator"
+        ]
+      },
+      {
+        "name": "Crystal Mercer",
+        "roles": [
+          "app_app12_contributor",
+          "Azure Digital Twins Data Reader",
+          "HDInsight Cluster Operator",
+          "SQL DB Contributor",
+          "Hybrid Identity Administrator",
+          "Azure AD Joined Device Local Administrator",
+          "External ID User Flow Administrator",
+          "Compliance Administrator",
+          "Directory Synchronization Accounts"
+        ]
+      },
+      {
+        "name": "Debra Hill",
+        "roles": [
+          "app_app12_contributor",
+          "Intelligent Systems Account Contributor",
+          "Teams Administrator",
+          "Reports Reader",
+          "Insights Business Leader",
+          "Authentication Policy Administrator",
+          "Authentication Policy Administrator",
+          "Teams Communications Administrator",
+          "Teams Communications Support Specialist",
+          "Application Administrator",
+          "Search Editor"
+        ]
+      },
+      {
+        "name": "Kaitlyn Hernandez",
+        "roles": [
+          "app_app12_contributor",
+          "FHIR Data Exporter",
+          "Security Manager (Legacy)",
+          "B2C IEF Keyset Administrator",
+          "Azure AD Joined Device Local Administrator",
+          "Windows Update Deployment Administrator",
+          "Teams Communications Support Specialist",
+          "Kaizala Administrator",
+          "Power BI Administrator"
+        ]
+      },
+      {
+        "name": "Kathy James",
+        "roles": [
+          "app_app12_contributor",
+          "Azure Information Protection Administrator",
+          "Cloud Application Administrator",
+          "Teams Communications Support Specialist",
+          "Dynamics 365 Administrator",
+          "Printer Technician",
+          "Power Platform Administrator",
+          "Billing Administrator",
+          "Network Administrator"
+        ]
+      },
+      {
+        "name": "Lisa Johnson",
+        "roles": [
+          "app_app12_contributor",
+          "Security Reader",
+          "Teams Communications Support Engineer",
+          "Printer Technician",
+          "Desktop Analytics Administrator",
+          "Kaizala Administrator"
+        ]
+      },
+      {
+        "name": "Loretta Mitchell",
+        "roles": [
+          "app_app12_contributor",
+          "EventGrid Contributor",
+          "Storage Queue Data Reader",
+          "Knowledge Administrator",
+          "Exchange Administrator",
+          "Partner Tier1 Support",
+          "Search Editor"
+        ]
+      },
+      {
+        "name": "Sarah Hamilton",
+        "roles": [
+          "app_app12_contributor",
+          "Storage Queue Data Contributor",
+          "Attribute Assignment Administrator",
+          "Knowledge Manager",
+          "Teams Devices Administrator"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "app13",
+    "writers_apps": [
+      "app3",
+      "app5"
+    ],
+    "reader_apps": [
+      "app12",
+      "app3",
+      "app4",
+      "app5",
+      "app9"
+    ],
+    "owners": [
+      {
+        "name": "Traci Tyler",
+        "roles": [
+          "app_app13_owner",
+          "Managed Application Contributor Role",
+          "Lab Creator",
+          "Service Support Administrator",
+          "Attribute Assignment Administrator"
+        ]
+      }
+    ],
+    "administrators": [
+      {
+        "name": "Jeffrey Gibson",
+        "roles": [
+          "app_app13_administrator",
+          "Azure Digital Twins Data Reader",
+          "External Identity Provider Administrator",
+          "Message Center Privacy Reader",
+          "Guest Inviter",
+          "Teams Communications Support Engineer",
+          "Message Center Privacy Reader",
+          "Teams Communications Support Specialist"
+        ]
+      },
+      {
+        "name": "Michelle Pearson",
+        "roles": [
+          "app_app13_administrator",
+          "Blueprint Contributor",
+          "SignalR REST API Reader",
+          "Microsoft Sentinel Automation Contributor",
+          "Power BI Administrator",
+          "Teams Administrator"
+        ]
+      },
+      {
+        "name": "Steven Gomez",
+        "roles": [
+          "app_app13_administrator",
+          "Cognitive Services Custom Vision Deployment",
+          "Cosmos DB Operator",
+          "Scheduler Job Collections Contributor",
+          "Guest Inviter",
+          "Teams Communications Support Engineer"
+        ]
+      }
+    ],
+    "contributors": [
+      {
+        "name": "David Hines",
+        "roles": [
+          "app_app13_contributor",
+          "CDN Profile Contributor",
+          "Power BI Administrator",
+          "Security Administrator",
+          "Directory Readers",
+          "Insights Analyst",
+          "Service Support Administrator",
+          "Customer LockBox Access Approver",
+          "Exchange Recipient Administrator",
+          "Azure DevOps Administrator",
+          "Network Administrator"
+        ]
+      },
+      {
+        "name": "Joseph Robinson",
+        "roles": [
+          "app_app13_contributor",
+          "Insights Analyst",
+          "Global Reader",
+          "Security Administrator",
+          "Security Reader",
+          "Message Center Reader",
+          "Domain Name Administrator",
+          "Teams Communications Support Engineer",
+          "Teams Communications Support Specialist"
+        ]
+      },
+      {
+        "name": "Kelly Walker",
+        "roles": [
+          "app_app13_contributor",
+          "Search Index Data Contributor",
+          "Automation Job Operator",
+          "Cognitive Services Custom Vision Contributor",
+          "SharePoint Administrator",
+          "Knowledge Manager",
+          "Power Platform Administrator",
+          "Partner Tier1 Support",
+          "Helpdesk Administrator",
+          "Azure Information Protection Administrator",
+          "Intune Administrator",
+          "Printer Technician"
+        ]
+      },
+      {
+        "name": "Michael Stephens",
+        "roles": [
+          "app_app13_contributor",
+          "Teams Devices Administrator",
+          "B2C IEF Keyset Administrator",
+          "Identity Governance Administrator",
+          "Customer LockBox Access Approver",
+          "Insights Business Leader"
+        ]
+      },
+      {
+        "name": "Ryan Contreras",
+        "roles": [
+          "app_app13_contributor",
+          "SignalR REST API Reader",
+          "Compliance Data Administrator",
+          "Attribute Assignment Administrator",
+          "Service Support Administrator",
+          "Windows Update Deployment Administrator",
+          "Network Administrator"
+        ]
+      }
+    ]
+  }
+]
