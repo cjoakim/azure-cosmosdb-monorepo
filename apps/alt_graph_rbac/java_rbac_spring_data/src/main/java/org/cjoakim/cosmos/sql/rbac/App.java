@@ -45,12 +45,13 @@ public class App implements CommandLineRunner, AppConstants {
 	public void run(String[] args) throws Exception {
 		AppConfiguration.setCommandLineArgs(args);
 		String process = args[0];
+		MainProcessor processor = null;
 		log.warn("process: " + process);
 
 		try {
 			switch (process) {
 				case "sample_users":
-					MainProcessor processor = new SampleUserProcessor(userRepository);
+					processor = new SampleUserProcessor(userRepository);
 					processor.process();
 					break;
 				default:

@@ -38,7 +38,6 @@ import java.util.UUID;
 
 @Slf4j
 public class SampleUserProcessor implements MainProcessor {
-
     private final UserRepository repository;
 
     public SampleUserProcessor(final UserRepository repo) {
