@@ -17,6 +17,3 @@ public abstract class AbstractRbacDocument {
     private String pk;
     private String doctype;
 }
-
-//{"id": "b24988ac-6180-42a0-ab88-20f7382dd24c", "doctype": "azure_role", "pk": "Contributor",
-// "role": "Contributor", "href": "contributor", "desc": "Grants full access to manage all resources, but does not allow you to assign roles in Azure RBAC, manage assignments in Azure Blueprints, or share image galleries."}

@@ -16,7 +16,8 @@ ext {
 	set('springCloudAzureVersion', "4.2.0")
 }
 
-// gradle bootRun --args='sample_users --delete-all --verbose --pretty'
+// gradle bootRun --args='sample_users --delete-all --verbose --
+// gradle bootRun --args='load_rbac ---verbose --pretty'
 
 dependencies {
 	implementation 'com.azure.spring:spring-cloud-azure-starter-data-cosmos'

@@ -8,9 +8,11 @@ import java.util.UUID;
 import com.azure.cosmos.models.PartitionKey;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.extern.slf4j.Slf4j;
+import org.cjoakim.cosmos.sql.rbac.data.AzureRoleRepository;
 import org.cjoakim.cosmos.sql.rbac.data.User;
 import org.cjoakim.cosmos.sql.rbac.data.UserRepository;
 import org.cjoakim.cosmos.sql.rbac.processors.MainProcessor;
+import org.cjoakim.cosmos.sql.rbac.processors.RbacLoader;
 import org.cjoakim.cosmos.sql.rbac.processors.SampleUserProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +26,8 @@ import org.springframework.context.ApplicationContext;
 @Slf4j
 public class App implements CommandLineRunner, AppConstants {
 
+	@Autowired
+	private AzureRoleRepository azureRoleRepository;
 	@Autowired
 	private UserRepository userRepository;
 
@@ -50,6 +54,10 @@ public class App implements CommandLineRunner, AppConstants {
 
 		try {
 			switch (process) {
+				case "load_rbac":
+					processor = new RbacLoader();
+					processor.process();
+					break;
 				case "sample_users":
 					processor = new SampleUserProcessor(userRepository);
 					processor.process();
