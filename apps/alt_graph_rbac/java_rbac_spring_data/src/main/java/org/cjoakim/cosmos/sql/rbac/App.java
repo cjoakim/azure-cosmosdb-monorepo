@@ -7,6 +7,11 @@ import java.util.UUID;
 
 import com.azure.cosmos.models.PartitionKey;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import lombok.extern.slf4j.Slf4j;
+import org.cjoakim.cosmos.sql.rbac.data.User;
+import org.cjoakim.cosmos.sql.rbac.data.UserRepository;
+import org.cjoakim.cosmos.sql.rbac.processors.MainProcessor;
+import org.cjoakim.cosmos.sql.rbac.processors.SampleUserProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +21,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
+@Slf4j
 public class App implements CommandLineRunner, AppConstants {
 
-	private static final Logger logger = LoggerFactory.getLogger(App.class);
-
 	@Autowired
-	private UserRepository repository;
+	private UserRepository userRepository;
 
 	@Autowired
 	private ApplicationContext applicationContext;
@@ -33,84 +37,33 @@ public class App implements CommandLineRunner, AppConstants {
 		SpringApplication.run(App.class, args);
 	}
 
+	/**
+	 * This is effectively the entry-point for a Spring Boot application,
+	 * called from the above main method.  Create and invoke a MainProcessor
+	 * instance based on CLI args.
+	 */
 	public void run(String[] args) throws Exception {
-		logger.warn("start of run() method");
 		AppConfiguration.setCommandLineArgs(args);
+		String process = args[0];
+		log.warn("process: " + process);
 
-		boolean deleteAll = AppConfiguration.booleanArg(AppConstants.DELETE_ALL);
-		logger.warn("deleteAll: " + deleteAll);
-
-		if (deleteAll) {
-			logger.warn("deleteAll starting");
-			repository.deleteAll();
-			logger.warn("deleteAll completed");
-		}
-
-		ArrayList<User> userObjects = createUsers();
-
-		long count = repository.countByLastName("Joakim");
-		logger.warn("countByLastame Joakim = " + count);
-
-		count = repository.countByLastName("Acosta");
-		logger.warn("countByLastame Acosta = " + count);
-
-		Iterable<User> userIterable = repository.findByFirstName("Miles");
-		userIterable.forEach(user -> logger.warn("findByFirstName: " + user));
-
-		User userObj = userObjects.get(0);
-		PartitionKey pk = new PartitionKey(userObj.getPk());
-		Optional<User> userOpt = repository.findById(userObj.getId(), pk);
-		if (userOpt.isPresent()) {
-			User u = userOpt.get();
-			logger.warn("findById: present -> " + u);
-			u.setFirstName("Matthew");
-			repository.save(u);
-		}
-		else {
-			logger.warn("findById: not present");
-		}
-
-		logger.warn("getUsersInPk ...");
-		List<User> pkUsers = repository.getUsersInPk("Joakim");
-		pkUsers.forEach(user -> {
-			try {
-				System.out.println(user.toJson());
+		try {
+			switch (process) {
+				case "sample_users":
+					MainProcessor processor = new SampleUserProcessor(userRepository);
+					processor.process();
+					break;
+				default:
+					log.error("unknown CLI process name: " + process);
 			}
-			catch (JsonProcessingException e) {
-				e.printStackTrace();
-			}});
-
-		pkUsers = repository.getUsersInPk("Miles");
-		pkUsers.forEach(user -> logger.warn("getUsersInPk: " + user));
-
-		logger.warn("spring app exiting");
-		SpringApplication.exit(this.applicationContext);
-		logger.warn("spring app exit completed");
-	}
-
-	private ArrayList<User> createUsers() {
-
-		ArrayList<String> namePairs = new ArrayList<String>();
-		ArrayList<User> userObjects = new ArrayList<User>();
-		namePairs.add("Chris,Joakim");
-		namePairs.add("Elsa,Joakim");
-		namePairs.add("Miles,Joakim");
-
-		for (int i = 0; i < namePairs.size(); i++) {
-			String[] tokens = namePairs.get(i).split(",");
-			String first = tokens[0];
-			String last = tokens[1];
-			String id = UUID.randomUUID().toString();
-			logger.warn("first: " + first + "  last: " + last + "  id: " + id);
-			final User user = new User(id, first, last);
-			if (i > 0) {
-				user.setOther(userObjects.get(i - 1)); // turtles all the way down
-			}
-			logger.warn("user object created: " + user);
-			repository.save(user);
-			logger.warn("user object saved");
-			userObjects.add(user);
 		}
-		return userObjects;
+		catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+		finally {
+			log.warn("spring app exiting");
+			SpringApplication.exit(this.applicationContext);
+			log.warn("spring app exit completed");
+		}
 	}
 }

@@ -1,7 +1,8 @@
-package org.cjoakim.cosmos.sql.rbac;
+package org.cjoakim.cosmos.sql.rbac.data;
 
 import com.azure.spring.data.cosmos.repository.CosmosRepository;
 import com.azure.spring.data.cosmos.repository.Query;
+import org.cjoakim.cosmos.sql.rbac.data.User;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package org.cjoakim.cosmos.sql.rbac;
+package org.cjoakim.cosmos.sql.rbac.data;
 
 import com.azure.spring.data.cosmos.core.mapping.Container;
 import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
